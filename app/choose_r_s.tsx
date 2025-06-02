@@ -1,9 +1,9 @@
-import { View, Text, Image, TouchableOpacity } from "react-native";
-import React from "react";
-import tw from "@/lib/tailwind";
-import { SvgXml } from "react-native-svg";
 import { IconErow, IconFillHome } from "@/icons/icon";
-import { Link, Slot } from "expo-router";
+import tw from "@/lib/tailwind";
+import { Link } from "expo-router";
+import React from "react";
+import { Image, Text, TouchableOpacity, View } from "react-native";
+import { SvgXml } from "react-native-svg";
 
 const Page = () => {
   return (
@@ -43,7 +43,8 @@ const Page = () => {
           <TouchableOpacity
             style={tw`bg-primaryFF flex-row gap-3 justify-center items-center w-[121px] rounded-lg py-1 absolute bottom-4 left-4`}
           >
-            <Link href="/retailer/home">
+            {/* ================ services route ==================== */}
+            <Link href="/services/drawer/servicesHome/serviceHome">
               <Text style={tw`font-medium text-lg`}>Service</Text>
               <View style={tw`pl-5`}>
                 <SvgXml xml={IconErow} />

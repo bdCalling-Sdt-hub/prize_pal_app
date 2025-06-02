@@ -1,7 +1,4 @@
-import { View, Text, Image, TouchableOpacity } from "react-native";
-import React from "react";
-import tw from "@/lib/tailwind";
-import { SvgFromXml, SvgXml } from "react-native-svg";
+import Btn from "@/components/Btn";
 import {
   IconCall,
   IconEdit,
@@ -10,8 +7,11 @@ import {
   IconSelectImg,
   IconUser,
 } from "@/icons/icon";
-import Btn from "@/components/Btn";
-import { Link, router } from "expo-router";
+import tw from "@/lib/tailwind";
+import { router } from "expo-router";
+import React from "react";
+import { Image, Text, TouchableOpacity, View } from "react-native";
+import { SvgXml } from "react-native-svg";
 
 const Page = () => {
   return (
@@ -86,7 +86,6 @@ const Page = () => {
                   router.push("/editProfile/editProfile");
                 }}
               >
-                |
                 <View style={tw`flex-row justify-center items-center gap-3`}>
                   <SvgXml xml={IconEdit} />
                   <Text
