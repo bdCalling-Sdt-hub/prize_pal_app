@@ -11,6 +11,8 @@ module.exports = {
         deepGreycc: "#cccccc",
         primaryBlack: "#121212",
         deepGreen: "#00B047",
+        lowGreen: "#F0FFD7",
+        SPrimary: "#6DA40A",
       },
     },
   },
