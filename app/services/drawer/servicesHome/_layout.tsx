@@ -1,4 +1,11 @@
-import { IconHome, IconSearch } from "@/icons/icon";
+import {
+  IconHome,
+  IconHomeBlack,
+  IconProfile,
+  IconProfileBlack,
+  IconSearchBlack,
+  IconSearchSTab,
+} from "@/icons/icon";
 import tw from "@/lib/tailwind";
 import { BottomTabNavigationEventMap } from "@react-navigation/bottom-tabs";
 import {
@@ -77,9 +84,11 @@ function MyTabBar({ state, descriptors, navigation }: MyTabBarProps) {
               const getIcon = () => {
                 switch (route.name) {
                   case "serviceHome":
-                    return isFocused ? IconHome : IconHome;
+                    return isFocused ? IconHome : IconHomeBlack;
                   case "search":
-                    return isFocused ? IconSearch : IconSearch;
+                    return isFocused ? IconSearchSTab : IconSearchBlack;
+                  case "profile":
+                    return isFocused ? IconProfile : IconProfileBlack;
                 }
               };
 
@@ -142,6 +151,8 @@ export default function TabLayout() {
       tabBar={(props: any) => <MyTabBar {...props} />}
     >
       <Tabs.Screen name="serviceHome" />
+      <Tabs.Screen name="search" />
+      <Tabs.Screen name="profile" />
     </Tabs>
   );
 }

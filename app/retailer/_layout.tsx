@@ -1,12 +1,3 @@
-import { GestureHandlerRootView } from "react-native-gesture-handler";
-import { Drawer } from "expo-router/drawer";
-import {
-  DrawerContentComponentProps,
-  DrawerContentScrollView,
-} from "@react-navigation/drawer";
-import { Text, TouchableOpacity, View } from "react-native";
-import { router } from "expo-router";
-import { SvgXml } from "react-native-svg";
 import {
   IconAboutUS,
   IconBack,
@@ -18,8 +9,16 @@ import {
   IconUserProfile,
 } from "@/icons/icon";
 import tw from "@/lib/tailwind";
-import Btn from "@/components/Btn";
 import { _HIGHT } from "@/utils/utils";
+import {
+  DrawerContentComponentProps,
+  DrawerContentScrollView,
+} from "@react-navigation/drawer";
+import { router } from "expo-router";
+import { Drawer } from "expo-router/drawer";
+import { Text, TouchableOpacity, View } from "react-native";
+import { GestureHandlerRootView } from "react-native-gesture-handler";
+import { SvgXml } from "react-native-svg";
 
 function CustomDrawerContent(props: DrawerContentComponentProps) {
   return (
@@ -128,7 +127,6 @@ function CustomDrawerContent(props: DrawerContentComponentProps) {
             <SvgXml xml={IconBack} />
           </TouchableOpacity>
         </View>
-        <Btn>lksdjfsdlf</Btn>
       </View>
     </DrawerContentScrollView>
   );

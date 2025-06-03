@@ -1,4 +1,9 @@
-import { ImgCarousel } from "@/assets/image";
+import {
+  ImgCarousel,
+  ImgCarouselFour,
+  ImgCarouselThree,
+  ImgCarouselTwo,
+} from "@/assets/image";
 import * as React from "react";
 import { Image, View } from "react-native";
 import { useSharedValue } from "react-native-reanimated";
@@ -8,13 +13,19 @@ import Carousel, {
 } from "react-native-reanimated-carousel";
 
 const defaultDataWith6Colors = [
-  "#B0604D",
-  "#899F9C",
-  "#B3C680",
-  "#5C6265",
-  "#F5D399",
-  "#F1F1F1",
+  ImgCarousel,
+  ImgCarouselTwo,
+  ImgCarouselThree,
+  ImgCarouselFour,
 ];
+// const defaultDataWith6Colors = [
+//   "#B0604D",
+//   "#899F9C",
+//   "#B3C680",
+//   "#5C6265",
+//   "#F5D399",
+//   "#F1F1F1",
+// ];
 
 const renderItem = ({ rounded }: { rounded?: boolean }) => {
   const Component = ({ item }: { item: string }) => (
@@ -29,7 +40,7 @@ const renderItem = ({ rounded }: { rounded?: boolean }) => {
     // />
 
     <Image
-      source={ImgCarousel}
+      source={item}
       style={{
         flex: 1,
         borderRadius: rounded ? 16 : 0,
@@ -44,7 +55,7 @@ const renderItem = ({ rounded }: { rounded?: boolean }) => {
   return Component;
 };
 
-const PAGE_WIDTH = 430;
+const PAGE_WIDTH = 410;
 const PAGE_HEIGHT = 130;
 
 const ServiceCarousel = () => {
@@ -68,9 +79,9 @@ const ServiceCarousel = () => {
     <View
       id="carousel-component"
       dataSet={{ kind: "utils", name: "pagination" }}
-      style={{ gap: 10 }}
+      style={{ gap: 1, marginTop: 16 }}
     >
-      <View style={{ marginBottom: 10 }}>
+      <View style={{ marginBottom: 20 }}>
         <Carousel
           ref={ref}
           {...baseOptions}
