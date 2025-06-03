@@ -1,12 +1,12 @@
-import { View, Text, TouchableOpacity } from "react-native";
-import React from "react";
-import { Tabs } from "expo-router";
-import { BottomTabBarProps } from "@react-navigation/bottom-tabs";
-import { useLinkBuilder, useTheme } from "@react-navigation/native";
+import tw from "@/lib/tailwind";
 import AntDesign from "@expo/vector-icons/AntDesign";
 import Feather from "@expo/vector-icons/Feather";
 import FontAwesome from "@expo/vector-icons/FontAwesome";
-import tw from "@/lib/tailwind";
+import { BottomTabBarProps } from "@react-navigation/bottom-tabs";
+import { useLinkBuilder, useTheme } from "@react-navigation/native";
+import { Tabs } from "expo-router";
+import React from "react";
+import { TouchableOpacity, View } from "react-native";
 
 export function TabBar({ state, descriptors, navigation }: BottomTabBarProps) {
   const { colors } = useTheme();

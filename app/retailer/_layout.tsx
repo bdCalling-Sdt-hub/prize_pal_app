@@ -140,17 +140,10 @@ const Drawerlayout = () => {
         screenOptions={{ headerShown: false }}
       >
         <Drawer.Screen
-          name="home/index"
+          name="home"
           options={{
             drawerLabel: "Home",
             title: "overview",
-          }}
-        />
-        <Drawer.Screen
-          name="home/profile"
-          options={{
-            drawerLabel: "My Profile",
-            // title: "overview",
           }}
         />
       </Drawer>
