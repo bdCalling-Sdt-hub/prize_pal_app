@@ -113,10 +113,11 @@ const Search = () => {
       <FlatList
         data={defaultSearchData}
         numColumns={2}
-        contentContainerStyle={tw` justify-between gap-2`}
+        contentContainerStyle={tw` flex-1 bg-white dark:bg-black gap-3 justify-start items-center`}
         columnWrapperStyle={{ gap: 10 }}
         renderItem={RenderItem}
         ListHeaderComponent={HeaderContent}
+        ListHeaderComponentStyle={tw`w-full px-3`}
         keyExtractor={(item) => item.id.toLocaleString()}
       />
     </SafeAreaView>

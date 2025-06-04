@@ -3,6 +3,7 @@ import { ImgLogo, ImgSPoster } from "@/assets/image";
 import ServiceCarousel from "@/components/ServiceCarousel";
 import {
   IconCheckBlack,
+  IconCheckWhite,
   IconCleaningService,
   IconMovingService,
   IconRemodelingService,
@@ -186,7 +187,9 @@ const ServiceHome = () => {
           style={tw`border border-deepGrey50 rounded-3xl px-10 py-6 mt-4 gap-3 mx-4`}
         >
           <View style={tw`flex-row justify-start items-center gap-5`}>
-            <SvgXml xml={IconCheckBlack} />
+            <SvgXml
+              xml={colorScheme === "dark" ? IconCheckWhite : IconCheckBlack}
+            />
             <Text
               style={tw`font-DegularDisplayRegular text-lg text-black dark:text-white`}
             >
@@ -194,7 +197,9 @@ const ServiceHome = () => {
             </Text>
           </View>
           <View style={tw`flex-row justify-start items-center gap-5`}>
-            <SvgXml xml={IconCheckBlack} />
+            <SvgXml
+              xml={colorScheme === "dark" ? IconCheckWhite : IconCheckBlack}
+            />
             <Text
               style={tw`font-DegularDisplayRegular text-lg text-black dark:text-white`}
             >
@@ -202,7 +207,9 @@ const ServiceHome = () => {
             </Text>
           </View>
           <View style={tw`flex-row justify-start items-center gap-5`}>
-            <SvgXml xml={IconCheckBlack} />
+            <SvgXml
+              xml={colorScheme === "dark" ? IconCheckWhite : IconCheckBlack}
+            />
             <Text
               style={tw`font-DegularDisplayRegular text-lg text-black dark:text-white`}
             >
@@ -210,7 +217,9 @@ const ServiceHome = () => {
             </Text>
           </View>
           <View style={tw`flex-row justify-start items-center gap-5`}>
-            <SvgXml xml={IconCheckBlack} />
+            <SvgXml
+              xml={colorScheme === "dark" ? IconCheckWhite : IconCheckBlack}
+            />
             <Text
               style={tw`font-DegularDisplayRegular text-lg text-black dark:text-white`}
             >
