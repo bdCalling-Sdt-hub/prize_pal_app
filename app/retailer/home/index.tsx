@@ -1,31 +1,56 @@
-import { View, TextInput, FlatList } from "react-native";
-import React, { useEffect } from "react";
+import React from "react";
+import {
+  FlatList,
+  Text,
+  TextInput,
+  TouchableOpacity,
+  View,
+} from "react-native";
 
-import { useNavigation } from "@react-navigation/native";
-import { SvgXml } from "react-native-svg";
+import { useTheme } from "@/app/context/ThemeProvider";
+import Card from "@/components/Card";
 import {
   IconDrower,
-  IconErow,
   IconLove,
   IconNotification,
   IconSearch,
   logo,
-  love,
 } from "@/icons/icon";
+import data from "@/lib/data.json";
 import tw from "@/lib/tailwind";
+import AsyncStorage from "@react-native-async-storage/async-storage";
+import { useNavigation } from "@react-navigation/native";
 import { Formik } from "formik";
 import { ScrollView } from "react-native-gesture-handler";
-import data from "@/lib/data.json";
-import Card from "@/components/Card";
+import { SvgXml } from "react-native-svg";
 
 const Page = () => {
+  const { toggleColorScheme, colorScheme } = useTheme();
   const navigation = useNavigation();
+
   return (
     <ScrollView
       showsVerticalScrollIndicator={false}
-      style={tw`bg-primaryFF h-full `}
+      style={tw`bg-base-light dark:bg-base-dark h-full `}
       contentContainerStyle={tw`px-4 pt-3 pb-30`}
     >
+      {/* ============= theme toggle button ========================== */}
+      <TouchableOpacity
+        onPress={async () => {
+          AsyncStorage.setItem(
+            "mode",
+            colorScheme === "dark" ? "light" : "dark"
+          );
+          toggleColorScheme();
+        }}
+      >
+        <Text
+          style={tw`dark:text-white text-black bg-green-500 rounded-full p-2`}
+        >
+          {colorScheme === "dark" ? "Make light" : "Make Dark"}
+        </Text>
+      </TouchableOpacity>
+      {/* ================= header ================= */}
       <View style={tw` flex-row justify-between  items-center`}>
         {/* togle btn */}
         <View>
