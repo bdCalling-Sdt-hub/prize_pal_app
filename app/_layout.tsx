@@ -36,7 +36,7 @@ export default function RootLayout() {
             <Stack.Screen name="retailer" />
           </Stack>
         </GestureHandlerRootView>
-      </SafeAreaView>{" "}
+      </SafeAreaView>
     </ThemeProvider>
   );
 }
