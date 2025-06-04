@@ -10,3 +10,5 @@ export const ImgServiceTwo = require("@/assets/images/services/servicesTwo.jpg")
 export const ImgServiceThree = require("@/assets/images/services/servicesThree.jpg");
 export const ImgServiceFour = require("@/assets/images/services/servicesFour.jpg");
 export const ImgServiceFive = require("@/assets/images/services/servicesFive.jpg");
+
+export const ImgChatOne = require("@/assets/images/chatOne.jpg");

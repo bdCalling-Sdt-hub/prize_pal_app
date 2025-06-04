@@ -33,7 +33,7 @@ const Page = () => {
             </View>
             {/* name and loction */}
             <View style={tw`text-center items-center pt-3`}>
-              <Text style={tw`font-medium text-xl font-deepGrey  `}>
+              <Text style={tw`font-medium text-xl text-deepGrey50  `}>
                 Majsharlaya
               </Text>
               <View style={tw`flex-row items-center gap-3 pt-1`}>

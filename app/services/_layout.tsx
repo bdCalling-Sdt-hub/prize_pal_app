@@ -15,6 +15,7 @@ const _layout = () => {
         }}
       >
         <Stack.Screen name="drawer" />
+        <Stack.Screen name="servicesPages" />
       </Stack>
     </SafeAreaView>
   );

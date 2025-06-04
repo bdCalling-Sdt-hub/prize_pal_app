@@ -43,7 +43,12 @@ const TButton = ({
         <ActivityIndicator color={loadingColor ? loadingColor : "white"} />
       )}
       {title && (
-        <Text style={[tw`text-white font-PoppinsSemiBold text-sm`, titleStyle]}>
+        <Text
+          style={[
+            tw`text-white font-DegularDisplaySemibold text-sm`,
+            titleStyle,
+          ]}
+        >
           {title}
         </Text>
       )}

@@ -7,13 +7,14 @@ import {
   IconUser,
 } from "@/icons/icon";
 import tw from "@/lib/tailwind";
+import { router } from "expo-router";
 import React from "react";
 import { Image, Text, TouchableOpacity, View } from "react-native";
 import { SvgXml } from "react-native-svg";
 
 const Page = () => {
   return (
-    <View style={tw`flex-1 bg-primaryFF `}>
+    <View style={tw`flex-1 bg-base-light dark:bg-base-dark`}>
       <View style={tw`p-5`}>
         {/* profile section */}
         <View
@@ -31,12 +32,16 @@ const Page = () => {
             </View>
             {/* name and loction */}
             <View style={tw`text-center items-center pt-3`}>
-              <Text style={tw`font-medium text-xl text-deepGrey50 `}>
+              <Text
+                style={tw`font-medium text-xl dark:text-white text-deepGrey50 `}
+              >
                 Majsharlaya
               </Text>
               <View style={tw`flex-row items-center gap-3 pt-1`}>
                 <SvgXml xml={IconLoction} />
-                <Text style={tw`font-normal text-base`}>Dhaka, bangladesh</Text>
+                <Text style={tw`font-normal dark:text-white text-base`}>
+                  Dhaka, bangladesh
+                </Text>
               </View>
             </View>
           </View>
@@ -79,9 +84,9 @@ const Page = () => {
           </View>
 
           <TouchableOpacity
-            // onPress={() => {
-            //   router.push("/editProfile/editProfile");
-            // }}
+            onPress={() => {
+              router.push("/services/servicesPages/editServicesProfile");
+            }}
             style={tw`bg-SPrimary py-3 rounded-full`}
           >
             <View style={tw`flex-row justify-center items-center gap-3`}>

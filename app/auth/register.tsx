@@ -1,24 +1,22 @@
-import {
-  View,
-  Text,
-  Image,
-  TextInput,
-  Button,
-  TouchableOpacity,
-  KeyboardAvoidingView,
-} from "react-native";
-import React, { useState } from "react";
+import AuthHeader from "@/components/AuthHeader";
 import tw from "@/lib/tailwind";
-import { Formik } from "formik";
-import MaterialIcons from "@expo/vector-icons/MaterialIcons";
-import { Link, router } from "expo-router";
-import Entypo from "@expo/vector-icons/Entypo";
-import Checkbox from "expo-checkbox";
 import AntDesign from "@expo/vector-icons/AntDesign";
-import { ScrollView } from "react-native-gesture-handler";
+import Entypo from "@expo/vector-icons/Entypo";
 import FontAwesome5 from "@expo/vector-icons/FontAwesome5";
 import FontAwesome6 from "@expo/vector-icons/FontAwesome6";
-import AuthHeader from "@/components/AuthHeader";
+import MaterialIcons from "@expo/vector-icons/MaterialIcons";
+import Checkbox from "expo-checkbox";
+import { Link, router } from "expo-router";
+import { Formik } from "formik";
+import React, { useState } from "react";
+import {
+  KeyboardAvoidingView,
+  Text,
+  TextInput,
+  TouchableOpacity,
+  View,
+} from "react-native";
+import { ScrollView } from "react-native-gesture-handler";
 
 const Register = () => {
   const [value, setValue] = useState(false);
