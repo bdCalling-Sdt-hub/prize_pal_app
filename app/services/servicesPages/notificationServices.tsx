@@ -3,16 +3,29 @@ import {
   IconBackBlack,
   IconBackWhite,
   IconSCancledWhite,
+  IconSModalCross,
   IconSpenddingWhite,
   IconSSuccessWhite,
 } from "@/icons/icon";
 import tw from "@/lib/tailwind";
 import { router } from "expo-router";
-import React from "react";
-import { Pressable, ScrollView, Text, View } from "react-native";
+import { Formik } from "formik";
+import React, { useState } from "react";
+import {
+  Pressable,
+  ScrollView,
+  Text,
+  TouchableOpacity,
+  View,
+} from "react-native";
+import { TextInput } from "react-native-gesture-handler";
+import StarRating from "react-native-star-rating-widget";
 import { SvgXml } from "react-native-svg";
+import { Dialog, PanningProvider } from "react-native-ui-lib";
 
 const NotificationServices = () => {
+  const [isModalVisible, setIsModalVisible] = useState(false);
+  const [rating, setRating] = useState(2);
   const colorScheme = useTheme();
 
   return (
@@ -90,6 +103,7 @@ const NotificationServices = () => {
           <Text></Text>
         </Pressable>
         <Pressable
+          onPress={() => setIsModalVisible(true)}
           style={tw`flex-row justify-between p-4   bg-[#D3FFE5] dark:bg-darkPrimary rounded-3xl items-center my-1.5`}
         >
           <View style={tw`flex-row justify-start items-center gap-4`}>
@@ -114,6 +128,78 @@ const NotificationServices = () => {
           <Text></Text>
         </Pressable>
       </View>
+      {/* ================== modal ====================== */}
+      <Dialog
+        width={"100%"}
+        height={"40%"}
+        visible={isModalVisible}
+        containerStyle={tw`flex-1 bg-white rounded-3xl mx-5`}
+        onDismiss={() => setIsModalVisible(false)}
+        panDirection={PanningProvider.Directions.DOWN}
+      >
+        <View style={tw``}>
+          <View style={tw`flex-row justify-between items-center px-4 my-3`}>
+            <Text></Text>
+            <Text
+              style={tw`font-DegularDisplayMedium text-2xl text-black dark:text-white`}
+            >
+              Add review
+            </Text>
+            <SvgXml
+              onPress={() => setIsModalVisible(false)}
+              xml={IconSModalCross}
+            />
+          </View>
+
+          <View style={tw`w-full justify-center items-center`}>
+            {/* ==================== stare rating =================== */}
+            <StarRating rating={rating} onChange={setRating} />
+            <Text
+              style={tw`font-DegularDisplayRegular text-xl text-black my-2 text-center`}
+            >
+              Tap to add your rating
+            </Text>
+          </View>
+
+          <View style={tw`px-4 `}>
+            <Formik
+              initialValues={{ review: "" }}
+              onSubmit={(values) => console.log(values)}
+            >
+              {({ handleChange, handleBlur, values }) => (
+                <View>
+                  <Text>Review</Text>
+                  <TextInput
+                    multiline
+                    numberOfLines={6}
+                    style={{
+                      height: 120,
+                      textAlignVertical: "top",
+                      borderColor: "#ccc",
+                      borderWidth: 1,
+                      padding: 10,
+                      borderRadius: 8,
+                    }}
+                    onChangeText={handleChange("review")}
+                    onBlur={handleBlur("review")}
+                    value={values.review}
+                  />
+                  <TouchableOpacity
+                    onPress={() => setIsModalVisible(false)}
+                    style={tw`w-full bg-SPrimary rounded-lg my-4 py-3`}
+                  >
+                    <Text
+                      style={tw`font-DegularDisplayMedium text-lg text-white text-center`}
+                    >
+                      Submit
+                    </Text>
+                  </TouchableOpacity>
+                </View>
+              )}
+            </Formik>
+          </View>
+        </View>
+      </Dialog>
     </ScrollView>
   );
 };
