@@ -57,6 +57,61 @@ const chatList = () => {
           10: 20 PM
         </Text>
       </Pressable>
+
+      <Pressable
+        onPress={() =>
+          router.push("/services/servicesPages/messeges/messeging")
+        }
+        style={tw`flex-row justify-between p-3 border  border-[#0000001A]  bg-[#DBDBDB] dark:bg-[#3D3D3D] rounded-3xl items-center my-3`}
+      >
+        <View style={tw`flex-row justify-start items-center gap-3`}>
+          <Image style={tw`w-16 h-16 rounded-full `} source={ImgChatOne} />
+          <View>
+            <Text
+              style={tw`font-DegularDisplayMedium text-lg text-black dark:text-white`}
+            >
+              Maria jone
+            </Text>
+            <Text
+              style={tw`font-DegularDisplayRegular text-sm text-black dark:text-white`}
+            >
+              You: Lorem ipsum dolor sit amet.
+            </Text>
+          </View>
+        </View>
+        <Text
+          style={tw`font-DegularDisplayRegular text-sm text-deepGrey80 dark:text-deepGreycc mr-1`}
+        >
+          10: 20 PM
+        </Text>
+      </Pressable>
+      <Pressable
+        onPress={() =>
+          router.push("/services/servicesPages/messeges/messeging")
+        }
+        style={tw`flex-row justify-between p-3 border  border-[#0000001A]  bg-[#DBDBDB] dark:bg-[#3D3D3D] rounded-3xl items-center my-3`}
+      >
+        <View style={tw`flex-row justify-start items-center gap-3`}>
+          <Image style={tw`w-16 h-16 rounded-full `} source={ImgChatOne} />
+          <View>
+            <Text
+              style={tw`font-DegularDisplayMedium text-lg text-black dark:text-white`}
+            >
+              Maria jone
+            </Text>
+            <Text
+              style={tw`font-DegularDisplayRegular text-sm text-black dark:text-white`}
+            >
+              You: Lorem ipsum dolor sit amet.
+            </Text>
+          </View>
+        </View>
+        <Text
+          style={tw`font-DegularDisplayRegular text-sm text-deepGrey80 dark:text-deepGreycc mr-1`}
+        >
+          10: 20 PM
+        </Text>
+      </Pressable>
     </View>
   );
 };
