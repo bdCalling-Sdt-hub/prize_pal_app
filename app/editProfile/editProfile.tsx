@@ -1,18 +1,18 @@
+import Btn from "@/components/Btn";
+import { IconUser } from "@/icons/icon";
+import BackWithComponent from "@/lib/backHeader/BackWithCoponent";
+import tw from "@/lib/tailwind";
+import { router } from "expo-router";
+import { Formik } from "formik";
+import React from "react";
 import {
-  View,
+  KeyboardAvoidingView,
   Text,
   TextInput,
   TouchableOpacity,
-  KeyboardAvoidingView,
+  View,
 } from "react-native";
-import React, { useState } from "react";
-import BackWithComponent from "@/lib/backHeader/BackWithCoponent";
-import { router } from "expo-router";
-import tw from "@/lib/tailwind";
 import { SvgXml } from "react-native-svg";
-import { IconUser } from "@/icons/icon";
-import { Formik } from "formik";
-import Btn from "@/components/Btn";
 
 const editProfile = () => {
   const user = {

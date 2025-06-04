@@ -3,6 +3,7 @@ import { ImgLogo, ImgSPoster } from "@/assets/image";
 import ServiceCarousel from "@/components/ServiceCarousel";
 import {
   IconCheckBlack,
+  IconCheckWhite,
   IconCleaningService,
   IconMovingService,
   IconRemodelingService,
@@ -13,7 +14,8 @@ import {
   IconSNotification,
 } from "@/icons/icon";
 import tw from "@/lib/tailwind";
-import { useNavigation } from "expo-router";
+import AsyncStorage from "@react-native-async-storage/async-storage";
+import { router, useNavigation } from "expo-router";
 import { Formik } from "formik";
 import React from "react";
 import {
@@ -39,12 +41,16 @@ const ServiceHome = () => {
       <View style={tw`px-5 pb-24`}>
         {/* ============= theme toggle button ========================== */}
         <TouchableOpacity
-          onPress={() => {
+          onPress={async () => {
+            AsyncStorage.setItem(
+              "mode",
+              colorScheme === "dark" ? "light" : "dark"
+            );
             toggleColorScheme();
           }}
         >
           <Text
-            style={tw`dark:text-white text-black bg-yellow-400 rounded-full p-2`}
+            style={tw`dark:text-white text-black bg-green-500 rounded-full p-2`}
           >
             {colorScheme === "dark" ? "Make light" : "Make Dark"}
           </Text>
@@ -55,7 +61,7 @@ const ServiceHome = () => {
             onPress={() => {
               (navigation as any)?.openDrawer();
             }}
-            style={tw`w-14 h-14 rounded-full bg-lowGreen justify-center items-center`}
+            style={tw`w-14 h-14 rounded-full bg-lowGreen dark:bg-[#3D3D3D] justify-center items-center`}
           >
             <SvgXml xml={IconSMenu} />
           </TouchableOpacity>
@@ -64,12 +70,18 @@ const ServiceHome = () => {
 
           <View style={tw`flex-row gap-2`}>
             <TouchableOpacity
-              style={tw`w-14 h-14 rounded-full bg-lowGreen justify-center items-center`}
+              onPress={() =>
+                router.push("/services/servicesPages/messeges/chatList")
+              }
+              style={tw`w-14 h-14 rounded-full bg-lowGreen dark:bg-[#3D3D3D] justify-center items-center`}
             >
               <SvgXml xml={IconSMassage} />
             </TouchableOpacity>
             <TouchableOpacity
-              style={tw`w-14 h-14 rounded-full bg-lowGreen justify-center items-center`}
+              onPress={() =>
+                router.push("/services/servicesPages/notificationServices")
+              }
+              style={tw`w-14 h-14 rounded-full bg-lowGreen dark:bg-[#3D3D3D] justify-center items-center`}
             >
               <SvgXml xml={IconSNotification} />
             </TouchableOpacity>
@@ -87,12 +99,13 @@ const ServiceHome = () => {
             }
             return (
               <View
-                style={tw`bg-primary my-2 rounded-full flex-row items-center pl-6`}
+                style={tw`bg-primary dark:bg-[#3D3D3D]  my-2 rounded-full flex-row items-center pl-6`}
               >
                 <SvgXml xml={IconSearch} />
                 <TextInput
-                  style={tw`h-[60px] flex-1 pl-3`}
+                  style={tw`h-[60px] flex-1 pl-3 `}
                   placeholder="Search items"
+                  placeholderTextColor="#888888"
                   onChangeText={handleChange("searchText")}
                   onBlur={handleBlur("searchText")}
                   value={values.searchText}
@@ -186,7 +199,9 @@ const ServiceHome = () => {
           style={tw`border border-deepGrey50 rounded-3xl px-10 py-6 mt-4 gap-3 mx-4`}
         >
           <View style={tw`flex-row justify-start items-center gap-5`}>
-            <SvgXml xml={IconCheckBlack} />
+            <SvgXml
+              xml={colorScheme === "dark" ? IconCheckWhite : IconCheckBlack}
+            />
             <Text
               style={tw`font-DegularDisplayRegular text-lg text-black dark:text-white`}
             >
@@ -194,7 +209,9 @@ const ServiceHome = () => {
             </Text>
           </View>
           <View style={tw`flex-row justify-start items-center gap-5`}>
-            <SvgXml xml={IconCheckBlack} />
+            <SvgXml
+              xml={colorScheme === "dark" ? IconCheckWhite : IconCheckBlack}
+            />
             <Text
               style={tw`font-DegularDisplayRegular text-lg text-black dark:text-white`}
             >
@@ -202,7 +219,9 @@ const ServiceHome = () => {
             </Text>
           </View>
           <View style={tw`flex-row justify-start items-center gap-5`}>
-            <SvgXml xml={IconCheckBlack} />
+            <SvgXml
+              xml={colorScheme === "dark" ? IconCheckWhite : IconCheckBlack}
+            />
             <Text
               style={tw`font-DegularDisplayRegular text-lg text-black dark:text-white`}
             >
@@ -210,7 +229,9 @@ const ServiceHome = () => {
             </Text>
           </View>
           <View style={tw`flex-row justify-start items-center gap-5`}>
-            <SvgXml xml={IconCheckBlack} />
+            <SvgXml
+              xml={colorScheme === "dark" ? IconCheckWhite : IconCheckBlack}
+            />
             <Text
               style={tw`font-DegularDisplayRegular text-lg text-black dark:text-white`}
             >

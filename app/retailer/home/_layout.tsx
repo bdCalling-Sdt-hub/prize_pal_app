@@ -60,7 +60,7 @@ export function TabBar({ state, descriptors, navigation }: BottomTabBarProps) {
         return (
           <TouchableOpacity
             key={route.name}
-            href={buildHref(route.name, route.params)}
+            // href={buildHref(route.name, route.params)}
             accessibilityState={isFocused ? { selected: true } : {}}
             accessibilityLabel={options.tabBarAccessibilityLabel}
             testID={options.tabBarButtonTestID}

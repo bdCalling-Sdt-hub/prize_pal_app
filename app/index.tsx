@@ -28,7 +28,7 @@ const App = () => {
     SplashScreen.hideAsync();
 
     setTimeout(() => {
-      // router.replace("/editProfile/editProfile");
+      // router.replace("/services/servicesPages/messeges/chatList");
       router.replace("/auth/login");
     }, 1000);
   }, []);

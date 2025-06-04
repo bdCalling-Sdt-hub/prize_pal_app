@@ -105,12 +105,15 @@ function MyTabBar({ state, descriptors, navigation }: MyTabBarProps) {
                 >
                   <View
                     style={[
-                      tw`items-center justify-center px-4 py-3 rounded-full `,
+                      tw`items-center justify-center px-4 py-3 `,
                       tw`${
                         isFocused
-                          ? "bg-SPrimary border-0 border-white shadow-lg"
-                          : "bg-transparent"
+                          ? "bg-SPrimary border-0 border-white shadow-lg "
+                          : "bg-transparent rounded-full "
                       }`,
+                      {
+                        borderRadius: 1000,
+                      },
                     ]}
                   >
                     <SvgXml

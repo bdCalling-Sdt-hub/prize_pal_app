@@ -91,12 +91,13 @@ const Search = () => {
           }
           return (
             <View
-              style={tw`bg-deepGreycc my-3 rounded-full flex-row items-center pl-6`}
+              style={tw`bg-primary border-deepGreycc border dark:bg-[#3D3D3D]  my-3 rounded-full flex-row items-center pl-6`}
             >
               <SvgXml xml={IconSearch} />
               <TextInput
                 style={tw`h-[60px] flex-1 pl-3`}
                 placeholder="Search items"
+                placeholderTextColor="#888888"
                 onChangeText={handleChange("searchText")}
                 onBlur={handleBlur("searchText")}
                 value={values.searchText}
@@ -109,14 +110,15 @@ const Search = () => {
   };
 
   return (
-    <SafeAreaView style={tw`flex-1 px-4`}>
+    <SafeAreaView style={tw`flex-1 bg-base-light dark:bg-base-dark px-4`}>
       <FlatList
         data={defaultSearchData}
         numColumns={2}
-        contentContainerStyle={tw` justify-between gap-2`}
+        contentContainerStyle={tw` flex-1  gap-3 justify-start items-center`}
         columnWrapperStyle={{ gap: 10 }}
         renderItem={RenderItem}
         ListHeaderComponent={HeaderContent}
+        ListHeaderComponentStyle={tw`w-full px-3`}
         keyExtractor={(item) => item.id.toLocaleString()}
       />
     </SafeAreaView>
