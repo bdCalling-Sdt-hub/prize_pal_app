@@ -398,3 +398,14 @@ export const IconPrivacyBlack = `<svg width="20" height="22" viewBox="0 0 20 22"
 </svg>
 
 `;
+export const IconBackWhite = `<svg width="10" height="18" viewBox="0 0 10 18" fill="none" xmlns="http://www.w3.org/2000/svg">
+<path fill-rule="evenodd" clip-rule="evenodd" d="M0.397603 9.99984L8.07979 18L10 16.0003L3.27791 9L10 1.99969L8.07979 0L0.397603 8.00016C0.143018 8.26536 0 8.625 0 9C0 9.375 0.143018 9.73464 0.397603 9.99984Z" fill="white"/>
+</svg>
+
+
+`;
+export const IconBackBlack = `<svg width="10" height="18" viewBox="0 0 10 18" fill="none" xmlns="http://www.w3.org/2000/svg">
+<path fill-rule="evenodd" clip-rule="evenodd" d="M0.397603 9.99984L8.07979 18L10 16.0003L3.27791 9L10 1.99969L8.07979 0L0.397603 8.00016C0.143018 8.26536 0 8.625 0 9C0 9.375 0.143018 9.73464 0.397603 9.99984Z" fill="black"/>
+</svg>
+
+`;

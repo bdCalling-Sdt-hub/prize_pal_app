@@ -14,7 +14,8 @@ import {
   IconSNotification,
 } from "@/icons/icon";
 import tw from "@/lib/tailwind";
-import { useNavigation } from "expo-router";
+import AsyncStorage from "@react-native-async-storage/async-storage";
+import { router, useNavigation } from "expo-router";
 import { Formik } from "formik";
 import React from "react";
 import {
@@ -40,7 +41,11 @@ const ServiceHome = () => {
       <View style={tw`px-5 pb-24`}>
         {/* ============= theme toggle button ========================== */}
         <TouchableOpacity
-          onPress={() => {
+          onPress={async () => {
+            AsyncStorage.setItem(
+              "mode",
+              colorScheme === "dark" ? "light" : "dark"
+            );
             toggleColorScheme();
           }}
         >
@@ -70,6 +75,9 @@ const ServiceHome = () => {
               <SvgXml xml={IconSMassage} />
             </TouchableOpacity>
             <TouchableOpacity
+              onPress={() =>
+                router.push("/services/servicesPages/notificationServices")
+              }
               style={tw`w-14 h-14 rounded-full bg-lowGreen justify-center items-center`}
             >
               <SvgXml xml={IconSNotification} />

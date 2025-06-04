@@ -67,7 +67,10 @@ const IwtButton = ({
 
       {title && (
         <Text
-          style={[tw`text-white font-PoppinsSemiBold text-base `, titleStyle]}
+          style={[
+            tw`text-white font-DegularDisplaySemibold text-base `,
+            titleStyle,
+          ]}
         >
           {title}
         </Text>

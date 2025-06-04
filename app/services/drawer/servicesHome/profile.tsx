@@ -14,7 +14,7 @@ import { SvgXml } from "react-native-svg";
 
 const Page = () => {
   return (
-    <View style={tw`flex-1 bg-primaryFF dark:bg-black`}>
+    <View style={tw`flex-1 bg-base-light dark:bg-base-dark`}>
       <View style={tw`p-5`}>
         {/* profile section */}
         <View
@@ -85,7 +85,7 @@ const Page = () => {
 
           <TouchableOpacity
             onPress={() => {
-              router.push("/editProfile/editProfile");
+              router.push("/services/servicesPages/editServicesProfile");
             }}
             style={tw`bg-SPrimary py-3 rounded-full`}
           >

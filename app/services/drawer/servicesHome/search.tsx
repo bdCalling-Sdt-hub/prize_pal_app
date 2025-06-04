@@ -109,11 +109,11 @@ const Search = () => {
   };
 
   return (
-    <SafeAreaView style={tw`flex-1 px-4`}>
+    <SafeAreaView style={tw`flex-1 bg-base-light dark:bg-base-dark px-4`}>
       <FlatList
         data={defaultSearchData}
         numColumns={2}
-        contentContainerStyle={tw` flex-1 bg-white dark:bg-black gap-3 justify-start items-center`}
+        contentContainerStyle={tw` flex-1  gap-3 justify-start items-center`}
         columnWrapperStyle={{ gap: 10 }}
         renderItem={RenderItem}
         ListHeaderComponent={HeaderContent}

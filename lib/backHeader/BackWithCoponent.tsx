@@ -82,7 +82,10 @@ const BackWithComponent = ({
               </View>
               <Text
                 numberOfLines={1}
-                style={[tw`text-b  font-PoppinsSemiBold text-base`, titleStyle]}
+                style={[
+                  tw`text-b  font-DegularDisplaySemibold text-base`,
+                  titleStyle,
+                ]}
               >
                 {title ? title : "Back"}
               </Text>

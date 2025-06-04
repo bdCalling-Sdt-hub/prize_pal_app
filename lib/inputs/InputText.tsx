@@ -134,7 +134,7 @@ const InputText = ({
         >
           {label}{" "}
           {required && (
-            <Text style={tw`text-red-500 font-PoppinsSemiBold`}> *</Text>
+            <Text style={tw`text-red-500 font-DegularDisplaySemibold`}> *</Text>
           )}
         </Text>
       )}
@@ -153,7 +153,7 @@ const InputText = ({
           <Animated.Text
             numberOfLines={1}
             style={[
-              tw`absolute bg-base rounded-full text-base font-PoppinsSemiBold py-2 px-2 ${
+              tw`absolute bg-base rounded-full text-base font-DegularDisplaySemibold py-2 px-2 ${
                 errorText && touched ? "text-red-500" : "text-gray-400"
               }`,
               placeholderStyle,
@@ -179,7 +179,7 @@ const InputText = ({
           onBlur={(e) => {
             onBlur && onBlur(e);
           }}
-          style={tw`flex-1 px-2 h-12 text-base  font-PoppinsSemiBold`}
+          style={tw`flex-1 px-2 h-12 text-base  font-DegularDisplaySemibold`}
           {...textInputProps}
           value={value || text}
           onChangeText={(text) => {
