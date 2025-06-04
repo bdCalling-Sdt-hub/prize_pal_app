@@ -1,9 +1,9 @@
-import { View, Text, Image, TouchableOpacity } from "react-native";
-import React from "react";
-import tw from "@/lib/tailwind";
 import { IconErow, love } from "@/icons/icon";
-import { SvgXml } from "react-native-svg";
+import tw from "@/lib/tailwind";
 import { router } from "expo-router";
+import React from "react";
+import { Image, Text, TouchableOpacity, View } from "react-native";
+import { SvgXml } from "react-native-svg";
 
 const Card = ({ item }: any) => {
   return (
@@ -17,16 +17,20 @@ const Card = ({ item }: any) => {
           ></Image>
 
           <View>
-            <Text style={tw`font-semibold text-lg`}>{item.category}</Text>
-            <Text style={tw`font-normal text-base text-deepGrey`}>
+            <Text style={tw`font-semibold text-lg dark:text-primaryFF`}>
+              {item.category}
+            </Text>
+            <Text style={tw`font-normal text-base text-deepGrey dark:text-`}>
               {item.productsCount} products
             </Text>
           </View>
         </View>
         <TouchableOpacity
-          style={tw`py-[8px] px-[16px] border flex items-center justify-center rounded-full border-deepGrey w-[90px]`}
+          style={tw`py-[8px] px-[16px] border dark:border-primaryFF flex items-center justify-center rounded-full border-deepGrey w-[90px]`}
         >
-          <Text style={tw`font-normal text-base`}>See all</Text>
+          <Text style={tw`font-normal text-base dark:text-primaryFF`}>
+            See all
+          </Text>
         </TouchableOpacity>
       </View>
       {/* card show  */}
@@ -38,7 +42,7 @@ const Card = ({ item }: any) => {
               router.push(`/product_details/${item?.id}`);
             }}
             key={cardItem.id}
-            style={tw`bg-primary  max-w-[180px] rounded-3xl relative`}
+            style={tw`bg-primary dark:bg-darkPrimary max-w-[180px] rounded-3xl relative`}
           >
             <Image
               style={tw`w-[170px] h-[144px] rounded-3xl m-1`}
@@ -53,10 +57,14 @@ const Card = ({ item }: any) => {
             {/* card content */}
             <View style={tw`flex-row items-center justify-between m-3`}>
               <View>
-                <Text style={tw`font-semibold text-lg text-black`}>
+                <Text
+                  style={tw`font-semibold text-lg dark:text-primaryFF text-black`}
+                >
                   {cardItem.name}
                 </Text>
-                <Text style={tw`font-normal text-base text-deepGrey`}>
+                <Text
+                  style={tw`font-normal text-lg dark:text-primaryFF text-deepGrey`}
+                >
                   {cardItem.price}
                 </Text>
               </View>
