@@ -36,6 +36,7 @@ module.exports = {
         deepGreen: "#00B047",
         lowGreen: "#F0FFD7",
         SPrimary: "#6DA40A",
+        darkPrimary: "#3D3D3D",
       },
     },
   },
