@@ -23,7 +23,7 @@ const editProfile = () => {
   };
 
   return (
-    <KeyboardAvoidingView style={tw`bg-primaryFF`}>
+    <KeyboardAvoidingView style={tw` bg-base-light dark:bg-base-dark `}>
       <View style={tw` h-[100%] m-5`}>
         <BackWithComponent
           onPress={() => {
@@ -48,37 +48,41 @@ const editProfile = () => {
                 <View style={tw`flex-col justify-between h-[92%]`}>
                   <View style={tw`pt-6`}>
                     <View
-                      style={tw`flex-row items-center gap-6 border mb-3 rounded-full px-5 h-14 overflow-hidden`}
+                      style={tw`flex-row items-center gap-6 border dark:border-primaryFF dark:bg-darkPrimary mb-3 rounded-full px-5 h-14 overflow-hidden`}
                     >
                       <SvgXml xml={IconUser} />
                       <TextInput
+                        style={tw`dark:text-primaryFF`}
                         value={values.name}
                         onChangeText={(tex) => setFieldValue("name", tex)}
                       />
                     </View>
                     <View
-                      style={tw`flex-row items-center gap-6 border mb-3 rounded-full px-5 h-14 overflow-hidden`}
+                      style={tw`flex-row items-center gap-6 border dark:border-primaryFF dark:bg-darkPrimary mb-3 rounded-full px-5 h-14 overflow-hidden`}
                     >
                       <SvgXml xml={IconUser} />
                       <TextInput
+                        style={tw`dark:text-primaryFF`}
                         value={values.email}
                         onChangeText={(tex) => setFieldValue("email", tex)}
                       />
                     </View>
                     <View
-                      style={tw`flex-row items-center gap-6 border mb-3 rounded-full px-5 h-14 overflow-hidden`}
+                      style={tw`flex-row items-center gap-6 border dark:border-primaryFF dark:bg-darkPrimary mb-3 rounded-full px-5 h-14 overflow-hidden`}
                     >
                       <SvgXml xml={IconUser} />
                       <TextInput
+                        style={tw`dark:text-primaryFF`}
                         value={values.phone}
                         onChangeText={(tex) => setFieldValue("phone", tex)}
                       />
                     </View>
                     <View
-                      style={tw`flex-row items-center gap-6 border mb-3 rounded-full px-5 h-14 overflow-hidden`}
+                      style={tw`flex-row items-center gap-6 border dark:border-primaryFF dark:bg-darkPrimary mb-3 rounded-full px-5 h-14 overflow-hidden`}
                     >
                       <SvgXml xml={IconUser} />
                       <TextInput
+                        style={tw`dark:text-primaryFF`}
                         value={values.location}
                         onChangeText={(tex) => setFieldValue("location", tex)}
                       />

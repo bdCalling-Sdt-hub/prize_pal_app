@@ -1,11 +1,11 @@
-import { View, Text, FlatList } from "react-native";
-import React, { useEffect, useState } from "react";
-import { useSearchParams } from "expo-router/build/hooks";
-import tw from "@/lib/tailwind";
+import ProductCard from "@/components/ProductCard";
 import BackWithComponent from "@/lib/backHeader/BackWithCoponent";
 import IButton from "@/lib/buttons/IButton";
+import tw from "@/lib/tailwind";
 import { router } from "expo-router";
-import ProductCard from "@/components/ProductCard";
+import { useSearchParams } from "expo-router/build/hooks";
+import React, { useEffect, useState } from "react";
+import { FlatList, View } from "react-native";
 
 import Cate from "@/assets/data/caretory.json";
 import { IconRightArrow } from "@/icons/icon";
@@ -23,7 +23,7 @@ const Details = () => {
   }, [name]);
 
   return (
-    <View style={tw`bg-primaryFF h-full w-full`}>
+    <View style={tw`bg-base-light dark:bg-base-dark  h-full w-full`}>
       <BackWithComponent
         onPress={() => {
           router.back();
@@ -32,7 +32,7 @@ const Details = () => {
         ComponentBtn={
           <View>
             <IButton
-              containerStyle={tw`p-0 m-0  rounded-full`}
+              containerStyle={tw`p-0 m-0 rounded-full`}
               svg={IconRightArrow}
             />
           </View>

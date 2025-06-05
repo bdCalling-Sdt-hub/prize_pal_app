@@ -1,12 +1,10 @@
-import { View, Text, Image, TouchableOpacity } from "react-native";
-import React from "react";
+import { IconErow } from "@/icons/icon";
 import tw from "@/lib/tailwind";
-import { SvgXml } from "react-native-svg";
-import { IconErow, love } from "@/icons/icon";
-import { ScrollView } from "react-native-gesture-handler";
-import { router } from "expo-router";
-import Cate from "@/assets/data/caretory.json";
 import { _HIGHT } from "@/utils/utils";
+import { router } from "expo-router";
+import React from "react";
+import { Image, Text, TouchableOpacity, View } from "react-native";
+import { SvgXml } from "react-native-svg";
 
 const ProductCard = ({
   item,
@@ -29,7 +27,10 @@ const ProductCard = ({
       onPress={() => {
         router.push(`/product_details/${item?.id}`);
       }}
-      style={[tw`bg-primary  flex-1  rounded-3xl relative`, containerStyle]}
+      style={[
+        tw`bg-base-light dark:bg-darkPrimary   flex-1  rounded-3xl relative`,
+        containerStyle,
+      ]}
     >
       <View style={tw`p-1`}>
         <Image
@@ -44,22 +45,22 @@ const ProductCard = ({
           }}
         />
       </View>
-      {/* love icon */}
-      <TouchableOpacity
-        style={tw`bg-primaryFF absolute right-3 top-3 w-10 h-10 justify-center items-center rounded-xl`}
-      >
-        <SvgXml xml={love} />
-      </TouchableOpacity>
       {/* card content */}
       <View style={tw` m-3`}>
         <View>
-          <Text style={tw`font-medium  text-lg `}>{item?.title}</Text>
-          <Text style={tw` text-base font-medium text-deepGrey50 `}>
+          <Text style={tw`font-medium  text-lg dark:text-primaryFF`}>
+            {item?.title}
+          </Text>
+          <Text
+            style={tw` text-base font-medium text-deepGrey50 dark:text-darkText`}
+          >
             {item?.brandName}
           </Text>
         </View>
-        <View style={tw`flex-row justify-between  items-center  `}>
-          <Text style={tw`font-semibold text-xl  `}>{item?.price}</Text>
+        <View style={tw`flex-row justify-between items-center`}>
+          <Text style={tw`font-semibold text-xl  dark:text-primaryFF`}>
+            {item?.price}
+          </Text>
           <TouchableOpacity
             onPress={() => {
               router.push(`/product_details/${item?.id}`);

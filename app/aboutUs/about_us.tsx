@@ -1,12 +1,12 @@
-import { View, Text, ScrollView } from "react-native";
-import React from "react";
-import tw from "@/lib/tailwind";
 import BackWithComponent from "@/lib/backHeader/BackWithCoponent";
+import tw from "@/lib/tailwind";
 import { router } from "expo-router";
+import React from "react";
+import { ScrollView, Text, View } from "react-native";
 
 const about_us = () => {
   return (
-    <View style={tw`bg-primaryFF h-full`}>
+    <View style={tw` bg-base-light dark:bg-base-dark h-full`}>
       <ScrollView
         showsVerticalScrollIndicator={false}
         contentContainerStyle={tw`m-5`}
@@ -18,7 +18,7 @@ const about_us = () => {
           togather
           title={"About us"}
         />
-        <Text style={tw`text-base font-normal pt-6`}>
+        <Text style={tw`text-base font-normal pt-6 dark:text-primaryFF`}>
           At 50/50, your privacy matters to us. This Privacy Policy outlines how
           we collect, use, and protect your information when you use our app. 1.
           Information We Collect Personal Information: When you sign up or

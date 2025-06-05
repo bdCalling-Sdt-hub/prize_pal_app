@@ -1,22 +1,16 @@
-import {
-  View,
-  Text,
-  Image,
-  TouchableOpacity,
-  FlatListComponent,
-} from "react-native";
-import React, { useState } from "react";
-import { useSearchParams } from "expo-router/build/hooks";
-import tw from "@/lib/tailwind";
-import { FlatList, ScrollView } from "react-native-gesture-handler";
-import Btn from "@/components/Btn";
-import { SvgXml } from "react-native-svg";
-import { erowLight, IconRightArrow } from "@/icons/icon";
 import caretory from "@/assets/data/caretory.json";
+import Btn from "@/components/Btn";
 import ProductCard from "@/components/ProductCard";
+import { erowLight, IconRightArrow } from "@/icons/icon";
 import BackWithComponent from "@/lib/backHeader/BackWithCoponent";
-import { router } from "expo-router";
 import IButton from "@/lib/buttons/IButton";
+import tw from "@/lib/tailwind";
+import { router } from "expo-router";
+import { useSearchParams } from "expo-router/build/hooks";
+import React from "react";
+import { Image, Text, TouchableOpacity, View } from "react-native";
+import { FlatList, ScrollView } from "react-native-gesture-handler";
+import { SvgXml } from "react-native-svg";
 
 const product_details = () => {
   const sizes = [2, 4, 6, 8, 10, 12];
@@ -30,7 +24,7 @@ const product_details = () => {
     "This is a deadstock fabric made from 76% Polyester, 21% Rayon and 3% Spandex. Wash cold + dry flat.",
   ];
   return (
-    <View style={tw`flex-1 bg-primaryFF `}>
+    <View style={tw`flex-1 bg-base-light dark:bg-base-dark`}>
       <BackWithComponent
         onPress={() => {
           router.back();
@@ -50,11 +44,10 @@ const product_details = () => {
         showsVerticalScrollIndicator={false}
         contentContainerStyle={tw` pb-10 px-5`}
       >
-        {/* <Text style={tw``}> product_details {id}</Text> */}
         <View style={tw``}>
           {/* view img */}
           <View
-            style={tw` aspect-square w-[100%] flex-row justify-center items-center bg-primary mb-2 rounded-2xl`}
+            style={tw` aspect-square w-[100%] flex-row justify-center items-center bg-primary dark:bg-darkText mb-2 rounded-2xl`}
           >
             <Image
               style={tw`h-[97%] w-[97%]  rounded-2xl m-2 `}
@@ -92,12 +85,16 @@ const product_details = () => {
           </View>
           <View style={tw`flex-row justify-between my-5 items-center `}>
             <View>
-              <Text style={tw`font-medium text-xl mb-1`}>Mia Skort</Text>
-              <Text style={tw` text-base font-normal text-deepGrey50`}>
+              <Text style={tw`font-medium text-xl mb-1 dark:text-primaryFF`}>
+                Mia Skort
+              </Text>
+              <Text style={tw` text-base font-normal text-darkText`}>
                 Reformation
               </Text>
             </View>
-            <Text style={tw`font-semibold text-2xl`}>$200</Text>
+            <Text style={tw`font-semibold text-2xl dark:text-primaryFF`}>
+              $200
+            </Text>
           </View>
           <View>
             <Image
@@ -106,9 +103,9 @@ const product_details = () => {
             />
           </View>
         </View>
-        <View style={tw``}>
-          <View style={tw`flex-row gap-2 `}>
-            <Text style={tw``}>Size</Text>
+        <View style={tw`py-6`}>
+          <View style={tw`flex-row gap-2 items-center `}>
+            <Text style={tw`dark:text-primaryFF mr-5`}>Size</Text>
             {sizes.map((size) => (
               <TouchableOpacity
                 key={size + new Date().getSeconds()}
@@ -136,7 +133,7 @@ const product_details = () => {
         <Btn>
           <View style={tw`flex-row justify-center items-center gap-3`}>
             <Text
-              style={tw`text-primaryFF text-center font-semibold text-lg  `}
+              style={tw`text-primaryFF text-center font-semibold text-lg dark:text-darkPrimary`}
             >
               View in store
             </Text>
@@ -144,24 +141,36 @@ const product_details = () => {
           </View>
         </Btn>
         <View>
-          <Text style={tw`text-lg font-medium pb-2`}>Details</Text>
+          <Text style={tw`text-lg font-medium pb-2 dark:text-primaryFF`}>
+            Details
+          </Text>
           <FlatList
             scrollEnabled={false}
             data={details}
             keyExtractor={(item, index) => index.toString()}
             renderItem={({ item }) => (
-              <Text style={tw`text-base font-normal leading-7`}>.{item}</Text>
+              <Text
+                style={tw`text-base font-normal leading-7 dark:text-primaryFF`}
+              >
+                .{item}
+              </Text>
             )}
           />
         </View>
-        <Text style={tw`text-lg font-medium pb-3 pt-5`}>Shipping Details</Text>
+        <Text style={tw`text-lg font-medium pb-3 pt-5 dark:text-primaryFF`}>
+          Shipping Details
+        </Text>
         <View style={tw`border-2 border-deepGreycc rounded-3xl py-4 px-10 `}>
-          <Text style={tw`text-base font-normal text-center`}>
+          <Text
+            style={tw`text-base font-normal text-center dark:text-primaryFF`}
+          >
             Free express shipping Duties and taxes are guaranteed Estimated
             delivery in 3-8 business days
           </Text>
         </View>
-        <Text style={tw`text-2xl font-medium py-7 text-center`}>
+        <Text
+          style={tw`text-2xl font-medium py-7 text-center dark:text-primaryFF`}
+        >
           More from this store
         </Text>
 
@@ -176,7 +185,9 @@ const product_details = () => {
           )}
         />
 
-        <Text style={tw`text-2xl font-medium py-7 text-center`}>
+        <Text
+          style={tw`text-2xl font-medium py-7 text-center dark:text-primaryFF`}
+        >
           Similar Items
         </Text>
 
