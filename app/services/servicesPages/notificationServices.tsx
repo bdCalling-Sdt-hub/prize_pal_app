@@ -4,6 +4,7 @@ import {
   IconBackWhite,
   IconSCancledWhite,
   IconSModalCross,
+  IconSModalCrossWhite,
   IconSpenddingWhite,
   IconSSuccessWhite,
 } from "@/icons/icon";
@@ -131,9 +132,9 @@ const NotificationServices = () => {
       {/* ================== modal ====================== */}
       <Dialog
         width={"100%"}
-        height={"40%"}
+        height={"45%"}
         visible={isModalVisible}
-        containerStyle={tw`flex-1 bg-white rounded-3xl mx-5`}
+        containerStyle={tw`flex-1 bg-white dark:bg-base-dark rounded-3xl mx-5`}
         onDismiss={() => setIsModalVisible(false)}
         panDirection={PanningProvider.Directions.DOWN}
       >
@@ -147,7 +148,9 @@ const NotificationServices = () => {
             </Text>
             <SvgXml
               onPress={() => setIsModalVisible(false)}
-              xml={IconSModalCross}
+              xml={
+                colorScheme === "dark" ? IconSModalCrossWhite : IconSModalCross
+              }
             />
           </View>
 
@@ -155,7 +158,7 @@ const NotificationServices = () => {
             {/* ==================== stare rating =================== */}
             <StarRating rating={rating} onChange={setRating} />
             <Text
-              style={tw`font-DegularDisplayRegular text-xl text-black my-2 text-center`}
+              style={tw`font-DegularDisplayRegular text-xl text-black dark:text-white my-2 text-center`}
             >
               Tap to add your rating
             </Text>
@@ -168,7 +171,11 @@ const NotificationServices = () => {
             >
               {({ handleChange, handleBlur, values }) => (
                 <View>
-                  <Text>Review</Text>
+                  <Text
+                    style={tw`my-2 font-DegularDisplayRegular text-sm text-black dark:text-white`}
+                  >
+                    Review
+                  </Text>
                   <TextInput
                     multiline
                     numberOfLines={6}
