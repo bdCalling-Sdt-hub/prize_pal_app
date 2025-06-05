@@ -9,6 +9,7 @@ const MessegeRoot = () => {
       }}
     >
       <Stack.Screen name="chatList" />
+      <Stack.Screen name="messeging" />
     </Stack>
   );
 };

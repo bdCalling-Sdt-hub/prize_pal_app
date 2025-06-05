@@ -61,7 +61,7 @@ const ServiceHome = () => {
             onPress={() => {
               (navigation as any)?.openDrawer();
             }}
-            style={tw`w-14 h-14 rounded-full bg-lowGreen justify-center items-center`}
+            style={tw`w-14 h-14 rounded-full bg-lowGreen dark:bg-[#3D3D3D] justify-center items-center`}
           >
             <SvgXml xml={IconSMenu} />
           </TouchableOpacity>
@@ -70,7 +70,10 @@ const ServiceHome = () => {
 
           <View style={tw`flex-row gap-2`}>
             <TouchableOpacity
-              style={tw`w-14 h-14 rounded-full bg-lowGreen justify-center items-center`}
+              onPress={() =>
+                router.push("/services/servicesPages/messeges/chatList")
+              }
+              style={tw`w-14 h-14 rounded-full bg-lowGreen dark:bg-[#3D3D3D] justify-center items-center`}
             >
               <SvgXml xml={IconSMassage} />
             </TouchableOpacity>
@@ -78,7 +81,7 @@ const ServiceHome = () => {
               onPress={() =>
                 router.push("/services/servicesPages/notificationServices")
               }
-              style={tw`w-14 h-14 rounded-full bg-lowGreen justify-center items-center`}
+              style={tw`w-14 h-14 rounded-full bg-lowGreen dark:bg-[#3D3D3D] justify-center items-center`}
             >
               <SvgXml xml={IconSNotification} />
             </TouchableOpacity>
@@ -96,12 +99,13 @@ const ServiceHome = () => {
             }
             return (
               <View
-                style={tw`bg-primary my-2 rounded-full flex-row items-center pl-6`}
+                style={tw`bg-primary dark:bg-[#3D3D3D]  my-2 rounded-full flex-row items-center pl-6`}
               >
                 <SvgXml xml={IconSearch} />
                 <TextInput
-                  style={tw`h-[60px] flex-1 pl-3`}
+                  style={tw`h-[60px] flex-1 pl-3 `}
                   placeholder="Search items"
+                  placeholderTextColor="#888888"
                   onChangeText={handleChange("searchText")}
                   onBlur={handleBlur("searchText")}
                   value={values.searchText}

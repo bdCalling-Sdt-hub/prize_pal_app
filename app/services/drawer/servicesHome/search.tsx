@@ -91,12 +91,13 @@ const Search = () => {
           }
           return (
             <View
-              style={tw`bg-deepGreycc my-3 rounded-full flex-row items-center pl-6`}
+              style={tw`bg-primary border-deepGreycc border dark:bg-[#3D3D3D]  my-3 rounded-full flex-row items-center pl-6`}
             >
               <SvgXml xml={IconSearch} />
               <TextInput
                 style={tw`h-[60px] flex-1 pl-3`}
                 placeholder="Search items"
+                placeholderTextColor="#888888"
                 onChangeText={handleChange("searchText")}
                 onBlur={handleBlur("searchText")}
                 value={values.searchText}
