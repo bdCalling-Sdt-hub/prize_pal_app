@@ -1,29 +1,25 @@
-import { View, Text, FlatList, TouchableOpacity } from "react-native";
-import React from "react";
-import { Formik } from "formik";
-import { SvgXml } from "react-native-svg";
-import { TextInput } from "react-native-gesture-handler";
+import categories from "@/assets/data/caretory.json";
 import { IconSearch } from "@/icons/icon";
 import tw from "@/lib/tailwind";
 import { _HIGHT } from "@/utils/utils";
-// import { Link, router } from "expo-router";
-
 import { Image } from "expo-image";
-
-import categories from "@/assets/data/caretory.json";
 import { router } from "expo-router";
+import React from "react";
+import { FlatList, TouchableOpacity, View } from "react-native";
+import { TextInput } from "react-native-gesture-handler";
+import { SvgXml } from "react-native-svg";
 
 const Page = () => {
   return (
-    <View style={tw`bg-primaryFF h-full `}>
+    <View style={tw`bg-primaryFF dark:bg-base-dark   h-full `}>
       <View
-        style={tw`bg-primary mt-8 mb-2 mx-3 rounded-full flex-row items-center pl-6`}
+        style={tw`bg-primary mt-8 mb-2 dark:bg-darkPrimary mx-3 rounded-full flex-row items-center pl-6`}
       >
         <SvgXml xml={IconSearch} />
         <TextInput
           style={tw`h-[60px] flex-1  pl-3`}
           placeholder="Search"
-
+          placeholderTextColor="text-deepGrey"
           // value={}
         />
       </View>
