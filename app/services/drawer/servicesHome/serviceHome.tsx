@@ -50,7 +50,7 @@ const ServiceHome = () => {
           }}
         >
           <Text
-            style={tw`dark:text-white text-black bg-yellow-400 rounded-full p-2`}
+            style={tw`dark:text-white text-black bg-green-500 rounded-full p-2`}
           >
             {colorScheme === "dark" ? "Make light" : "Make Dark"}
           </Text>
