@@ -1,5 +1,6 @@
 import { Text, TouchableOpacity, View } from "react-native";
 
+import { useTheme } from "@/app/context/ThemeProvider";
 import React from "react";
 import { SvgXml } from "react-native-svg";
 import tw from "../tailwind";
@@ -23,6 +24,8 @@ const BackWithComponent = ({
   offBack,
   togather,
 }: BackButtonProps) => {
+  const { colorScheme } = useTheme();
+
   return (
     <View
       style={[
@@ -38,7 +41,9 @@ const BackWithComponent = ({
               style={tw`flex-row items-center gap-2 pr-4`}
             >
               <View
-                style={tw`bg-[#FFF1EC] w-10 h-10 justify-center items-center rounded-lg`}
+                style={tw` ${
+                  colorScheme === "dark" ? "bg-darkPrimary" : "bg-[#FFF1EC]"
+                }  w-40 h-10 justify-center items-center rounded-lg`}
               >
                 <SvgXml
                   xml={`<svg width="60" height="60" viewBox="0 0 60 60" fill="none" xmlns="http://www.w3.org/2000/svg">

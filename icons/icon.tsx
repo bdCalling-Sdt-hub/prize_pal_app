@@ -443,9 +443,3 @@ export const IconSSuccessWhite = `<svg width="22" height="22" viewBox="0 0 22 22
 </svg>
 
 `;
-export const IconSModalCross = `<svg width="38" height="38" viewBox="0 0 38 38" fill="none" xmlns="http://www.w3.org/2000/svg">
-<rect x="0.5" y="0.5" width="37" height="37" rx="18.5" stroke="#3D3D3D"/>
-<path d="M13.4 26L12 24.6L17.6 19L12 13.4L13.4 12L19 17.6L24.6 12L26 13.4L20.4 19L26 24.6L24.6 26L19 20.4L13.4 26Z" fill="#3D3D3D"/>
-</svg>
-
-`;
