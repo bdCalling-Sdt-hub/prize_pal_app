@@ -38,6 +38,8 @@ module.exports = {
         SPrimary: "#6DA40A",
         darkPrimary: "#3D3D3D",
         darkText: "#AFAFAF",
+        Sblue: "#007AFF",
+        Sred: "#FF5050",
       },
     },
   },

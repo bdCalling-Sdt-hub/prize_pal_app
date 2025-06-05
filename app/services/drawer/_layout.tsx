@@ -93,7 +93,7 @@ function CustomDrawerContent(props: DrawerContentComponentProps) {
         <TouchableOpacity
           onPress={() => {
             props?.navigation?.closeDrawer();
-            // router.push("/retailer/home/profile");
+            router.push("/services/drawer/MyBokkings/myBooking");
           }}
           style={tw`flex-row justify-between items-center px-3 bg-primary dark:bg-deepGrey80 py-4 rounded-xl`}
         >

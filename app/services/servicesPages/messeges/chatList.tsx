@@ -8,7 +8,7 @@ import { Image, Pressable, Text, View } from "react-native";
 import { SvgXml } from "react-native-svg";
 
 const chatList = () => {
-  const colorScheme = useTheme();
+  const { colorScheme } = useTheme();
   return (
     <View style={tw`flex-1 px-4 bg-base-light dark:bg-base-dark`}>
       <View style={tw`flex-row justify-between items-center`}>

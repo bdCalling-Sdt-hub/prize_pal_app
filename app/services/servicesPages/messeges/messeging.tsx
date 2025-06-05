@@ -20,7 +20,7 @@ import { Avatar } from "react-native-ui-lib";
 const message = () => {
   const router = useRouter();
   const [message, setMessage] = React.useState("");
-  const colorScheme = useTheme();
+  const { colorScheme } = useTheme();
   const [allMessages, setAllMessages] = React.useState([
     {
       id: 1,
