@@ -10,7 +10,7 @@ import {
   IconRightArrowWhite,
   IconSearch,
   IconSMassage,
-  IconSMenu,
+  IconSMenuGreen,
   IconSNotification,
 } from "@/icons/icon";
 import tw from "@/lib/tailwind";
@@ -63,7 +63,7 @@ const ServiceHome = () => {
             }}
             style={tw`w-14 h-14 rounded-full bg-lowGreen dark:bg-[#3D3D3D] justify-center items-center`}
           >
-            <SvgXml xml={IconSMenu} />
+            <SvgXml xml={IconSMenuGreen} />
           </TouchableOpacity>
 
           <Image style={tw`w-28 h-28 ml-8`} source={ImgLogo} />

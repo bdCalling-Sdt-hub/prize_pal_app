@@ -28,8 +28,8 @@ const App = () => {
     SplashScreen.hideAsync();
 
     setTimeout(() => {
-      router.replace("/retailer/home");
-      // router.replace("/auth/login");
+      // router.replace("/services/drawer/MyBokkings/myBooking");
+      router.replace("/auth/login");
     }, 1000);
   }, []);
 
