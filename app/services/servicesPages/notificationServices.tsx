@@ -27,7 +27,7 @@ import { Dialog, PanningProvider } from "react-native-ui-lib";
 const NotificationServices = () => {
   const [isModalVisible, setIsModalVisible] = useState(false);
   const [rating, setRating] = useState(2);
-  const colorScheme = useTheme();
+  const { colorScheme } = useTheme();
 
   return (
     <ScrollView style={tw`flex-1 bg-base-light dark:bg-base-dark px-4`}>
