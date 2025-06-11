@@ -152,3 +152,13 @@ const Drawerlayout = () => {
 };
 
 export default Drawerlayout;
+
+// const App = () => {
+//   return (
+//     <Stack>
+//       <Stack.Screen name="//" />
+//     </Stack>
+//   );
+// };
+
+// export default App;
