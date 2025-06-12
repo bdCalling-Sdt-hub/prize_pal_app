@@ -34,6 +34,8 @@ const BookNowCategory = () => {
     image: any;
   }
 
+  // ===================  default search data ==============================
+
   const defaultSearchData: ISearchData[] = [
     {
       id: 1,
