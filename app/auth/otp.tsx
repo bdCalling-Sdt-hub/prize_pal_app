@@ -1,17 +1,16 @@
-import {
-  View,
-  Text,
-  TextInput,
-  TouchableOpacity,
-  KeyboardAvoidingView,
-} from "react-native";
-import tw from "@/lib/tailwind";
-import { Formik } from "formik";
-import { Link, router } from "expo-router";
-import { ScrollView } from "react-native-gesture-handler";
 import AuthHeader from "@/components/AuthHeader";
-import { OtpInput } from "react-native-otp-entry";
+import tw from "@/lib/tailwind";
 import AntDesign from "@expo/vector-icons/AntDesign";
+import { Link, router } from "expo-router";
+import { Formik } from "formik";
+import {
+  KeyboardAvoidingView,
+  Text,
+  TouchableOpacity,
+  View,
+} from "react-native";
+import { ScrollView } from "react-native-gesture-handler";
+import { OtpInput } from "react-native-otp-entry";
 
 const OTP = () => {
   return (
@@ -23,7 +22,7 @@ const OTP = () => {
       <View
         style={tw`w-[36px] h-[36px] bg-primary200 m-4 rounded-md  flex items-center justify-center`}
       >
-        <Link href='/auth/forgot_password'>
+        <Link href="/auth/forgot_password">
           <AntDesign name="left" size={24} color="black" />
         </Link>
       </View>
@@ -52,7 +51,7 @@ const OTP = () => {
                 values,
                 touched,
               }) => (
-                <View style={tw``}>
+                <View>
                   <OtpInput
                     numberOfDigits={6}
                     value={values.otp}
