@@ -7,7 +7,7 @@ import { ScrollView } from "react-native-gesture-handler";
 
 const terms = () => {
   return (
-    <View style={tw` bg-base-light dark:bg-base-dark h-full h-full`}>
+    <View style={tw` bg-base-light dark:bg-base-dark h-full `}>
       <ScrollView
         showsVerticalScrollIndicator={false}
         contentContainerStyle={tw`m-5`}

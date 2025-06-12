@@ -1,10 +1,10 @@
-import { View, Text, TouchableOpacity, Switch } from "react-native";
-import React, { useState } from "react";
-import BackWithComponent from "@/lib/backHeader/BackWithCoponent";
-import { router } from "expo-router";
-import tw from "@/lib/tailwind";
-import { SvgXml } from "react-native-svg";
 import { IconBack, IconDarkmode, IconEdits, IconKey } from "@/icons/icon";
+import BackWithComponent from "@/lib/backHeader/BackWithCoponent";
+import tw from "@/lib/tailwind";
+import { router } from "expo-router";
+import React, { useState } from "react";
+import { Switch, Text, TouchableOpacity, View } from "react-native";
+import { SvgXml } from "react-native-svg";
 
 const Settings = () => {
   const [isEnabled, setIsEnabled] = useState(false);
@@ -24,7 +24,7 @@ const Settings = () => {
           {/* add page */}
           <TouchableOpacity
             onPress={() => {
-              router.push("/retailer/home/profile");
+              router.push("/Settings/changePass");
             }}
             style={tw`flex-row justify-between items-center px-3 bg-primary py-4 rounded-xl`}
           >
