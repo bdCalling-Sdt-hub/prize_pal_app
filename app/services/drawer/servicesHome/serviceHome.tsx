@@ -134,6 +134,7 @@ const ServiceHome = () => {
         </View>
 
         <TouchableOpacity
+          onPress={() => router.push("/services/servicesPages/bookNowCategory")}
           style={tw`w-full bg-SPrimary rounded-full flex-row justify-center items-center gap-2 py-3`}
         >
           <Text style={tw`font-DegularDisplayMedium text-xl text-white `}>
@@ -263,6 +264,7 @@ const ServiceHome = () => {
           </View>
         </View>
         <TouchableOpacity
+          onPress={() => router.push("/services/servicesPages/bookNowCategory")}
           style={tw`w-full bg-SPrimary rounded-full flex-row justify-center items-center gap-2 mt-6 mb-1.5 py-3`}
         >
           <Text style={tw`font-DegularDisplayMedium text-xl text-white `}>
