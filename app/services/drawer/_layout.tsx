@@ -124,7 +124,7 @@ function CustomDrawerContent(props: DrawerContentComponentProps) {
         <TouchableOpacity
           onPress={() => {
             props?.navigation?.closeDrawer();
-            router.push("/retailer/home/profile");
+            router.push("/retailer/home");
           }}
           style={tw`flex-row justify-between items-center px-3 bg-primary dark:bg-deepGrey80 py-4 rounded-xl`}
         >
@@ -137,7 +137,7 @@ function CustomDrawerContent(props: DrawerContentComponentProps) {
               />
             </View>
             <Text style={tw`font-medium dark:text-white text-lg`}>
-              Switch to Service
+              Switch to Retail
             </Text>
           </View>
           <SvgXml
@@ -156,7 +156,7 @@ function CustomDrawerContent(props: DrawerContentComponentProps) {
           <TouchableOpacity
             onPress={() => {
               props?.navigation?.closeDrawer();
-              router.push("/Settings/Settings");
+              router.push("/services/drawer/Settings/setting");
             }}
             style={tw`flex-row justify-between items-center px-3 bg-primary dark:bg-deepGrey80 py-4 rounded-xl`}
           >

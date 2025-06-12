@@ -10,6 +10,7 @@ const ServicesPageRoot = () => {
     >
       <Stack.Screen name="editServicesProfile" />
       <Stack.Screen name="notificationServices" />
+      <Stack.Screen name="bookNowCategory" />
     </Stack>
   );
 };
