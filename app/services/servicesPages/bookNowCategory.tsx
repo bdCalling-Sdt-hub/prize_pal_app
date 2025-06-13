@@ -66,7 +66,9 @@ const BookNowCategory = () => {
 
   const RenderItem = ({ item }: { item: ISearchData }): JSX.Element => {
     return (
-      <Pressable>
+      <Pressable
+        onPress={() => router.push("/services/servicesPages/serviceExplorer")}
+      >
         <Image
           style={tw`relative w-44 h-36 rounded-2xl `}
           source={item.image}
@@ -78,6 +80,9 @@ const BookNowCategory = () => {
             {item.title}
           </Text>
           <TouchableOpacity
+            onPress={() =>
+              router.push("/services/servicesPages/serviceExplorer")
+            }
             style={tw`w-10 h-10 bg-slate-400 rounded-xl justify-center items-center`}
           >
             <SvgXml style={tw`text-center`} xml={IconRightArrowConner} />
