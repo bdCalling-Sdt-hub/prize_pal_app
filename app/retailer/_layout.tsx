@@ -60,7 +60,7 @@ function CustomDrawerContent(props: DrawerContentComponentProps) {
             props?.navigation?.closeDrawer();
             router.push("/retailer/home/profile");
           }}
-          style={tw`flex-row justify-between items-center px-3 dark:bg-darkPrimary py-4 rounded-t-xl `}
+          style={tw`flex-row justify-between items-center px-3 dark:bg-darkPrimary py-4 rounded-3xl `}
         >
           <View style={tw`flex-row gap-4 items-center `}>
             <View style={tw`bg-deepGreycc dark:bg-deepGrey80 p-3 rounded-full`}>
