@@ -1,6 +1,8 @@
 import {
   IconBack,
+  IconBackBlack,
   IconBackDark,
+  IconBackWhite,
   IconDarkmode,
   IconDarkmodeDark,
   IconEdits,
@@ -8,12 +10,11 @@ import {
   IconKey,
   IconKeyDark,
 } from "@/icons/icon";
-import BackWithComponent from "@/lib/backHeader/BackWithCoponent";
 import tw from "@/lib/tailwind";
 import AsyncStorage from "@react-native-async-storage/async-storage";
 import { router } from "expo-router";
 import React, { useState } from "react";
-import { Switch, Text, TouchableOpacity, View } from "react-native";
+import { Pressable, Switch, Text, TouchableOpacity, View } from "react-native";
 import { SvgXml } from "react-native-svg";
 import { useTheme } from "../context/ThemeProvider";
 
@@ -29,13 +30,21 @@ const Settings = () => {
   };
   return (
     <View style={tw`bg-base-light dark:bg-base-dark h-full`}>
-      <BackWithComponent
-        onPress={() => {
-          router.back();
-        }}
-        togather
-        title={"Settings"}
-      />
+      <View style={tw`flex-row justify-between items-center pl-6 my-5`}>
+        <Pressable onPress={() => router.back()} style={tw` `}>
+          <View style={tw`flex-row gap-6 justify-center items-center`}>
+            <SvgXml
+              xml={colorScheme === "dark" ? IconBackWhite : IconBackBlack}
+            />
+            <Text
+              style={tw`font-DegularDisplaySemibold text-base text-black dark:text-white`}
+            >
+              Settings
+            </Text>
+          </View>
+        </Pressable>
+        <Text> </Text>
+      </View>
       <View style={tw`m-5`}>
         <View style={tw`bg-primary dark:bg-darkPrimary  rounded-3xl`}>
           {/* add page */}
