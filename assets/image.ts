@@ -22,3 +22,5 @@ export const ImgProviderOne = require("@/assets/images/providerOne.jpg");
 export const ImgProviderTwo = require("@/assets/images/providerTwo.jpg");
 export const ImgProviderThree = require("@/assets/images/providerThree.jpg");
 export const ImgProviderFour = require("@/assets/images/providerFour.jpg");
+
+export const ImgReviewProfile = require("@/assets/images/reviewProfile.jpg");

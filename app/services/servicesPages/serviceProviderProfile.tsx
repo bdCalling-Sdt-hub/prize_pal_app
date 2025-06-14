@@ -1,5 +1,6 @@
 import { useTheme } from "@/app/context/ThemeProvider";
 import {
+  ImgReviewProfile,
   ImgServiceFour,
   ImgServiceOne,
   ImgServiceThree,
@@ -9,11 +10,21 @@ import {
   IconBackBlack,
   IconBackWhite,
   IconLoction,
+  IconMessageBlack,
+  IconMessageWhite,
+  IconSBusinessBlack,
+  IconSBusinessWhite,
+  IconSEmployeeBlack,
+  IconSEmployeeWhite,
+  IconSLocationBlack,
+  IconSLocationWhite,
+  IconSTeliPhoneBlack,
+  IconSTeliPhoneWhite,
   IconSTimerWhite,
 } from "@/icons/icon";
 import tw from "@/lib/tailwind";
 import { router } from "expo-router";
-import React, { useState } from "react";
+import React, { JSX, useState } from "react";
 import {
   FlatList,
   Image,
@@ -35,6 +46,63 @@ const ServiceProviderProfile = () => {
     ImgServiceTwo,
     ImgServiceThree,
     ImgServiceFour,
+  ];
+
+  interface IReviewProps {
+    id: number;
+    name: string;
+    date: Date;
+    ratting: number;
+    description: string;
+    image: any;
+  }
+
+  const reviewsData = [
+    {
+      id: 1,
+      name: "Maria Jones",
+      image: ImgReviewProfile,
+      date: new Date(),
+      ratting: 4,
+      description:
+        "Lorem ipsum dolor sit amet consectetur. Morbi eu consequat non ornare viverra scelerisque imperdiet. Nisi tortor amet nunc magnis at morbi. Odio risus suspendisse tempus tempus quisque. ",
+    },
+    {
+      id: 5,
+      name: "Maria Jones",
+      image: ImgReviewProfile,
+      date: new Date(),
+      ratting: 4,
+      description:
+        "Lorem ipsum dolor sit amet consectetur. Morbi eu consequat non ornare viverra scelerisque imperdiet. Nisi tortor amet nunc magnis at morbi. Odio risus suspendisse tempus tempus quisque. ",
+    },
+    {
+      id: 2,
+      name: "Maria Jones",
+      image: ImgReviewProfile,
+      date: new Date(),
+      ratting: 3,
+      description:
+        "Lorem ipsum dolor sit amet consectetur. Morbi eu consequat non ornare viverra scelerisque imperdiet. Nisi tortor amet nunc magnis at morbi. Odio risus suspendisse tempus tempus quisque. ",
+    },
+    {
+      id: 3,
+      name: "Maria Jones",
+      image: ImgReviewProfile,
+      date: new Date(),
+      ratting: 5,
+      description:
+        "Lorem ipsum dolor sit amet consectetur. Morbi eu consequat non ornare viverra scelerisque imperdiet. Nisi tortor amet nunc magnis at morbi. Odio risus suspendisse tempus tempus quisque. ",
+    },
+    {
+      id: 4,
+      name: "Maria Jones",
+      image: ImgReviewProfile,
+      date: new Date(),
+      ratting: 4,
+      description:
+        "Lorem ipsum dolor sit amet consectetur. Morbi eu consequat non ornare viverra scelerisque imperdiet. Nisi tortor amet nunc magnis at morbi. Odio risus suspendisse tempus tempus quisque. ",
+    },
   ];
 
   return (
@@ -126,9 +194,9 @@ const ServiceProviderProfile = () => {
           <TouchableOpacity
             style={tw`border border-black flex-row justify-center items-center rounded-full py-3 w-44 gap-2`}
           >
-            {/* <SvgXml
+            <SvgXml
               xml={colorScheme === "dark" ? IconMessageWhite : IconMessageBlack}
-            /> */}
+            />
             <Text
               style={tw`font-DegularDisplayMedium text-lg text-black dark:text-white`}
             >
@@ -143,6 +211,179 @@ const ServiceProviderProfile = () => {
               Book
             </Text>
           </TouchableOpacity>
+        </View>
+
+        <View style={tw`border border-deepGrey80 rounded-xl p-5 my-2`}>
+          <Text
+            style={tw`font-DegularDisplayMedium text-2xl text-black dark:text-white mb-2`}
+          >
+            About
+          </Text>
+          <Text
+            style={tw`font-DegularDisplayRegular text-base text-black  dark:text-white`}
+          >
+            Lorem ipsum dolor sit amet consectetur. Morbi eu consequat non
+            ornare viverra scelerisque imperdiet. Nisi tortor amet nunc magnis
+            at morbi. Odio risus suspendisse tempus tempus quisque. Pellentesque
+            tincidunt arcu porttitor diam. Gravida arcu eu pellentesque
+            penatibus morbi. Feugiat ac eu non in. At pulvinar vulputate eu
+            consectetur eu orci. Aliquet nisi eu ridiculus eleifend praesent
+            iaculis. Ut arcu amet sodales.
+          </Text>
+        </View>
+
+        <View style={tw`border border-deepGrey80 rounded-xl p-5 my-2 gap-4`}>
+          <Text
+            style={tw`font-DegularDisplayMedium text-2xl text-black dark:text-white`}
+          >
+            Services
+          </Text>
+
+          <View style={tw`flex-row justify-between items-center`}>
+            <View>
+              <Text
+                style={tw`font-DegularDisplayMedium text-lg text-black dark:text-white`}
+              >
+                Cleaning
+              </Text>
+              <View style={tw`flex-row justify-start items-center gap-1`}>
+                <Text
+                  style={tw`font-DegularDisplayRegular text-base text-black dark:text-white`}
+                >
+                  Starting price:{" "}
+                </Text>
+                <Text
+                  style={tw`font-DegularDisplayMedium text-lg text-black dark:text-white`}
+                >
+                  {" "}
+                  $50
+                </Text>
+              </View>
+            </View>
+            <TouchableOpacity
+              style={tw` flex-row justify-center items-center bg-SPrimary rounded-full py-3 w-36 gap-2`}
+            >
+              <Text style={tw`font-DegularDisplayMedium text-white text-lg`}>
+                Book Now
+              </Text>
+            </TouchableOpacity>
+          </View>
+
+          <View style={tw`flex-row justify-between items-center`}>
+            <View>
+              <Text
+                style={tw`font-DegularDisplayMedium text-lg text-black dark:text-white`}
+              >
+                Plumbing
+              </Text>
+              <View style={tw`flex-row justify-start items-center gap-1`}>
+                <Text
+                  style={tw`font-DegularDisplayRegular text-base text-black dark:text-white`}
+                >
+                  Starting price:{" "}
+                </Text>
+                <Text
+                  style={tw`font-DegularDisplayMedium text-lg text-black dark:text-white`}
+                >
+                  {" "}
+                  $50
+                </Text>
+              </View>
+            </View>
+            <TouchableOpacity
+              style={tw` flex-row justify-center items-center bg-SPrimary rounded-full py-3 w-36 gap-2`}
+            >
+              <Text style={tw`font-DegularDisplayMedium text-white text-lg`}>
+                Book Now
+              </Text>
+            </TouchableOpacity>
+          </View>
+        </View>
+
+        {/* ================ contract info ============== */}
+        <View style={tw`border border-deepGrey80 rounded-xl p-5 my-2 gap-3`}>
+          <Text
+            style={tw`font-DegularDisplayMedium text-2xl text-black dark:text-white`}
+          >
+            Overview
+          </Text>
+
+          <View style={tw`flex-row justify-start items-center gap-3`}>
+            <SvgXml
+              xml={
+                colorScheme === "dark"
+                  ? IconSTeliPhoneWhite
+                  : IconSTeliPhoneBlack
+              }
+            />
+            <Text
+              style={tw`font-DegularDisplayRegular text-xl text-black dark:text-white`}
+            >
+              +01245698745
+            </Text>
+          </View>
+          <View style={tw`flex-row justify-start items-center gap-3`}>
+            <SvgXml
+              xml={
+                colorScheme === "dark" ? IconSLocationWhite : IconSLocationBlack
+              }
+            />
+            <Text
+              style={tw`font-DegularDisplayRegular text-xl text-black dark:text-white`}
+            >
+              Dhaka, Bangladesh
+            </Text>
+          </View>
+          <View style={tw`flex-row justify-start items-center gap-3`}>
+            <SvgXml
+              xml={
+                colorScheme === "dark" ? IconSEmployeeWhite : IconSEmployeeBlack
+              }
+            />
+            <Text
+              style={tw`font-DegularDisplayRegular text-xl text-black dark:text-white`}
+            >
+              10 employees
+            </Text>
+          </View>
+          <View style={tw`flex-row justify-start items-center gap-3`}>
+            <SvgXml
+              xml={
+                colorScheme === "dark" ? IconSBusinessWhite : IconSBusinessBlack
+              }
+            />
+            <Text
+              style={tw`font-DegularDisplayRegular text-xl text-black dark:text-white`}
+            >
+              10 employees
+            </Text>
+          </View>
+        </View>
+
+        {/* ======================= Review profile ====================== */}
+
+        <View>
+          <Text
+            style={tw`font-DegularDisplayMedium text-2xl text-black dark:text-white`}
+          >
+            {" "}
+            Reviews
+          </Text>
+          <View>
+            {reviewsData.map(
+              (item): JSX.Element => (
+                <View key={item.id}>
+                  <View>
+                    <Image style={tw`w-16 h-16`} source={item.image} />
+                    <View>
+                      <Text>{item.name}</Text>
+                      <Text>{item.date.toLocaleDateString()}</Text>
+                    </View>
+                  </View>
+                </View>
+              )
+            )}
+          </View>
         </View>
       </View>
     </ScrollView>
