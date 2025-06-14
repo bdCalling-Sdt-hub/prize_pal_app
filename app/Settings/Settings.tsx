@@ -1,17 +1,34 @@
-import { IconBack, IconDarkmode, IconEdits, IconKey } from "@/icons/icon";
+import {
+  IconBack,
+  IconBackDark,
+  IconDarkmode,
+  IconDarkmodeDark,
+  IconEdits,
+  IconEditsDark,
+  IconKey,
+  IconKeyDark,
+} from "@/icons/icon";
 import BackWithComponent from "@/lib/backHeader/BackWithCoponent";
 import tw from "@/lib/tailwind";
+import AsyncStorage from "@react-native-async-storage/async-storage";
 import { router } from "expo-router";
 import React, { useState } from "react";
 import { Switch, Text, TouchableOpacity, View } from "react-native";
 import { SvgXml } from "react-native-svg";
+import { useTheme } from "../context/ThemeProvider";
 
 const Settings = () => {
   const [isEnabled, setIsEnabled] = useState(false);
   const toggleSwitch = () => setIsEnabled((previousState) => !previousState);
-
+  const { toggleColorScheme, colorScheme } = useTheme();
+  const handleTheme = async () => {
+    const newValue = !isEnabled;
+    setIsEnabled(newValue);
+    toggleColorScheme();
+    await AsyncStorage.setItem("mode", newValue ? "dark" : "light");
+  };
   return (
-    <View style={tw`bg-primaryFF h-full`}>
+    <View style={tw`bg-base-light dark:bg-base-dark h-full`}>
       <BackWithComponent
         onPress={() => {
           router.back();
@@ -20,49 +37,68 @@ const Settings = () => {
         title={"Settings"}
       />
       <View style={tw`m-5`}>
-        <View style={tw`bg-primary rounded-2xl`}>
+        <View style={tw`bg-primary dark:bg-darkPrimary  rounded-3xl`}>
           {/* add page */}
           <TouchableOpacity
             onPress={() => {
               router.push("/Settings/changePass");
             }}
-            style={tw`flex-row justify-between items-center px-3 bg-primary py-4 rounded-xl`}
+            style={tw`flex-row justify-between items-center px-3  py-4 rounded-xl`}
           >
             <View style={tw`flex-row gap-4 items-center `}>
-              <SvgXml xml={IconKey} />
-              <Text style={tw`font-medium text-lg`}>Change password</Text>
+              <View
+                style={tw` rounded-3xl bg-offWhite dark:bg-deepGrey80  p-3 `}
+              >
+                <SvgXml xml={colorScheme === "dark" ? IconKeyDark : IconKey} />
+              </View>
+              <Text style={tw`font-medium text-lg dark:text-primaryFF`}>
+                Change password
+              </Text>
             </View>
-            <SvgXml xml={IconBack} />
+            <SvgXml xml={colorScheme === "dark" ? IconBackDark : IconBack} />
           </TouchableOpacity>
 
           <TouchableOpacity
             onPress={() => {
               router.push("/retailer/home/profile");
             }}
-            style={tw`flex-row justify-between items-center px-3 bg-primary py-4 rounded-xl`}
+            style={tw`flex-row justify-between items-center px-3  py-4 rounded-xl`}
           >
             <View style={tw`flex-row gap-4 items-center `}>
-              <SvgXml xml={IconEdits} />
-              <Text style={tw`font-medium text-lg`}>Edit profile</Text>
+              <View
+                style={tw` rounded-3xl bg-offWhite dark:bg-deepGrey80  p-3 `}
+              >
+                <SvgXml
+                  xml={colorScheme === "dark" ? IconEditsDark : IconEdits}
+                />
+              </View>
+              <Text style={tw`font-medium text-lg  dark:text-primaryFF`}>
+                Edit profile
+              </Text>
             </View>
-            <SvgXml xml={IconBack} />
+            <SvgXml xml={colorScheme === "dark" ? IconBackDark : IconBack} />
           </TouchableOpacity>
-
           <TouchableOpacity
-            onPress={() => {
-              router.push("/retailer/home/profile");
-            }}
-            style={tw`flex-row justify-between items-center px-3 bg-primary py-4 rounded-xl`}
+            style={tw`flex-row justify-between items-center px-3  py-4 rounded-xl`}
           >
             <View style={tw`flex-row gap-4 items-center `}>
-              <SvgXml xml={IconDarkmode} />
-              <Text style={tw`font-medium text-lg`}>Dark Mode</Text>
+              <View
+                style={tw` rounded-3xl bg-offWhite dark:bg-deepGrey80  p-3 `}
+              >
+                <SvgXml
+                  xml={colorScheme === "dark" ? IconDarkmodeDark : IconDarkmode}
+                />
+              </View>
+              <Text style={tw`font-medium text-lg  dark:text-primaryFF`}>
+                Dark Mode
+              </Text>
             </View>
             <Switch
+              onValueChange={handleTheme}
               trackColor={{ false: "#767577", true: "#81b0ff" }}
               thumbColor={isEnabled ? "#f5dd4b" : "#f4f3f4"}
               ios_backgroundColor="#3e3e3e"
-              onValueChange={toggleSwitch}
+              // onValueChange={toggleSwitch}
               value={isEnabled}
             />
           </TouchableOpacity>
