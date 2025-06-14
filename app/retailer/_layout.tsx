@@ -53,14 +53,15 @@ function CustomDrawerContent(props: DrawerContentComponentProps) {
       </View>
       {/*  */}
 
-      <View style={tw`bg-primary dark:bg-base-dark `}>
+      <View style={tw`bg-primary dark:bg-darkPrimary rounded-xl `}>
         {/* add page */}
+
         <TouchableOpacity
           onPress={() => {
             props?.navigation?.closeDrawer();
             router.push("/retailer/home/profile");
           }}
-          style={tw`flex-row justify-between items-center px-3 dark:bg-darkPrimary py-4 rounded-3xl `}
+          style={tw`flex-row justify-between items-center px-3  py-4  `}
         >
           <View style={tw`flex-row gap-4 items-center `}>
             <View style={tw`bg-deepGreycc dark:bg-deepGrey80 p-3 rounded-full`}>

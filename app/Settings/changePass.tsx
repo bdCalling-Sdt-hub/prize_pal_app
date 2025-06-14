@@ -1,27 +1,37 @@
-import BackWithComponent from "@/lib/backHeader/BackWithCoponent";
+import { IconBackBlack, IconBackWhite } from "@/icons/icon";
 import tw from "@/lib/tailwind";
 import Entypo from "@expo/vector-icons/Entypo";
 import { router } from "expo-router";
 import { Formik } from "formik";
 import React from "react";
-import { KeyboardAvoidingView, View } from "react-native";
-import { TextInput } from "react-native-gesture-handler";
+import { KeyboardAvoidingView, Text, View } from "react-native";
+import { Pressable, TextInput } from "react-native-gesture-handler";
+import { SvgXml } from "react-native-svg";
+import { useTheme } from "../context/ThemeProvider";
 
 const changePass = () => {
   const [showCurrentPassword, setShowCurrentPassword] = React.useState(false);
   const [showNewPassword, setShowNewPassword] = React.useState(false);
   const [showConfirmPassword, setShowConfirmPassword] = React.useState(false);
 
+  const { colorScheme } = useTheme();
   return (
     <KeyboardAvoidingView>
-      <BackWithComponent
-        onPress={() => {
-          router.back();
-        }}
-        togather
-        title={"Terns and conditions"}
-      />
-
+      <View style={tw`flex-row justify-between items-center pl-6 my-5`}>
+        <Pressable onPress={() => router.back()} style={tw` `}>
+          <View style={tw`flex-row gap-6 justify-center items-center`}>
+            <SvgXml
+              xml={colorScheme === "dark" ? IconBackWhite : IconBackBlack}
+            />
+            <Text
+              style={tw`font-DegularDisplaySemibold text-base text-black dark:text-white`}
+            >
+              Terns and conditions
+            </Text>
+          </View>
+        </Pressable>
+        <Text> </Text>
+      </View>
       <View style={tw`bg-base-light p-5 dark:bg-base-dark h-full`}>
         <Formik
           initialValues={{

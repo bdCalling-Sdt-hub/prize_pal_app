@@ -1,20 +1,23 @@
 import Btn from "@/components/Btn";
-import { IconUser } from "@/icons/icon";
-import BackWithComponent from "@/lib/backHeader/BackWithCoponent";
+import { IconBackBlack, IconBackWhite, IconUser } from "@/icons/icon";
 import tw from "@/lib/tailwind";
 import { router } from "expo-router";
 import { Formik } from "formik";
 import React from "react";
 import {
   KeyboardAvoidingView,
+  Pressable,
   Text,
   TextInput,
   TouchableOpacity,
   View,
 } from "react-native";
 import { SvgXml } from "react-native-svg";
+import { useTheme } from "../context/ThemeProvider";
 
 const editProfile = () => {
+  const { colorScheme } = useTheme();
+
   const user = {
     name: "Majsharlaya",
     email: "example@gmail.com",
@@ -25,13 +28,21 @@ const editProfile = () => {
   return (
     <KeyboardAvoidingView style={tw` bg-base-light dark:bg-base-dark `}>
       <View style={tw` h-[100%] m-5`}>
-        <BackWithComponent
-          onPress={() => {
-            router.back();
-          }}
-          togather
-          title={"Back"}
-        />
+        <View style={tw`flex-row justify-between items-center pl-6 my-5`}>
+          <Pressable onPress={() => router.back()} style={tw` `}>
+            <View style={tw`flex-row gap-6 justify-center items-center`}>
+              <SvgXml
+                xml={colorScheme === "dark" ? IconBackWhite : IconBackBlack}
+              />
+              <Text
+                style={tw`font-DegularDisplaySemibold text-base text-black dark:text-white`}
+              >
+                Back
+              </Text>
+            </View>
+          </Pressable>
+          <Text> </Text>
+        </View>
 
         <View>
           <Formik
@@ -95,7 +106,7 @@ const editProfile = () => {
                         style={tw`flex-row justify-center items-center gap-3`}
                       >
                         <Text
-                          style={tw`text-primaryFF text-center font-semibold text-lg  `}
+                          style={tw`text-primaryFF dark:text-base-dark text-center font-semibold text-lg  `}
                         >
                           Save changes
                         </Text>
