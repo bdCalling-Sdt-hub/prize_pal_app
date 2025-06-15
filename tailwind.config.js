@@ -28,6 +28,7 @@ module.exports = {
         },
         primaryFF: "#ffffff",
         primary200: "#fff1ec",
+        offWhite: "#D9D9D9",
         deepGrey: "#888888",
         deepGrey50: "#505050",
         deepGrey80: "#535353",
