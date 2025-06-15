@@ -12,6 +12,7 @@ import {
   IconLoction,
   IconMessageBlack,
   IconMessageWhite,
+  IconSBookWhite,
   IconSBusinessBlack,
   IconSBusinessWhite,
   IconSEmployeeBlack,
@@ -34,7 +35,7 @@ import {
   TouchableOpacity,
   View,
 } from "react-native";
-import StarRating from "react-native-star-rating-widget";
+import StarRating, { StarRatingDisplay } from "react-native-star-rating-widget";
 import { SvgXml } from "react-native-svg";
 
 const ServiceProviderProfile = () => {
@@ -47,6 +48,8 @@ const ServiceProviderProfile = () => {
     ImgServiceThree,
     ImgServiceFour,
   ];
+
+  const CategoryData = ["Cleaning", "Plumbing", "Carpentry"];
 
   interface IReviewProps {
     id: number;
@@ -106,7 +109,11 @@ const ServiceProviderProfile = () => {
   ];
 
   return (
-    <ScrollView style={tw`flex-1 bg-base-light dark:bg-base-dark px-5`}>
+    <ScrollView
+      showsHorizontalScrollIndicator={false}
+      showsVerticalScrollIndicator={false}
+      style={tw`flex-1 bg-base-light dark:bg-base-dark px-5`}
+    >
       {/* ================ head back bar ============== */}
       <View style={tw`flex-row justify-between items-center my-3`}>
         <View style={tw`flex-row gap-8 justify-center items-center`}>
@@ -127,7 +134,7 @@ const ServiceProviderProfile = () => {
       {/* ===================== service provider profile content ============= */}
       <View>
         <View
-          style={tw` relative flex justify-center items-center border border-deepGreycc dark:border-deepGrey80 py-3 rounded-xl my-2 dark:bg-deepGrey50 gap-1`}
+          style={tw`  flex justify-center items-center border border-deepGreycc dark:border-deepGrey80 py-3 rounded-xl my-2 dark:bg-deepGrey50 gap-1`}
         >
           <Image style={tw`w-24 h-24 rounded-full`} source={ImgServiceOne} />
           <Text
@@ -160,26 +167,32 @@ const ServiceProviderProfile = () => {
           </View>
         </View>
 
-        <View style={tw`absolute right-3 top-4 gap-2`}>
-          <TouchableOpacity
-            style={tw`bg-SPrimary justify-center items-center w-24 py-1.5 rounded-full`}
-          >
-            <Text style={tw`font-DegularDisplayMedium text-base text-white`}>
-              Cleaner
-            </Text>
-          </TouchableOpacity>
-          <TouchableOpacity
-            style={tw`bg-SPrimary w-24 py-1.5 justify-center items-center rounded-full`}
-          >
-            <Text style={tw`font-DegularDisplayMedium text-base text-white`}>
-              Plumber
-            </Text>
-          </TouchableOpacity>
-        </View>
+        <FlatList
+          data={CategoryData}
+          horizontal
+          contentContainerStyle={tw`my-3 gap-2`}
+          keyExtractor={(_, index) => index.toLocaleString()}
+          showsHorizontalScrollIndicator={false}
+          showsVerticalScrollIndicator={false}
+          renderItem={({ item }: any): JSX.Element => (
+            <TouchableOpacity
+              style={tw`bg-SPrimary w-24 py-1.5 justify-center  items-center rounded-full`}
+            >
+              <Text style={tw`font-DegularDisplayMedium text-base text-white`}>
+                {item}
+              </Text>
+            </TouchableOpacity>
+          )}
+        />
+
+        {/* <View style={tw` flex-row justify-start items-center my-3 gap-2`}>
+         
+        </View> */}
 
         <FlatList
           horizontal
           data={Images}
+          contentContainerStyle={tw`my-2`}
           keyExtractor={(_, index) => index.toLocaleString()}
           renderItem={({ item }: any) => (
             <View style={tw`mr-3`}>
@@ -362,29 +375,74 @@ const ServiceProviderProfile = () => {
 
         {/* ======================= Review profile ====================== */}
 
-        <View>
+        <View style={tw`border border-deepGrey80 rounded-xl p-5 my-2 gap-3`}>
           <Text
             style={tw`font-DegularDisplayMedium text-2xl text-black dark:text-white`}
           >
             {" "}
             Reviews
           </Text>
-          <View>
+          <View style={tw`gap-3`}>
             {reviewsData.map(
               (item): JSX.Element => (
-                <View key={item.id}>
-                  <View>
-                    <Image style={tw`w-16 h-16`} source={item.image} />
+                <View style={tw`my-5`} key={item.id}>
+                  <View style={tw`flex-row justify-start items-center gap-4`}>
+                    <Image
+                      style={tw`w-16 h-16 rounded-full`}
+                      source={item.image}
+                    />
                     <View>
-                      <Text>{item.name}</Text>
-                      <Text>{item.date.toLocaleDateString()}</Text>
+                      <Text
+                        style={tw`font-DegularDisplayMedium text-lg text-black dark:text-white`}
+                      >
+                        {item.name}
+                      </Text>
+                      <Text
+                        style={tw`font-DegularDisplayRegular text-base text-deepGrey`}
+                      >
+                        {item.date.toLocaleDateString()}
+                      </Text>
+                      <View style={tw`flex-row  gap-2`}>
+                        <View style={tw``}>
+                          <StarRatingDisplay
+                            style={tw`-ml-1`}
+                            starSize={26}
+                            rating={item.ratting}
+                          />
+                        </View>
+                        <Text
+                          style={tw`font-DegularDisplaySemibold text-lg text-black dark:text-white `}
+                        >
+                          4
+                          <Text
+                            style={tw`font-DegularDisplayRegular text-base text-black dark:text-white`}
+                          >
+                            (100)
+                          </Text>
+                        </Text>
+                      </View>
                     </View>
                   </View>
+
+                  <Text
+                    style={tw`mt-4 font-normal text-base text-black dark:text-white`}
+                  >
+                    {item.description}
+                  </Text>
                 </View>
               )
             )}
           </View>
         </View>
+
+        <TouchableOpacity
+          style={tw` flex-row justify-center items-center bg-SPrimary rounded-full py-3 w-full my-4 gap-2`}
+        >
+          <SvgXml xml={IconSBookWhite} />
+          <Text style={tw`font-DegularDisplayMedium text-lg text-white`}>
+            Book
+          </Text>
+        </TouchableOpacity>
       </View>
     </ScrollView>
   );
