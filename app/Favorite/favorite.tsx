@@ -1,13 +1,14 @@
-import { IconDelete } from "@/icons/icon";
-import BackWithComponent from "@/lib/backHeader/BackWithCoponent";
+import { IconBackBlack, IconBackWhite, IconDelete } from "@/icons/icon";
 import tw from "@/lib/tailwind";
 import { Image } from "expo-image";
 import { router } from "expo-router";
 import React from "react";
 import { FlatList, Pressable, Text, View } from "react-native";
 import { SvgXml } from "react-native-svg";
+import { useTheme } from "../context/ThemeProvider";
 
 const favorite = () => {
+  const { colorScheme } = useTheme();
   const items = [
     {
       id: "1",
@@ -30,13 +31,21 @@ const favorite = () => {
   ];
   return (
     <View style={tw`bg-base-light p-5 dark:bg-base-dark h-full`}>
-      <BackWithComponent
-        onPress={() => {
-          router.back();
-        }}
-        togather
-        title={"Terns and conditions"}
-      />
+      <View style={tw`flex-row justify-between items-center pl-6 my-5`}>
+        <Pressable onPress={() => router.back()}>
+          <View style={tw`flex-row gap-6 justify-center items-center`}>
+            <SvgXml
+              xml={colorScheme === "dark" ? IconBackWhite : IconBackBlack}
+            />
+            <Text
+              style={tw`font-DegularDisplaySemibold text-base text-black dark:text-white`}
+            >
+              About us
+            </Text>
+          </View>
+        </Pressable>
+        <Text> </Text>
+      </View>
       <FlatList
         data={items}
         keyExtractor={(item) => item.id}

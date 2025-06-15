@@ -1,20 +1,20 @@
+import AuthHeader from "@/components/AuthHeader";
+import tw from "@/lib/tailwind";
+import AntDesign from "@expo/vector-icons/AntDesign";
+import Entypo from "@expo/vector-icons/Entypo";
+import MaterialIcons from "@expo/vector-icons/MaterialIcons";
+import Checkbox from "expo-checkbox";
+import { Link, router } from "expo-router";
+import { Formik } from "formik";
+import React, { useState } from "react";
 import {
-  View,
+  KeyboardAvoidingView,
   Text,
   TextInput,
   TouchableOpacity,
-  KeyboardAvoidingView,
+  View,
 } from "react-native";
-import React, { useState } from "react";
-import tw from "@/lib/tailwind";
-import { Formik } from "formik";
-import MaterialIcons from "@expo/vector-icons/MaterialIcons";
-import { Link, router } from "expo-router";
-import Entypo from "@expo/vector-icons/Entypo";
-import Checkbox from "expo-checkbox";
-import AntDesign from "@expo/vector-icons/AntDesign";
 import { ScrollView } from "react-native-gesture-handler";
-import AuthHeader from "@/components/AuthHeader";
 
 const Login = () => {
   const [isChecked, setChecked] = useState(false);
@@ -34,12 +34,14 @@ const Login = () => {
 
   return (
     <KeyboardAvoidingView
-      style={tw`flex-1`}
+      style={tw`flex-1 `}
       enabled={true}
       behavior={"padding"}
     >
-      <ScrollView contentContainerStyle={tw`flex-grow justify-center`}>
-        <View style={tw`flex-1 justify-center items-center bg-primaryFF`}>
+      <ScrollView
+        contentContainerStyle={tw`flex-grow justify-center dark:bg-base-dark  bg-base-light `}
+      >
+        <View style={tw`flex-1 justify-center items-center `}>
           {/* logo and title reper */}
           <AuthHeader title="Login to your account" />
           {/* logo and title reper end*/}
@@ -59,9 +61,9 @@ const Login = () => {
                 touched,
                 errors,
               }) => (
-                <View style={tw`bg-primaryFF`}>
+                <View style={tw`dark:bg-base-dark  bg-base-light`}>
                   <View
-                    style={tw`flex-row items-center gap-2 border-2 h-12 rounded-full px-3 mb-6`}
+                    style={tw`flex-row items-center gap-2 border-2 dark:border-primary h-12 rounded-full px-3 mb-6 font-Poppins`}
                   >
                     <MaterialIcons
                       name="email"
@@ -70,32 +72,35 @@ const Login = () => {
                       style={tw`mr-2`}
                     />
                     <TextInput
-                      // style={tw`border-2 border-red-100 w-full rounded-lg `}
+                      autoFocus={true}
+                      placeholderTextColor="#777777"
+                      style={tw`flex-1 text-base font-Poppins`}
                       placeholder="Enter your email"
-                      // right={<MaterialIcons name="email" size={24} color="black" />}
                       value={values.email}
                       onChangeText={handleChange("email")}
                       onBlur={handleBlur("email")}
-                      touched={touched.email}
-                      errorText={errors.email}
-                    />
-                  </View>
-                  <View
-                    style={tw`flex-row items-center gap-2 border-2 h-12 rounded-full px-3 `}
-                  >
-                    <Entypo name="lock" size={24} color="#777777" />
-                    <TextInput
-                      // style={tw`border-2 border-red-100 w-full rounded-lg `}
-                      placeholder="Enter your password"
-                      // right={<MaterialIcons name="email" size={24} color="black" />}
-                      value={values.password}
-                      onChangeText={handleChange("password")}
-                      onBlur={handleBlur("password")}
-                      touched={touched.password}
-                      errorText={errors.password}
                     />
                   </View>
 
+                  <View
+                    style={tw`flex-row items-center gap-2 border-2 dark:border-primary h-12 rounded-full px-3`}
+                  >
+                    <Entypo
+                      name="lock"
+                      style={tw`mr-2`}
+                      size={24}
+                      color="#777777"
+                    />
+                    <TextInput
+                      autoFocus={true}
+                      style={tw`flex-1 text-base font-Poppins`}
+                      placeholderTextColor="#777777"
+                      placeholder="Enter your password"
+                      value={values.password}
+                      onChangeText={handleChange("password")}
+                      onBlur={handleBlur("password")}
+                    />
+                  </View>
                   <View style={tw`my-7 flex-row justify-between items-center`}>
                     <View style={tw`flex-row gap-3`}>
                       <Checkbox
@@ -103,11 +108,15 @@ const Login = () => {
                         onValueChange={setChecked}
                         color={isChecked ? "#4630EB" : undefined}
                       />
-                      <Text style={tw`font-medium text-sm`}>Remember me</Text>
+                      <Text
+                        style={tw`font-medium text-sm dark:text-primary font-PoppinsSemiBold`}
+                      >
+                        Remember me
+                      </Text>
                     </View>
                     <Link href="/auth/forgot_password">
                       <Text
-                        style={tw`text-primaryBlack underline font-medium text-sm`}
+                        style={tw`text-primaryBlack underline dark:text-primary font-medium text-sm  font-PoppinsSemiBold`}
                       >
                         Forgot password
                       </Text>
@@ -115,14 +124,14 @@ const Login = () => {
                   </View>
 
                   <TouchableOpacity
-                    style={tw`bg-primaryBlack rounded-full`}
+                    style={tw`bg-primaryBlack dark:bg-primary rounded-full`}
                     onPress={() => {
                       handleSubmit();
                       router.replace("/choose_r_s");
                     }}
                   >
                     <Text
-                      style={tw`text-primaryFF text-center font-semibold text-lg py-[14px] `}
+                      style={tw`text-primaryFF dark:text-primaryBlack text-center font-semibold text-lg py-[14px] font-PoppinsBold`}
                     >
                       Login
                     </Text>
@@ -131,18 +140,21 @@ const Login = () => {
               )}
             </Formik>
           </View>
-          <View style={tw`  `}>
-            <Text style={tw` w-full font-medium text-base  `}>
-              Don’t have an account ?
-              <Link href="/auth/register">
-                {" "}
-                <Text style={tw`text-primaryBlack underline p-2`}>
-                  Register{" "}
-                </Text>
-                <AntDesign name="caretright" size={12} color="black" />
-              </Link>{" "}
-            </Text>
-          </View>
+        </View>
+        <View>
+          <Text
+            style={tw` w-full dark:text-primary font-medium pb-6 text-base text-center  font-PoppinsSemiBold `}
+          >
+            Don’t have an account ?
+            <Link href="/auth/register">
+              <Text
+                style={tw`text-primaryBlack underline p-2 dark:text-darkText`}
+              >
+                Register
+              </Text>
+              <AntDesign name="caretright" size={12} color="black" />
+            </Link>
+          </Text>
         </View>
       </ScrollView>
     </KeyboardAvoidingView>

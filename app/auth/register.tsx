@@ -172,10 +172,10 @@ const Register = () => {
                       <Text
                         style={tw`font-medium text-deepGrey50 text-sm pr-5`}
                       >
-                        By creating this account, you agree to the{" "}
+                        By creating this account, you agree to the
                         <Text style={tw`text-primaryBlack`}>
                           terms of use & privacy policy
-                        </Text>{" "}
+                        </Text>
                         .
                       </Text>
                     </View>
@@ -209,12 +209,11 @@ const Register = () => {
             <Text style={tw` w-full font-medium text-base  `}>
               Already have an account ?
               <Link href="/auth/login">
-                {" "}
                 <Text style={tw`text-primaryBlack underline p-2`}>
-                  Login here{" "}
+                  Login here
                 </Text>
                 <AntDesign name="caretright" size={12} color="black" />
-              </Link>{" "}
+              </Link>
             </Text>
           </View>
         </View>

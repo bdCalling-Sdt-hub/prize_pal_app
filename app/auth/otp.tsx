@@ -11,11 +11,14 @@ import {
 } from "react-native";
 import { ScrollView } from "react-native-gesture-handler";
 import { OtpInput } from "react-native-otp-entry";
+import { useTheme } from "../context/ThemeProvider";
 
 const OTP = () => {
+  const { colorScheme } = useTheme();
+
   return (
     <KeyboardAvoidingView
-      style={tw`bg-primaryFF`}
+      style={tw`dark:bg-base-dark  bg-base-light`}
       enabled={true}
       behavior={"padding"}
     >
@@ -29,13 +32,17 @@ const OTP = () => {
       <ScrollView
         contentContainerStyle={tw` flex-grow items-center h-full justify-center`}
       >
-        <View style={tw`flex-1 justify-center items-center bg-primaryFF`}>
+        <View
+          style={tw`flex-1 justify-center items-center dark:bg-base-dark  bg-base-light`}
+        >
           {/* logo and title reper */}
           <AuthHeader title="Enter OTP" />
           {/* logo and title reper end*/}
 
           <View style={tw` w-full p-4 rounded-t-[2rem] pt-8 pb-5`}>
-            <Text style={tw`font-normal text-sm mb-8`}>
+            <Text
+              style={tw`font-normal text-base mb-8 font-Poppins text-primary`}
+            >
               Enter that OTP which we sent you through the email you provided.
             </Text>
             <Formik
@@ -65,19 +72,19 @@ const OTP = () => {
                         height: 50,
                         borderWidth: 1,
                         borderRadius: 9999,
-                        borderColor: "#000",
+                        borderColor: colorScheme === "dark" ? "#fff" : "#000",
                       },
                     }}
                   />
                   <TouchableOpacity
-                    style={tw`bg-primaryBlack rounded-full mt-9`}
+                    style={tw`bg-primaryBlack dark:bg-primary rounded-full mt-9`}
                     onPress={() => {
                       handleSubmit();
                       router.replace("/auth/set_new_password");
                     }}
                   >
                     <Text
-                      style={tw`text-primaryFF  text-center font-semibold text-lg py-[14px] `}
+                      style={tw`text-primaryFF font-PoppinsBold dark:text-black   text-center font-semibold text-lg py-[14px] `}
                     >
                       Verify
                     </Text>

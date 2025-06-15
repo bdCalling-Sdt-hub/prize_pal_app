@@ -151,7 +151,7 @@ const ServiceProviderProfile = () => {
             </Text>
           </View>
           <View style={tw`flex-row justify-start items-center gap-2`}>
-            <View style={tw``}>
+            <View>
               <StarRating starSize={26} rating={rating} onChange={setRating} />
             </View>
             <Text
@@ -263,12 +263,11 @@ const ServiceProviderProfile = () => {
                 <Text
                   style={tw`font-DegularDisplayRegular text-base text-black dark:text-white`}
                 >
-                  Starting price:{" "}
+                  Starting price:
                 </Text>
                 <Text
                   style={tw`font-DegularDisplayMedium text-lg text-black dark:text-white`}
                 >
-                  {" "}
                   $50
                 </Text>
               </View>
@@ -293,12 +292,11 @@ const ServiceProviderProfile = () => {
                 <Text
                   style={tw`font-DegularDisplayRegular text-base text-black dark:text-white`}
                 >
-                  Starting price:{" "}
+                  Starting price:
                 </Text>
                 <Text
                   style={tw`font-DegularDisplayMedium text-lg text-black dark:text-white`}
                 >
-                  {" "}
                   $50
                 </Text>
               </View>
@@ -379,7 +377,6 @@ const ServiceProviderProfile = () => {
           <Text
             style={tw`font-DegularDisplayMedium text-2xl text-black dark:text-white`}
           >
-            {" "}
             Reviews
           </Text>
           <View style={tw`gap-3`}>
@@ -403,7 +400,7 @@ const ServiceProviderProfile = () => {
                         {item.date.toLocaleDateString()}
                       </Text>
                       <View style={tw`flex-row  gap-2`}>
-                        <View style={tw``}>
+                        <View>
                           <StarRatingDisplay
                             style={tw`-ml-1`}
                             starSize={26}

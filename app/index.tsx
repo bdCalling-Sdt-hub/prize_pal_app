@@ -23,13 +23,20 @@ const App = () => {
       DegularDisplaySemiboldItalic: require("@/assets/fonts/DegularDisplay-SemiboldItalic.otf"),
       DegularDisplayThin: require("@/assets/fonts/DegularDisplay-Thin.otf"),
       DegularDisplayThinItalic: require("@/assets/fonts/DegularDisplay-ThinItalic.otf"),
+
+      //Add Poppins fonts
+      PoppinsRegular: require("@/assets/fonts/Poppins-Regular.ttf"),
+      PoppinsBold: require("@/assets/fonts/Poppins-Bold.ttf"),
+      PoppinsSemiBold: require("@/assets/fonts/Poppins-SemiBold.ttf"),
+      PoppinsLight: require("@/assets/fonts/Poppins-Light.ttf"),
+      PoppinsMedium: require("@/assets/fonts/Poppins-Medium.ttf"),
     });
 
     SplashScreen.hideAsync();
 
     setTimeout(() => {
       // router.replace("/services/drawer/Settings/setting");
-      router.replace("/auth/login");
+      router.replace("/auth/forgot_password");
       // router.replace("/Settings/changePass");
     }, 1000);
   }, []);

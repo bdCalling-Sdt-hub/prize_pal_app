@@ -1,23 +1,22 @@
 import caretory from "@/assets/data/caretory.json";
 import Btn from "@/components/Btn";
 import ProductCard from "@/components/ProductCard";
-import { erowLight, IconRightArrow } from "@/icons/icon";
-import BackWithComponent from "@/lib/backHeader/BackWithCoponent";
-import IButton from "@/lib/buttons/IButton";
+import { erowLight, IconBackBlack, IconBackWhite } from "@/icons/icon";
 import tw from "@/lib/tailwind";
 import { router } from "expo-router";
 import { useSearchParams } from "expo-router/build/hooks";
 import React from "react";
-import { Image, Text, TouchableOpacity, View } from "react-native";
+import { Image, Pressable, Text, TouchableOpacity, View } from "react-native";
 import { FlatList, ScrollView } from "react-native-gesture-handler";
 import { SvgXml } from "react-native-svg";
+import { useTheme } from "../context/ThemeProvider";
 
 const product_details = () => {
   const sizes = [2, 4, 6, 8, 10, 12];
   const searchParams = useSearchParams();
   const id = searchParams.get("id");
   const [selectedSize, setSelectedSize] = React.useState(null);
-
+  const { colorScheme } = useTheme();
   const details = [
     "Designed to have a slim fit throughout.",
     "The model is wearing a US size 0 and has a 61cm waist, 86.4cm hips.",
@@ -25,26 +24,24 @@ const product_details = () => {
   ];
   return (
     <View style={tw`flex-1 bg-base-light dark:bg-base-dark`}>
-      <BackWithComponent
-        onPress={() => {
-          router.back();
-        }}
-        togather
-        ComponentBtn={
-          <View>
-            <IButton
-              containerStyle={tw`p-0 m-0  rounded-full`}
-              svg={IconRightArrow}
+      <View style={tw`flex-row justify-between items-center pl-6 my-5`}>
+        <Pressable onPress={() => router.back()}>
+          <View style={tw`flex-row gap-6 justify-center items-center`}>
+            <SvgXml
+              xml={colorScheme === "dark" ? IconBackWhite : IconBackBlack}
             />
+            <Text
+              style={tw`font-DegularDisplaySemibold text-base text-black dark:text-white`}
+            ></Text>
           </View>
-        }
-        // title={}
-      />
+        </Pressable>
+        <Text> </Text>
+      </View>
       <ScrollView
         showsVerticalScrollIndicator={false}
         contentContainerStyle={tw` pb-10 px-5`}
       >
-        <View style={tw``}>
+        <View>
           {/* view img */}
           <View
             style={tw` aspect-square w-[100%] flex-row justify-center items-center bg-primary dark:bg-darkText mb-2 rounded-2xl`}

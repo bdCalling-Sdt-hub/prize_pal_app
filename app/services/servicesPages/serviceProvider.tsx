@@ -150,7 +150,7 @@ const ServiceProvider = () => {
               </Text>
             </View>
             <View style={tw`flex-row justify-start items-center gap-2`}>
-              <View style={tw``}>
+              <View>
                 <StarRating
                   starSize={26}
                   rating={rating}

@@ -1,4 +1,5 @@
 export const ImgLogo = require("@/assets/images/sLogo.png");
+export const ImgLogoLight = require("@/assets/images/logo_light.png");
 export const ImgCarousel = require("@/assets/images/servicesCarousel.jpg");
 export const ImgCarouselTwo = require("@/assets/images/serviceCarouselTwo.jpg");
 export const ImgCarouselThree = require("@/assets/images/serviceCarouselThree.jpg");

@@ -18,6 +18,13 @@ module.exports = {
         DegularDisplaySemiboldItalic: "DegularDisplaySemiboldItalic",
         DegularDisplayThin: "DegularDisplayThin",
         DegularDisplayThinItalic: "DegularDisplayThinItalic",
+
+        // Poppins fonts
+        Poppins: "PoppinsRegular",
+        PoppinsBold: "PoppinsBold",
+        PoppinsSemiBold: "PoppinsSemiBold",
+        PoppinsLight: "PoppinsLight",
+        PoppinsMedium: "PoppinsMedium",
       },
 
       colors: {

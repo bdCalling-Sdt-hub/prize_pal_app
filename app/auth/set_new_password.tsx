@@ -1,23 +1,25 @@
+import AuthHeader from "@/components/AuthHeader";
+import tw from "@/lib/tailwind";
+import AntDesign from "@expo/vector-icons/AntDesign";
+import Entypo from "@expo/vector-icons/Entypo";
+import { Link, router } from "expo-router";
+import { Formik } from "formik";
+import React, { useState } from "react";
 import {
-  View,
+  KeyboardAvoidingView,
   Text,
   TextInput,
   TouchableOpacity,
-  KeyboardAvoidingView,
+  View,
 } from "react-native";
-import React, { useState } from "react";
-import tw from "@/lib/tailwind";
-import { Formik } from "formik";
-import MaterialIcons from "@expo/vector-icons/MaterialIcons";
-import { Link, router } from "expo-router";
-import Entypo from "@expo/vector-icons/Entypo";
-import Checkbox from "expo-checkbox";
-import AntDesign from "@expo/vector-icons/AntDesign";
 import { ScrollView } from "react-native-gesture-handler";
-import AuthHeader from "@/components/AuthHeader";
+import { useTheme } from "../context/ThemeProvider";
 
 const SetNewPassword = () => {
   const [isChecked, setChecked] = useState(false);
+
+  const { colorScheme } = useTheme();
+
   const validate = (values: any) => {
     const errors: any = {};
 
@@ -36,7 +38,7 @@ const SetNewPassword = () => {
       behavior={"padding"}
     >
       <View
-        style={tw`w-[36px] h-[36px] bg-primary200 m-4 rounded-md  flex items-center justify-center`}
+        style={tw`w-[36px] h-[36px] bg-primary200  m-4 rounded-md  flex items-center justify-center`}
       >
         <Link href="/auth/otp">
           <AntDesign name="left" size={24} color="black" />
@@ -45,7 +47,9 @@ const SetNewPassword = () => {
       <ScrollView
         contentContainerStyle={tw` flex-grow items-center  h-full justify-center`}
       >
-        <View style={tw`flex-1 justify-center items-center w-full bg-primaryFF`}>
+        <View
+          style={tw`flex-1 justify-center items-center w-full bg-primaryFF`}
+        >
           {/* logo and title reper */}
           <AuthHeader title="Set your new password" />
           {/* logo and title reper end*/}
