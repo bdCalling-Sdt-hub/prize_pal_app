@@ -9,6 +9,8 @@ import {
   IconBackBlack,
   IconBackWhite,
   IconLoction,
+  IconMessageBlack,
+  IconMessageWhite,
   IconSTimerWhite,
 } from "@/icons/icon";
 import tw from "@/lib/tailwind";
@@ -126,9 +128,9 @@ const ServiceProviderProfile = () => {
           <TouchableOpacity
             style={tw`border border-black flex-row justify-center items-center rounded-full py-3 w-44 gap-2`}
           >
-            {/* <SvgXml
+            <SvgXml
               xml={colorScheme === "dark" ? IconMessageWhite : IconMessageBlack}
-            /> */}
+            />
             <Text
               style={tw`font-DegularDisplayMedium text-lg text-black dark:text-white`}
             >
