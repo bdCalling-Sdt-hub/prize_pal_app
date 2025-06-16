@@ -1,6 +1,5 @@
 import AuthHeader from "@/components/AuthHeader";
 import tw from "@/lib/tailwind";
-import AntDesign from "@expo/vector-icons/AntDesign";
 import Entypo from "@expo/vector-icons/Entypo";
 import MaterialIcons from "@expo/vector-icons/MaterialIcons";
 import Checkbox from "expo-checkbox";
@@ -146,14 +145,13 @@ const Login = () => {
             style={tw` w-full dark:text-primary font-medium pb-6 text-base text-center  font-PoppinsSemiBold `}
           >
             Don’t have an account ?
-            <Link href="/auth/register">
+            <TouchableOpacity onPress={() => router.push("/auth/register")}>
               <Text
-                style={tw`text-primaryBlack underline p-2 dark:text-darkText`}
+                style={tw`text-primaryBlack underline h-11 text-base p-2 dark:text-darkText`}
               >
                 Register
               </Text>
-              <AntDesign name="caretright" size={12} color="black" />
-            </Link>
+            </TouchableOpacity>
           </Text>
         </View>
       </ScrollView>

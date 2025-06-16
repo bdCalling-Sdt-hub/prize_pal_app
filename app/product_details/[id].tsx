@@ -82,14 +82,20 @@ const product_details = () => {
           </View>
           <View style={tw`flex-row justify-between my-5 items-center `}>
             <View>
-              <Text style={tw`font-medium text-xl mb-1 dark:text-primaryFF`}>
+              <Text
+                style={tw` font-PoppinsMedium text-xl mb-1 dark:text-primaryFF`}
+              >
                 Mia Skort
               </Text>
-              <Text style={tw` text-base font-normal text-darkText`}>
+              <Text
+                style={tw`text-base font-normal font-PoppinsLight text-darkText`}
+              >
                 Reformation
               </Text>
             </View>
-            <Text style={tw`font-semibold text-2xl dark:text-primaryFF`}>
+            <Text
+              style={tw`font-semibold text-2xl font-PoppinsSemiBold dark:text-primaryFF`}
+            >
               $200
             </Text>
           </View>
@@ -130,7 +136,7 @@ const product_details = () => {
         <Btn>
           <View style={tw`flex-row justify-center items-center gap-3`}>
             <Text
-              style={tw`text-primaryFF text-center font-semibold text-lg dark:text-darkPrimary`}
+              style={tw`text-primaryFF text-center font-semibold font-PoppinsSemiBold text-lg dark:text-darkPrimary`}
             >
               View in store
             </Text>
@@ -138,7 +144,9 @@ const product_details = () => {
           </View>
         </Btn>
         <View>
-          <Text style={tw`text-lg font-medium pb-2 dark:text-primaryFF`}>
+          <Text
+            style={tw`text-lg font-medium font-PoppinsMedium pb-2 dark:text-primaryFF`}
+          >
             Details
           </Text>
           <FlatList
@@ -147,33 +155,35 @@ const product_details = () => {
             keyExtractor={(item, index) => index.toString()}
             renderItem={({ item }) => (
               <Text
-                style={tw`text-base font-normal leading-7 dark:text-primaryFF`}
+                style={tw`text-base font-normal font-Poppins leading-7 dark:text-primaryFF`}
               >
                 .{item}
               </Text>
             )}
           />
         </View>
-        <Text style={tw`text-lg font-medium pb-3 pt-5 dark:text-primaryFF`}>
+        <Text
+          style={tw`text-lg font-medium pb-3 pt-5 font-PoppinsMedium dark:text-primaryFF`}
+        >
           Shipping Details
         </Text>
         <View style={tw`border-2 border-deepGreycc rounded-3xl py-4 px-10 `}>
           <Text
-            style={tw`text-base font-normal text-center dark:text-primaryFF`}
+            style={tw`text-base font-normal font-Poppins text-center dark:text-primaryFF`}
           >
             Free express shipping Duties and taxes are guaranteed Estimated
             delivery in 3-8 business days
           </Text>
         </View>
         <Text
-          style={tw`text-2xl font-medium py-7 text-center dark:text-primaryFF`}
+          style={tw`text-2xl font-medium font-PoppinsMedium py-7 text-center dark:text-primaryFF`}
         >
           More from this store
         </Text>
 
         <FlatList
           showsVerticalScrollIndicator={false}
-          contentContainerStyle={tw`px-4 gap-3 pb-8`}
+          contentContainerStyle={tw` gap-3 pb-8`}
           horizontal
           showsHorizontalScrollIndicator={false}
           data={caretory[0]?.product}
@@ -183,7 +193,7 @@ const product_details = () => {
         />
 
         <Text
-          style={tw`text-2xl font-medium py-7 text-center dark:text-primaryFF`}
+          style={tw`text-2xl font-medium font-PoppinsMedium py-7 text-center dark:text-primaryFF`}
         >
           Similar Items
         </Text>
@@ -191,7 +201,7 @@ const product_details = () => {
         <FlatList
           scrollEnabled={false}
           showsVerticalScrollIndicator={false}
-          contentContainerStyle={tw`px-4 gap-3 pb-8 `}
+          contentContainerStyle={tw`gap-3 pb-8 `}
           columnWrapperStyle={tw`justify-between gap-3 `}
           numColumns={2}
           data={caretory[1]?.product}

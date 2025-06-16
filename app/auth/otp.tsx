@@ -23,7 +23,7 @@ const OTP = () => {
       behavior={"padding"}
     >
       <View
-        style={tw`w-[36px] h-[36px] bg-primary200 m-4 rounded-md  flex items-center justify-center`}
+        style={tw`w-[36px] h-[36px] dark:bg-deepGrey bg-primary200 m-4 rounded-md  flex items-center justify-center`}
       >
         <Link href="/auth/forgot_password">
           <AntDesign name="left" size={24} color="black" />
@@ -41,31 +41,27 @@ const OTP = () => {
 
           <View style={tw` w-full p-4 rounded-t-[2rem] pt-8 pb-5`}>
             <Text
-              style={tw`font-normal text-base mb-8 font-Poppins text-primary`}
+              style={tw`font-normal text-base mb-8 font-Poppins dark:text-primary`}
             >
               Enter that OTP which we sent you through the email you provided.
             </Text>
             <Formik
               initialValues={{ otp: "" }}
-              onSubmit={(values) => {
+              onSubmit={async (values) => {
                 console.log(values);
+                await router.replace("/auth/set_new_password");
               }}
             >
-              {({
-                handleChange,
-                handleBlur,
-                handleSubmit,
-                values,
-                touched,
-              }) => (
+              {({ handleChange, handleBlur, handleSubmit, values }) => (
                 <View>
                   <OtpInput
                     numberOfDigits={6}
-                    value={values.otp}
-                    onChangeText={handleChange("otp")}
-                    onBlur={handleBlur("otp")}
-                    touched={touched.otp}
-                    onTextChange={(text) => console.log(text)}
+                    // value={values.otp}
+                    onTextChange={(text) => {}}
+                    onFilled={(text) => {
+                      console.log(text);
+                    }}
+                    // onBlur={handleBlur("otp")}
                     theme={{
                       pinCodeContainerStyle: {
                         width: 50,
@@ -76,15 +72,13 @@ const OTP = () => {
                       },
                     }}
                   />
+
                   <TouchableOpacity
                     style={tw`bg-primaryBlack dark:bg-primary rounded-full mt-9`}
-                    onPress={() => {
-                      handleSubmit();
-                      router.replace("/auth/set_new_password");
-                    }}
+                    onPress={() => handleSubmit()}
                   >
                     <Text
-                      style={tw`text-primaryFF font-PoppinsBold dark:text-black   text-center font-semibold text-lg py-[14px] `}
+                      style={tw`text-primaryFF font-PoppinsBold dark:text-black text-center text-lg py-[14px]`}
                     >
                       Verify
                     </Text>

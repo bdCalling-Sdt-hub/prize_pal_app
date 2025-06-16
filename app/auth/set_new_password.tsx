@@ -33,12 +33,12 @@ const SetNewPassword = () => {
 
   return (
     <KeyboardAvoidingView
-      style={tw`bg-primaryFF `}
+      style={tw`bg-base-light dark:bg-base-dark `}
       enabled={true}
       behavior={"padding"}
     >
       <View
-        style={tw`w-[36px] h-[36px] bg-primary200  m-4 rounded-md  flex items-center justify-center`}
+        style={tw`w-[36px] h-[36px] dark:bg-deepGrey bg-primary200 m-4 rounded-md  flex items-center justify-center`}
       >
         <Link href="/auth/otp">
           <AntDesign name="left" size={24} color="black" />
@@ -48,13 +48,15 @@ const SetNewPassword = () => {
         contentContainerStyle={tw` flex-grow items-center  h-full justify-center`}
       >
         <View
-          style={tw`flex-1 justify-center items-center w-full bg-primaryFF`}
+          style={tw`flex-1 justify-center items-center w-full bg-base-light dark:bg-base-dark`}
         >
           {/* logo and title reper */}
           <AuthHeader title="Set your new password" />
           {/* logo and title reper end*/}
           <View style={tw` w-full p-4 rounded-t-[2rem] pt-8 pb-5`}>
-            <Text style={tw`font-normal text-sm mb-8`}>
+            <Text
+              style={tw`font-normal  mb-8 font-Poppins text-base dark:text-primaryFF `}
+            >
               It must be different from your previous password.
             </Text>
             <Formik
@@ -64,56 +66,44 @@ const SetNewPassword = () => {
               }}
               validate={validate}
             >
-              {({
-                handleChange,
-                handleBlur,
-                handleSubmit,
-                values,
-                touched,
-                errors,
-              }) => (
-                <View style={tw`bg-primaryFF`}>
+              {({ handleChange, handleBlur, handleSubmit, values, errors }) => (
+                <View style={tw` bg-base-light dark:bg-base-dark`}>
                   <View
-                    style={tw`flex-row items-center gap-2 border-2 h-12 rounded-full px-3 mb-6`}
+                    style={tw`flex-row items-center gap-2 dark:border-primary font-Poppins border-2 h-12 rounded-full px-3 mb-6`}
                   >
                     <Entypo name="lock" size={24} color="#777777" />
                     <TextInput
-                      // style={tw`border-2 border-red-100 w-full rounded-lg `}
+                      style={tw`font-Poppins text-primary`}
+                      placeholderTextColor="#777777"
                       placeholder="Enter password"
-                      // right={<MaterialIcons name="email" size={24} color="black" />}
                       value={values.password}
                       onChangeText={handleChange("password")}
                       onBlur={handleBlur("password")}
-                      touched={touched.password}
-                      errorText={errors.password}
                     />
                   </View>
 
                   <View
-                    style={tw`flex-row items-center gap-2 border-2 h-12 rounded-full px-3 `}
+                    style={tw`flex-row items-center gap-2 dark:border-primary font-Poppins border-2 h-12 rounded-full px-3 `}
                   >
                     <Entypo name="lock" size={24} color="#777777" />
                     <TextInput
-                      // style={tw`border-2 border-red-100 w-full rounded-lg `}
+                      style={tw`font-Poppins text-primary`}
+                      placeholderTextColor="#777777"
                       placeholder="Confirm password"
-                      // right={<MaterialIcons name="email" size={24} color="black" />}
                       value={values.confirmPassword}
                       onChangeText={handleChange("confirmPassword")}
                       onBlur={handleBlur("confirmPassword")}
-                      touched={touched.confirmPassword}
-                      errorText={errors.confirmPassword}
                     />
                   </View>
-
                   <TouchableOpacity
-                    style={tw`bg-primaryBlack rounded-full mt-9`}
+                    style={tw`bg-primaryBlack dark:bg-primaryFF rounded-full mt-9`}
                     onPress={() => {
                       handleSubmit();
                       router.replace("/auth/successfullMassge");
                     }}
                   >
                     <Text
-                      style={tw`text-primaryFF text-center font-semibold text-lg py-[14px] `}
+                      style={tw`text-primaryFF dark:text-primaryBlack text-center  font-PoppinsBold text-lg py-[14px] `}
                     >
                       Change password
                     </Text>
