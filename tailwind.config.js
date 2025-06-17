@@ -18,6 +18,13 @@ module.exports = {
         DegularDisplaySemiboldItalic: "DegularDisplaySemiboldItalic",
         DegularDisplayThin: "DegularDisplayThin",
         DegularDisplayThinItalic: "DegularDisplayThinItalic",
+
+        // Poppins fonts
+        Poppins: "PoppinsRegular",
+        PoppinsBold: "PoppinsBold",
+        PoppinsSemiBold: "PoppinsSemiBold",
+        PoppinsLight: "PoppinsLight",
+        PoppinsMedium: "PoppinsMedium",
       },
 
       colors: {
@@ -32,12 +39,14 @@ module.exports = {
         deepGrey: "#888888",
         deepGrey50: "#505050",
         deepGrey80: "#535353",
+        deepGrey2D: "#2D2D2D",
         deepGreycc: "#cccccc",
         primaryBlack: "#121212",
         deepGreen: "#00B047",
         lowGreen: "#F0FFD7",
         SPrimary: "#6DA40A",
         darkPrimary: "#3D3D3D",
+        darkSecoundary: "#4B4B4B",
         darkText: "#AFAFAF",
         Sblue: "#007AFF",
         Sred: "#FF5050",

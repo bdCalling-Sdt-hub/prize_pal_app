@@ -31,7 +31,7 @@ const NotificationServices = () => {
 
   return (
     <ScrollView style={tw`flex-1 bg-base-light dark:bg-base-dark px-4`}>
-      <View style={tw``}>
+      <View>
         {/*  ------------ bottom header ------------------- */}
         <View style={tw`flex-row justify-between items-center my-5`}>
           <View style={tw`flex-row gap-8 justify-center items-center`}>
@@ -138,7 +138,7 @@ const NotificationServices = () => {
         onDismiss={() => setIsModalVisible(false)}
         panDirection={PanningProvider.Directions.DOWN}
       >
-        <View style={tw``}>
+        <View>
           <View style={tw`flex-row justify-between items-center px-4 my-3`}>
             <Text></Text>
             <Text

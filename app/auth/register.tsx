@@ -1,6 +1,5 @@
 import AuthHeader from "@/components/AuthHeader";
 import tw from "@/lib/tailwind";
-import AntDesign from "@expo/vector-icons/AntDesign";
 import Entypo from "@expo/vector-icons/Entypo";
 import FontAwesome5 from "@expo/vector-icons/FontAwesome5";
 import FontAwesome6 from "@expo/vector-icons/FontAwesome6";
@@ -42,7 +41,9 @@ const Register = () => {
       behavior={"padding"}
     >
       <ScrollView contentContainerStyle={tw`flex-grow justify-center`}>
-        <View style={tw`flex-1 justify-center items-center bg-primaryFF`}>
+        <View
+          style={tw`flex-1 justify-center items-center bg-base-light dark:bg-base-dark`}
+        >
           {/* logo and title reper */}
           <AuthHeader title="Register Your Account" />
           {/* logo and title reper end*/}
@@ -69,9 +70,9 @@ const Register = () => {
                 touched,
                 errors,
               }) => (
-                <View style={tw`bg-primaryFF`}>
+                <View style={tw`bg-base-light dark:bg-base-dark`}>
                   <View
-                    style={tw`flex-row items-center gap-2 border-2 h-12 rounded-full px-3 mb-6`}
+                    style={tw`flex-row items-center gap-2 border-2 dark:border-primary h-12 rounded-full px-3 mb-6`}
                   >
                     <FontAwesome5
                       name="user-alt"
@@ -80,9 +81,9 @@ const Register = () => {
                       color="#777777"
                     />
                     <TextInput
-                      // style={tw`border-2 border-red-100 w-full rounded-lg `}
                       placeholder="Enter your name"
-                      // right={<MaterialIcons name="email" size={24} color="black" />}
+                      placeholderTextColor="#777777"
+                      style={tw`font-Poppins dark:text-primary`}
                       value={values.name}
                       onChangeText={handleChange("name")}
                       onBlur={handleBlur("name")}
@@ -91,7 +92,7 @@ const Register = () => {
                     />
                   </View>
                   <View
-                    style={tw`flex-row items-center gap-2 border-2 h-12 rounded-full px-3 mb-6`}
+                    style={tw`flex-row items-center gap-2 border-2 dark:border-primary h-12 rounded-full px-3 mb-6`}
                   >
                     <MaterialIcons
                       name="email"
@@ -100,9 +101,9 @@ const Register = () => {
                       style={tw`mr-2`}
                     />
                     <TextInput
-                      // style={tw`border-2 border-red-100 w-full rounded-lg `}
                       placeholder="Enter your email"
-                      // right={<MaterialIcons name="email" size={24} color="black" />}
+                      placeholderTextColor="#777777"
+                      style={tw`font-Poppins dark:text-primary`}
                       value={values.email}
                       onChangeText={handleChange("email")}
                       onBlur={handleBlur("email")}
@@ -111,7 +112,7 @@ const Register = () => {
                     />
                   </View>
                   <View
-                    style={tw`flex-row items-center gap-2 border-2 h-12 rounded-full px-3 mb-6`}
+                    style={tw`flex-row items-center gap-2 border-2 dark:border-primary h-12 rounded-full px-3 mb-6`}
                   >
                     <FontAwesome6
                       name="location-dot"
@@ -121,9 +122,9 @@ const Register = () => {
                     />
 
                     <TextInput
-                      // style={tw`border-2 border-red-100 w-full rounded-lg `}
                       placeholder="Enter your Address"
-                      // right={<MaterialIcons name="email" size={24} color="black" />}
+                      placeholderTextColor="#777777"
+                      style={tw`font-Poppins dark:text-primary`}
                       value={values.address}
                       onChangeText={handleChange("address")}
                       onBlur={handleBlur("address")}
@@ -132,13 +133,13 @@ const Register = () => {
                     />
                   </View>
                   <View
-                    style={tw`flex-row items-center gap-2 border-2 h-12 rounded-full px-3 mb-6`}
+                    style={tw`flex-row items-center gap-2 border-2 dark:border-primary h-12 rounded-full px-3 mb-6`}
                   >
                     <Entypo name="lock" size={24} color="#777777" />
                     <TextInput
-                      // style={tw`border-2 border-red-100 w-full rounded-lg `}
                       placeholder="Enter password"
-                      // right={<MaterialIcons name="email" size={24} color="black" />}
+                      placeholderTextColor="#777777"
+                      style={tw`font-Poppins dark:text-primary`}
                       value={values.password}
                       onChangeText={handleChange("password")}
                       onBlur={handleBlur("password")}
@@ -147,13 +148,13 @@ const Register = () => {
                     />
                   </View>
                   <View
-                    style={tw`flex-row items-center gap-2 border-2 h-12 rounded-full px-3 `}
+                    style={tw`flex-row items-center gap-2 border-2 dark:border-primary h-12 rounded-full px-3 `}
                   >
                     <Entypo name="lock" size={24} color="#777777" />
                     <TextInput
-                      // style={tw`border-2 border-red-100 w-full rounded-lg `}
-                      placeholder="Enter password"
-                      // right={<MaterialIcons name="email" size={24} color="black" />}
+                      placeholder="confirm password"
+                      placeholderTextColor="#777777"
+                      style={tw`font-Poppins dark:text-primary`}
                       value={values.confirmPassword}
                       onChangeText={handleChange("confirmPassword")}
                       onBlur={handleBlur("confirmPassword")}
@@ -167,15 +168,17 @@ const Register = () => {
                       <Checkbox
                         value={isChecked}
                         onValueChange={setChecked}
-                        color={isChecked ? "#4630EB" : undefined}
+                        color={isChecked ? "#777777" : undefined}
                       />
                       <Text
-                        style={tw`font-medium text-deepGrey50 text-sm pr-5`}
+                        style={tw`font-medium text-deepGrey50 text-sm pr-5 dark:text-primary`}
                       >
-                        By creating this account, you agree to the{" "}
-                        <Text style={tw`text-primaryBlack`}>
+                        By creating this account, you agree to the
+                        <Text
+                          style={tw`text-deepGrey50 text-sm pr-5 dark:text-primary`}
+                        >
                           terms of use & privacy policy
-                        </Text>{" "}
+                        </Text>
                         .
                       </Text>
                     </View>
@@ -189,14 +192,14 @@ const Register = () => {
                   </View>
 
                   <TouchableOpacity
-                    style={tw`bg-primaryBlack rounded-full`}
+                    style={tw`bg-primaryBlack dark:bg-primary rounded-full`}
                     onPress={() => {
                       handleSubmit();
                       router.replace("/retailer/home");
                     }}
                   >
                     <Text
-                      style={tw`text-primaryFF text-center font-semibold text-lg py-[14px] `}
+                      style={tw`text-primaryFF dark:text-primaryBlack text-center font-semibold text-lg py-[14px] font-PoppinsBold`}
                     >
                       Register
                     </Text>
@@ -205,16 +208,21 @@ const Register = () => {
               )}
             </Formik>
           </View>
-          <View style={tw`  `}>
-            <Text style={tw` w-full font-medium text-base  `}>
+          <View>
+            <Text
+              style={tw` w-full dark:text-primary font-medium pb-6 text-base text-center  font-PoppinsSemiBold `}
+            >
               Already have an account ?
-              <Link href="/auth/login">
-                {" "}
-                <Text style={tw`text-primaryBlack underline p-2`}>
-                  Login here{" "}
+              <TouchableOpacity
+                onPress={() => router.push("/auth/login")}
+                style={tw`flex-grow justify-center `}
+              >
+                <Text
+                  style={tw`text-primaryBlack underline text-base h-11 p-3 dark:text-darkText`}
+                >
+                  Login here
                 </Text>
-                <AntDesign name="caretright" size={12} color="black" />
-              </Link>{" "}
+              </TouchableOpacity>
             </Text>
           </View>
         </View>

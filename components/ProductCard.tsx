@@ -28,7 +28,7 @@ const ProductCard = ({
         router.push(`/product_details/${item?.id}`);
       }}
       style={[
-        tw`bg-base-light dark:bg-darkPrimary   flex-1  rounded-3xl relative`,
+        tw`bg-primary dark:bg-darkPrimary flex-1 rounded-3xl relative`,
         containerStyle,
       ]}
     >
@@ -48,17 +48,21 @@ const ProductCard = ({
       {/* card content */}
       <View style={tw` m-3`}>
         <View>
-          <Text style={tw`font-medium  text-lg dark:text-primaryFF`}>
+          <Text
+            style={tw`font-medium font-PoppinsMedium text-lg dark:text-primaryFF`}
+          >
             {item?.title}
           </Text>
           <Text
-            style={tw` text-base font-medium text-deepGrey50 dark:text-darkText`}
+            style={tw` text-base font-medium font-PoppinsMedium  text-deepGrey50 dark:text-darkText`}
           >
             {item?.brandName}
           </Text>
         </View>
         <View style={tw`flex-row justify-between items-center`}>
-          <Text style={tw`font-semibold text-xl  dark:text-primaryFF`}>
+          <Text
+            style={tw`font-semibold text-xl font-PoppinsSemiBold dark:text-primaryFF`}
+          >
             {item?.price}
           </Text>
           <TouchableOpacity

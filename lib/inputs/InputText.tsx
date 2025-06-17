@@ -132,7 +132,7 @@ const InputText = ({
             labelStyle,
           ]}
         >
-          {label}{" "}
+          {label}
           {required && (
             <Text style={tw`text-red-500 font-DegularDisplaySemibold`}> *</Text>
           )}

@@ -1,14 +1,14 @@
-import { View, Text, Image, TouchableOpacity } from "react-native";
-import React from "react";
 import tw from "@/lib/tailwind";
-import { Link, router } from "expo-router";
 import AntDesign from "@expo/vector-icons/AntDesign";
+import { Link, router } from "expo-router";
+import React from "react";
+import { Image, Text, TouchableOpacity, View } from "react-native";
 
 const successfullMassge = () => {
   return (
-    <View style={tw` h-full`}>
+    <View style={tw` dark:bg-base-dark h-full`}>
       <View
-        style={tw`w-[36px] h-[36px] bg-primary200 m-4 rounded-md overflow-hidden flex items-center justify-center`}
+        style={tw`w-[36px] h-[36px] dark:bg-deepGrey bg-primary200 m-4 rounded-md  flex items-center justify-center`}
       >
         <Link href="/auth/set_new_password">
           <AntDesign name="left" size={24} color="black" />
@@ -21,13 +21,13 @@ const successfullMassge = () => {
           source={require("@/assets/images/passChanged.png")}
         />
         <TouchableOpacity
-          style={tw`bg-primaryBlack rounded-full  mt-9 w-full`}
+          style={tw`bg-primaryBlack dark:bg-primaryFF w-full rounded-full mt-9`}
           onPress={() => {
             router.replace("/auth/login");
           }}
         >
           <Text
-            style={tw`text-primaryFF  text-center font-semibold text-lg py-[14px] `}
+            style={tw`text-primaryFF dark:text-primaryBlack text-center font-PoppinsBold text-lg py-[14px] `}
           >
             Back to login
           </Text>

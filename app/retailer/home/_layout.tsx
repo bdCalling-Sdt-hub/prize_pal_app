@@ -1,15 +1,17 @@
+import { useTheme } from "@/app/context/ThemeProvider";
 import tw from "@/lib/tailwind";
 import AntDesign from "@expo/vector-icons/AntDesign";
 import Feather from "@expo/vector-icons/Feather";
 import FontAwesome from "@expo/vector-icons/FontAwesome";
 import { BottomTabBarProps } from "@react-navigation/bottom-tabs";
-import { useLinkBuilder, useTheme } from "@react-navigation/native";
+import { useLinkBuilder } from "@react-navigation/native";
 import { Tabs } from "expo-router";
 import React from "react";
 import { TouchableOpacity, View } from "react-native";
+// import { useTheme } from "../context/ThemeProvider";
 
 export function TabBar({ state, descriptors, navigation }: BottomTabBarProps) {
-  const { colors } = useTheme();
+  const { colorScheme } = useTheme();
   const { buildHref } = useLinkBuilder();
   const icon = {
     index: (props: any) => (
@@ -25,7 +27,7 @@ export function TabBar({ state, descriptors, navigation }: BottomTabBarProps) {
 
   return (
     <View
-      style={tw`flex-row bottom-5 absolute  mx-6  shadow-black shadow-md rounded-full justify-between items-center bg-[#fff] `}
+      style={tw`flex-row bottom-5 absolute  mx-6  shadow-black shadow-md rounded-full justify-between items-center bg-primary dark:bg-deepGrey2D `}
     >
       {state.routes.map((route, index) => {
         const { options } = descriptors[route.key];
@@ -66,15 +68,23 @@ export function TabBar({ state, descriptors, navigation }: BottomTabBarProps) {
             testID={options.tabBarButtonTestID}
             onPress={onPress}
             onLongPress={onLongPress}
-            style={tw`flex-1 justify-center items-center rounded-full`}
+            style={tw`flex-1 justify-center  items-center rounded-full`}
           >
             <View
               style={tw`m-2 ${
-                isFocused ? "bg-[#E4E4E4] p-5 rounded-full " : ""
+                isFocused
+                  ? "bg-[#E4E4E4] dark:bg-darkSecoundary p-5 rounded-full "
+                  : ""
               }`}
             >
               {icon[route.name]({
-                color: isFocused ? "#000" : "#222",
+                color: isFocused
+                  ? colorScheme === "dark"
+                    ? "#fff"
+                    : "#000"
+                  : colorScheme === "dark"
+                  ? "#ccc"
+                  : "#222",
               })}
             </View>
           </TouchableOpacity>

@@ -30,8 +30,7 @@ const BackButton = ({
 
         {title && (
           <Text style={[tw`text-black900 font-RobotoBold text-lg`, titleStyle]}>
-            {" "}
-            {title}{" "}
+            {title}
           </Text>
         )}
       </View>
