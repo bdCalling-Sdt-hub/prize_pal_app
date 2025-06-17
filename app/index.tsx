@@ -36,7 +36,7 @@ const App = () => {
 
     setTimeout(() => {
       // router.replace("/services/drawer/Settings/setting");
-      router.replace("/retailer/home");
+      router.replace("/choose_r_s");
       // router.replace("/Settings/changePass");
     }, 1000);
   }, []);

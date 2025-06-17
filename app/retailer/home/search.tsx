@@ -17,10 +17,9 @@ const Page = () => {
       >
         <SvgXml xml={IconSearch} />
         <TextInput
-          style={tw`h-[60px] flex-1  pl-3`}
+          style={tw`h-[60px] flex-1 font-PoppinsMedium dark:text-[#777777]  pl-3`}
           placeholder="Search"
-          placeholderTextColor="text-deepGrey"
-          // value={}
+          placeholderTextColor="#777777"
         />
       </View>
 

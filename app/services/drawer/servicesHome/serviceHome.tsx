@@ -1,5 +1,5 @@
 import { useTheme } from "@/app/context/ThemeProvider";
-import { ImgLogo, ImgSPoster } from "@/assets/image";
+import { ImgLogo, ImgLogoLight, ImgSPoster } from "@/assets/image";
 import ServiceCarousel from "@/components/ServiceCarousel";
 import {
   IconCheckBlack,
@@ -66,7 +66,10 @@ const ServiceHome = () => {
             <SvgXml xml={IconSMenuGreen} />
           </TouchableOpacity>
 
-          <Image style={tw`w-28 h-28 ml-8`} source={ImgLogo} />
+          <Image
+            style={tw`w-28 h-28 ml-8`}
+            source={colorScheme === "dark" ? ImgLogo : ImgLogoLight}
+          />
 
           <View style={tw`flex-row gap-2`}>
             <TouchableOpacity

@@ -1,3 +1,4 @@
+import { useTheme } from "@/app/context/ThemeProvider";
 import {
   IconHome,
   IconHomeBlack,
@@ -27,7 +28,7 @@ type MyTabBarProps = {
 
 function MyTabBar({ state, descriptors, navigation }: MyTabBarProps) {
   const [isKeyboardVisible, setKeyboardVisible] = React.useState(false);
-
+  const { colorScheme } = useTheme();
   React.useEffect(() => {
     const showSubscription = Keyboard.addListener("keyboardDidShow", () => {
       setKeyboardVisible(true);
@@ -53,7 +54,7 @@ function MyTabBar({ state, descriptors, navigation }: MyTabBarProps) {
           ]}
         >
           <View
-            style={tw` bg-white justify-between overflow-hidden h-[70px] w-[90%] rounded-full flex-row items-center  shadow-xl flex-1`}
+            style={tw` bg-primary dark:bg-deepGrey2D  justify-between overflow-hidden h-[70px] w-[90%] rounded-full flex-row items-center  shadow-xl flex-1`}
           >
             {state.routes.map((route, index) => {
               const { options } = descriptors[route.key];
@@ -84,11 +85,28 @@ function MyTabBar({ state, descriptors, navigation }: MyTabBarProps) {
               const getIcon = () => {
                 switch (route.name) {
                   case "serviceHome":
-                    return isFocused ? IconHome : IconHomeBlack;
+                    return isFocused
+                      ? colorScheme === "dark"
+                        ? IconHome
+                        : IconHome
+                      : IconHomeBlack;
+
                   case "search":
-                    return isFocused ? IconSearchSTab : IconSearchBlack;
+                    return isFocused
+                      ? colorScheme === "dark"
+                        ? IconSearchSTab
+                        : IconSearchSTab
+                      : IconSearchBlack;
+
                   case "profile":
-                    return isFocused ? IconProfile : IconProfileBlack;
+                    return isFocused
+                      ? colorScheme === "dark"
+                        ? IconProfile
+                        : IconProfile
+                      : IconProfileBlack;
+
+                  default:
+                    return null;
                 }
               };
 

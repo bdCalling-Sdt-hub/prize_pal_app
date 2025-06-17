@@ -98,9 +98,9 @@ const Page = () => {
             >
               <SvgXml xml={IconSearch} />
               <TextInput
-                style={tw`h-[60px] flex-1 pl-3 `}
+                style={tw`h-[60px] flex-1 pl-3 font-PoppinsMedium dark:text-[#777777]`}
                 placeholder="Search items"
-                placeholderTextColor="text-deepGrey"
+                placeholderTextColor="#777777"
                 onChangeText={handleChange("searchText")}
                 onBlur={handleBlur("searchText")}
                 value={values.searchText}
