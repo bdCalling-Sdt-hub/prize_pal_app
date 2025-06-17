@@ -26,6 +26,7 @@ export default function RootLayout() {
             <Stack.Screen name="choose_r_s" />
             <Stack.Screen name="retailer" />
             <Stack.Screen name="favorite" />
+            <Stack.Screen name="editProfile" />
           </Stack>
         </AlertNotificationRoot>
       </GestureHandlerRootView>
