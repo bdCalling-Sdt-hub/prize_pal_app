@@ -30,22 +30,22 @@ const forgotPassword = () => {
 
   return (
     <KeyboardAvoidingView
-      style={tw`dark:bg-base-dark flex-1  bg-base-light`}
+      style={tw`dark:bg-base-dark flex-1 relative  bg-base-light `}
       enabled={true}
       behavior={"padding"}
     >
-      <ScrollView contentContainerStyle={tw` flex-grow  justify-between`}>
-        <View
-          style={tw`w-[36px] h-[36px] dark:bg-deepGrey bg-primary200 m-4 rounded-md  flex items-center justify-center`}
-        >
-          <Link href="/auth/login">
-            <AntDesign
-              name="left"
-              size={24}
-              color={colorScheme === "dark" ? "white" : "black"}
-            />
-          </Link>
-        </View>
+      <View
+        style={tw`w-[36px] h-[36px] dark:bg-deepGrey bg-primary200 m-4 rounded-md  flex items-center justify-center top-0 z-10 absolute `}
+      >
+        <Link href="/auth/login">
+          <AntDesign
+            name="left"
+            size={24}
+            color={colorScheme === "dark" ? "white" : "black"}
+          />
+        </Link>
+      </View>
+      <ScrollView contentContainerStyle={tw`flex-1  justify-center `}>
         <View
           style={tw` justify-center items-center dark:bg-base-dark  bg-base-light`}
         >

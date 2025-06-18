@@ -33,15 +33,19 @@ const SetNewPassword = () => {
 
   return (
     <KeyboardAvoidingView
-      style={tw`bg-base-light dark:bg-base-dark `}
+      style={tw`bg-base-light dark:bg-base-dark relative`}
       enabled={true}
       behavior={"padding"}
     >
       <View
-        style={tw`w-[36px] h-[36px] dark:bg-deepGrey bg-primary200 m-4 rounded-md  flex items-center justify-center`}
+        style={tw`w-[36px] h-[36px] dark:bg-deepGrey bg-primary200 m-4 rounded-md  flex items-center justify-center absolute z-10 top-0`}
       >
         <Link href="/auth/otp">
-          <AntDesign name="left" size={24} color="black" />
+          <AntDesign
+            name="left"
+            size={24}
+            color={colorScheme === "dark" ? "white" : "black"}
+          />
         </Link>
       </View>
       <ScrollView

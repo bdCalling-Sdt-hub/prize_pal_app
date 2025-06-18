@@ -73,7 +73,7 @@ const Login = () => {
                     <TextInput
                       autoFocus={true}
                       placeholderTextColor="#777777"
-                      style={tw`flex-1 text-base font-Poppins`}
+                      style={tw`flex-1 text-base font-Poppins dark:text-primary`}
                       placeholder="Enter your email"
                       value={values.email}
                       onChangeText={handleChange("email")}
@@ -92,7 +92,7 @@ const Login = () => {
                     />
                     <TextInput
                       autoFocus={true}
-                      style={tw`flex-1 text-base font-Poppins`}
+                      style={tw`flex-1 text-base font-Poppins dark:text-primary`}
                       placeholderTextColor="#777777"
                       placeholder="Enter your password"
                       value={values.password}

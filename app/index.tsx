@@ -36,7 +36,7 @@ const App = () => {
 
     setTimeout(() => {
       // router.replace("/services/drawer/Settings/setting");
-      router.replace("/editProfile/loginSignUp");
+      router.replace("/auth/successfullMassge");
       // router.replace("/Settings/changePass");
     }, 1000);
   }, []);
