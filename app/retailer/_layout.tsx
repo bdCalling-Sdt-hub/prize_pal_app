@@ -5,6 +5,7 @@ import {
   IconBackDark,
   IconClose,
   IconCloseDark,
+  IconLogout,
   IconPrivacy,
   IconPrivacyDark,
   IconService,
@@ -115,7 +116,7 @@ function CustomDrawerContent(props: DrawerContentComponentProps) {
         <TouchableOpacity
           onPress={() => {
             props?.navigation?.closeDrawer();
-            router.push("/retailer/home/profile");
+            router.push("/services/drawer/servicesHome/serviceHome");
           }}
           style={tw`flex-row justify-between items-center px-3 dark:bg-darkPrimary py-4 rounded-b-xl`}
         >
@@ -223,6 +224,21 @@ function CustomDrawerContent(props: DrawerContentComponentProps) {
             <SvgXml xml={colorScheme === "dark" ? IconBackDark : IconBack} />
           </TouchableOpacity>
         </View>
+        <TouchableOpacity
+          onPress={() => {
+            props?.navigation?.closeDrawer();
+            router.push("/auth/login");
+          }}
+          style={tw`flex-row justify-between items-center px-3 dark:bg-darkPrimary bg-primary py-4  rounded-xl`}
+        >
+          <View style={tw`flex-row gap-4 items-center `}>
+            <View style={tw`bg-[#FFDDDD]  p-3 rounded-full`}>
+              <SvgXml xml={IconLogout} />
+            </View>
+            <Text style={tw`text-[#FF3737] font-medium text-lg`}>Logout</Text>
+          </View>
+          <SvgXml xml={colorScheme === "dark" ? IconBackDark : IconBack} />
+        </TouchableOpacity>
       </View>
     </DrawerContentScrollView>
   );

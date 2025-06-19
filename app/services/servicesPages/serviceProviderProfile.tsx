@@ -185,10 +185,6 @@ const ServiceProviderProfile = () => {
           )}
         />
 
-        {/* <View style={tw` flex-row justify-start items-center my-3 gap-2`}>
-         
-        </View> */}
-
         <FlatList
           horizontal
           data={Images}
@@ -218,6 +214,9 @@ const ServiceProviderProfile = () => {
           </TouchableOpacity>
           <TouchableOpacity
             style={tw` flex-row justify-center items-center bg-SPrimary rounded-full py-3 w-44 gap-2`}
+            onPress={() =>
+              router.push("/services/servicesPages/bookNow/zepcode")
+            }
           >
             <SvgXml xml={IconSTimerWhite} />
             <Text style={tw`font-DegularDisplayMedium text-lg text-white`}>

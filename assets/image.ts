@@ -25,3 +25,4 @@ export const ImgProviderThree = require("@/assets/images/providerThree.jpg");
 export const ImgProviderFour = require("@/assets/images/providerFour.jpg");
 
 export const ImgReviewProfile = require("@/assets/images/reviewProfile.jpg");
+export const zipcode = require("@/assets/images/services/zipcode.jpg");
