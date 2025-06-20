@@ -1,12 +1,14 @@
 import { zipcode } from "@/assets/image";
-import { IconBackBlack, IconLoctionBlack, IconNext } from "@/icons/icon";
+import { IconAdd, IconBackBlack, IconCloseDark, IconNext } from "@/icons/icon";
 import tw from "@/lib/tailwind";
 import { BlurView } from "expo-blur";
 import { Image } from "expo-image";
 import { LinearGradient } from "expo-linear-gradient";
 import { router } from "expo-router";
+import { useState } from "react";
 import {
   KeyboardAvoidingView,
+  Modal,
   ScrollView,
   StyleSheet,
   Text,
@@ -16,7 +18,9 @@ import {
 } from "react-native";
 import { SvgXml } from "react-native-svg";
 
-export default function Zepcode() {
+export default function buttonType() {
+  const [visible, setVisible] = useState(false);
+
   return (
     <KeyboardAvoidingView
       style={tw`flex-1 `}
@@ -75,9 +79,8 @@ export default function Zepcode() {
                   tw` py-5 px-7 flex-row items-center gap-3 w-full `,
                 ]}
               >
-                <SvgXml xml={IconLoctionBlack} />
                 <Text style={tw` text-black font-PoppinsMedium  text-lg`}>
-                  Enter the location of your home
+                  Quantity of Rooms
                 </Text>
               </BlurView>
             </View>
@@ -86,22 +89,22 @@ export default function Zepcode() {
               blurReductionFactor={40}
               intensity={120}
               tint="default"
-              style={[styles.blurContainer, tw`py-9 px-7 `]}
+              style={[styles.blurContainer, tw`py-9 px-7 flex-col gap-5`]}
             >
-              {/* Zip Code Input */}
-              <TextInput
-                placeholder="Zip Code"
-                placeholderTextColor="black"
-                style={[
-                  tw` border rounded-2xl px-4 py-5 mb-4 text-black font-PoppinsMedium  text-base`,
-                ]}
-              />
               {/* Next Button */}
               <TouchableOpacity
+                style={tw`bg-primary  rounded-2xl py-4 flex-row justify-center gap-3 items-center`}
+                onPress={() => setVisible(true)}
+              >
+                <SvgXml xml={IconAdd} />
+                <Text
+                  style={tw`text-SPrimary bg-primary  font-semibold font-PoppinsMedium text-lg `}
+                >
+                  Add
+                </Text>
+              </TouchableOpacity>
+              <TouchableOpacity
                 style={tw`bg-SPrimary  rounded-2xl py-4 flex-row justify-center gap-3 items-center`}
-                onPress={() =>
-                  router.push("/services/servicesPages/bookNow/redioInput")
-                }
               >
                 <Text
                   style={tw`text-white font-semibold font-PoppinsMedium text-lg `}
@@ -113,6 +116,60 @@ export default function Zepcode() {
             </BlurView>
           </View>
         </View>
+        <Modal
+          transparent={true}
+          animationType="slide"
+          visible={visible}
+          onRequestClose={() => setVisible(false)}
+          style={tw`bg-orange-500`}
+        >
+          <View style={tw`flex-1  justify-end `}>
+            <View style={tw` bg-base-light dark:bg-base-dark rounded-t-2xl`}>
+              <View
+                style={tw`flex-row  justify-between bg-SPrimary p-4 items-center rounded-t-2xl`}
+              >
+                <Text style={tw`font-PoppinsSemiBold text-xl`}></Text>
+                <Text style={tw`font-PoppinsSemiBold text-xl text-primary `}>
+                  Add Room
+                </Text>
+                <View>
+                  <TouchableOpacity
+                    style={tw`border w-10 flex-row border-white rounded-full  items-center justify-center py-3`}
+                    onPress={() => setVisible(false)}
+                  >
+                    <SvgXml xml={IconCloseDark} />
+                  </TouchableOpacity>
+                </View>
+              </View>
+              <View style={tw`mx-7 my-9`}>
+                <TextInput
+                  placeholder="Type name of the room"
+                  placeholderTextColor="black"
+                  style={[
+                    tw` border rounded-2xl px-4 py-5 mb-4 text-black font-PoppinsMedium  text-base`,
+                  ]}
+                />
+                <TextInput
+                  placeholder="Quantity"
+                  placeholderTextColor="black"
+                  style={[
+                    tw` border dark:border-white rounded-2xl px-4 py-5 mb-4 text-black font-PoppinsMedium  text-base`,
+                  ]}
+                />
+
+                <TouchableOpacity
+                  style={tw`bg-SPrimary mt-9 rounded-2xl py-4 flex-row justify-center gap-3 items-center`}
+                >
+                  <Text
+                    style={tw`text-white font-semibold font-PoppinsMedium text-lg `}
+                  >
+                    Save
+                  </Text>
+                </TouchableOpacity>
+              </View>
+            </View>
+          </View>
+        </Modal>
       </ScrollView>
     </KeyboardAvoidingView>
   );

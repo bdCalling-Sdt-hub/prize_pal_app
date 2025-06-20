@@ -36,8 +36,8 @@ const App = () => {
 
     setTimeout(() => {
       // router.replace("/services/drawer/Settings/setting");
-      router.replace("/services/servicesPages/bookNow/zepcode");
-      // router.replace("/Settings/changePass");
+      router.replace("/services/servicesPages/bookNow/buttonType");
+      // router.replace("/choose_r_s");
     }, 1000);
   }, []);
 
