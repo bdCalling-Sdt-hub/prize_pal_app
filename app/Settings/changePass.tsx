@@ -135,9 +135,6 @@ const changePass = () => {
           </Formik>
           <TouchableOpacity
             style={tw`bg-primaryBlack dark:bg-primary rounded-full mb-6`}
-            onPress={() => {
-              router.push("/choose_r_s");
-            }}
           >
             <Text
               style={tw`text-primaryFF dark:text-primaryBlack text-center font-semibold text-lg py-[14px] font-PoppinsBold`}

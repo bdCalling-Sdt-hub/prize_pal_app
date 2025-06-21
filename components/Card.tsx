@@ -24,7 +24,7 @@ const Card = ({ item }: any) => {
               {item.category}
             </Text>
             <Text
-              style={tw`font-normal text-base font-Poppins text-deepGrey dark:text-`}
+              style={tw`font-normal text-base font-Poppins text-deepGrey dark:text-primaryFF`}
             >
               {item.productsCount} products
             </Text>

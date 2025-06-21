@@ -14,7 +14,6 @@ import {
   IconSNotification,
 } from "@/icons/icon";
 import tw from "@/lib/tailwind";
-import AsyncStorage from "@react-native-async-storage/async-storage";
 import { router, useNavigation } from "expo-router";
 import { Formik } from "formik";
 import React from "react";
@@ -39,22 +38,6 @@ const ServiceHome = () => {
       style={tw`flex-1 bg-base-light dark:bg-base-dark pb-20`}
     >
       <View style={tw`px-5 pb-24`}>
-        {/* ============= theme toggle button ========================== */}
-        <TouchableOpacity
-          onPress={async () => {
-            AsyncStorage.setItem(
-              "mode",
-              colorScheme === "dark" ? "light" : "dark"
-            );
-            toggleColorScheme();
-          }}
-        >
-          <Text
-            style={tw`dark:text-white text-black bg-green-500 rounded-full p-2`}
-          >
-            {colorScheme === "dark" ? "Make light" : "Make Dark"}
-          </Text>
-        </TouchableOpacity>
         {/* ================= header -================= */}
         <View style={tw`flex-row justify-between items-center my-5`}>
           <TouchableOpacity

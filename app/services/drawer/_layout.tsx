@@ -2,8 +2,11 @@ import { useTheme } from "@/app/context/ThemeProvider";
 import {
   IconAboutAsBlack,
   IconAboutAsWhite,
+  IconBack,
+  IconBackDark,
   IconCrossBlack,
   IconCrossWhite,
+  IconLogout,
   IconMyBookingBlack,
   IconMyBookingWhite,
   IconPrivacyBlack,
@@ -38,7 +41,7 @@ function CustomDrawerContent(props: DrawerContentComponentProps) {
     <DrawerContentScrollView
       showsVerticalScrollIndicator={false}
       {...props}
-      style={tw`dark:bg-black`}
+      style={tw`bg-base-light dark:bg-base-dark`}
     >
       <View style={tw`flex-row items-center justify-between pb-5`}>
         <Text style={tw`text-2xl font-normal dark:text-white`}>
@@ -276,6 +279,21 @@ function CustomDrawerContent(props: DrawerContentComponentProps) {
             />
           </TouchableOpacity>
         </View>
+        <TouchableOpacity
+          onPress={() => {
+            props?.navigation?.closeDrawer();
+            router.push("/auth/login");
+          }}
+          style={tw`flex-row justify-between items-center px-3 dark:bg-darkPrimary bg-primary py-4  rounded-xl`}
+        >
+          <View style={tw`flex-row gap-4 items-center `}>
+            <View style={tw`bg-[#FFDDDD]  p-3 rounded-full`}>
+              <SvgXml xml={IconLogout} />
+            </View>
+            <Text style={tw`text-[#FF3737] font-medium text-lg`}>Logout</Text>
+          </View>
+          <SvgXml xml={colorScheme === "dark" ? IconBackDark : IconBack} />
+        </TouchableOpacity>
       </View>
     </DrawerContentScrollView>
   );

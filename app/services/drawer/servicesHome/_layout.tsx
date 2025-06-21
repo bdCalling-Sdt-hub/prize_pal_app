@@ -143,14 +143,6 @@ function MyTabBar({ state, descriptors, navigation }: MyTabBarProps) {
                         isFocused ? tw`text-white` : tw`text-[#8E8E93]`,
                       ]}
                     />
-                    {/* <Text
-                  style={[
-                    tw`text-xs`,
-                    isFocused ? tw`text-white font-bold` : tw`text-[#8E8E93]`,
-                  ]}
-                >
-                  {label}
-                </Text> */}
                   </View>
                 </TouchableOpacity>
               );
@@ -167,7 +159,6 @@ export default function TabLayout() {
     <Tabs
       screenOptions={{
         headerShown: false,
-        // tabBarHideOnKeyboard: true,
       }}
       tabBar={(props: any) => <MyTabBar {...props} />}
     >

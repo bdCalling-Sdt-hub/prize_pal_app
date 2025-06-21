@@ -1,10 +1,10 @@
+import { useTheme } from "@/app/context/ThemeProvider";
 import {
   IconBackBlack,
   IconBackWhite,
   IconSMyBookingsStatic,
 } from "@/icons/icon";
 import tw from "@/lib/tailwind";
-import { useTheme } from "@react-navigation/native";
 import { router } from "expo-router";
 import React from "react";
 import { FlatList, Pressable, Text, View } from "react-native";
@@ -44,16 +44,19 @@ const MyBooking = () => {
     return (
       <View style={tw`flex-row justify-between items-center my-5`}>
         <View style={tw`flex-row gap-8 justify-center items-center`}>
-          <Pressable onPress={() => router.back()} style={tw` `}>
+          <Pressable
+            onPress={() => router.back()}
+            style={tw`flex-row items-center gap-5`}
+          >
             <SvgXml
               xml={colorScheme === "dark" ? IconBackWhite : IconBackBlack}
             />
+            <Text
+              style={tw`font-DegularDisplaySemibold text-base text-black dark:text-white`}
+            >
+              Back
+            </Text>
           </Pressable>
-          <Text
-            style={tw`font-DegularDisplaySemibold text-base text-black dark:text-white`}
-          >
-            Back
-          </Text>
         </View>
         <Text> </Text>
       </View>

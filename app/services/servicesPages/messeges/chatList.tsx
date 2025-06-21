@@ -15,17 +15,17 @@ const chatList = () => {
         <View style={tw`flex-row gap-5 justify-center items-center`}>
           <Pressable
             onPress={() => router.back()}
-            style={tw`w-10 h-10 flex justify-center items-center rounded-full `}
+            style={tw` flex-row items-center justify-center rounded-full `}
           >
             <SvgXml
               xml={colorScheme === "dark" ? IconBackWhite : IconBackBlack}
             />
+            <Text
+              style={tw`font-DegularDisplaySemibold text-base text-black dark:text-white`}
+            >
+              Chat with providers
+            </Text>
           </Pressable>
-          <Text
-            style={tw`font-DegularDisplaySemibold text-base text-black dark:text-white`}
-          >
-            Chat with providers
-          </Text>
         </View>
         <Text> </Text>
       </View>

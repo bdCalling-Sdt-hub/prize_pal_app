@@ -18,15 +18,19 @@ const OTP = () => {
 
   return (
     <KeyboardAvoidingView
-      style={tw`dark:bg-base-dark  bg-base-light`}
+      style={tw`dark:bg-base-dark  bg-base-light relative`}
       enabled={true}
       behavior={"padding"}
     >
       <View
-        style={tw`w-[36px] h-[36px] dark:bg-deepGrey bg-primary200 m-4 rounded-md  flex items-center justify-center`}
+        style={tw`w-[36px] h-[36px] dark:bg-deepGrey bg-primary200 m-4 rounded-md  flex items-center justify-center absolute z-10 top-0`}
       >
         <Link href="/auth/forgot_password">
-          <AntDesign name="left" size={24} color="black" />
+          <AntDesign
+            name="left"
+            size={24}
+            color={colorScheme === "dark" ? "white" : "black"}
+          />
         </Link>
       </View>
       <ScrollView
@@ -69,6 +73,11 @@ const OTP = () => {
                         borderWidth: 1,
                         borderRadius: 9999,
                         borderColor: colorScheme === "dark" ? "#fff" : "#000",
+                      },
+                      pinCodeTextStyle: {
+                        color: colorScheme === "dark" ? "#fff" : "#000",
+                        fontSize: 20,
+                        fontWeight: "bold",
                       },
                     }}
                   />

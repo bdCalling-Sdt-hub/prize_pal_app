@@ -39,20 +39,20 @@ const editServicesProfile = () => {
         <View style={tw` h-[100%] m-5`}>
           {/*  ------------ bottom header ------------------- */}
           <View style={tw`flex-row justify-between items-center`}>
-            <View style={tw`flex-row gap-5 justify-center items-center`}>
+            <View style={tw`flex-row  justify-center items-center`}>
               <Pressable
                 onPress={() => router.back()}
-                style={tw`w-14 h-14 flex justify-center items-center rounded-full `}
+                style={tw`w-14 h-14 flex-row gap-5 justify-center items-center rounded-full `}
               >
                 <SvgXml
                   xml={colorScheme === "dark" ? IconBackWhite : IconBackBlack}
                 />
+                <Text
+                  style={tw`font-DegularDisplaySemibold text-base text-black gap-5 dark:text-white`}
+                >
+                  Back
+                </Text>
               </Pressable>
-              <Text
-                style={tw`font-DegularDisplaySemibold text-base text-black dark:text-white`}
-              >
-                Back
-              </Text>
             </View>
             <Text> </Text>
           </View>

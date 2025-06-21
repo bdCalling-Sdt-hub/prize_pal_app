@@ -36,16 +36,19 @@ const Setting = () => {
       {/* --------------- header back -------------------- */}
       <View style={tw`flex-row justify-between items-center my-3`}>
         <View style={tw`flex-row gap-8 justify-center items-center`}>
-          <Pressable onPress={() => router.back()} style={tw` `}>
+          <Pressable
+            onPress={() => router.back()}
+            style={tw`flex-row items-center gap-5 `}
+          >
             <SvgXml
               xml={colorScheme === "dark" ? IconBackWhite : IconBackBlack}
             />
+            <Text
+              style={tw`font-DegularDisplaySemibold text-base text-black dark:text-white`}
+            >
+              Back
+            </Text>
           </Pressable>
-          <Text
-            style={tw`font-DegularDisplaySemibold text-base text-black dark:text-white`}
-          >
-            Back
-          </Text>
         </View>
         <Text></Text>
       </View>
