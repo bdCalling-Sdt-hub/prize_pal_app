@@ -202,6 +202,9 @@ const ServiceProviderProfile = () => {
         <View style={tw`flex-row justify-between items-center gap-2 my-3`}>
           <TouchableOpacity
             style={tw`border border-black flex-row justify-center items-center rounded-full py-3 w-44 gap-2`}
+            onPress={() =>
+              router.push("/services/servicesPages/messeges/messeging")
+            }
           >
             <SvgXml
               xml={colorScheme === "dark" ? IconMessageWhite : IconMessageBlack}

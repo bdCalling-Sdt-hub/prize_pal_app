@@ -36,7 +36,7 @@ const App = () => {
 
     setTimeout(() => {
       // router.replace("/services/drawer/Settings/setting");
-      router.replace("/services/servicesPages/bookNow/buttonType");
+      router.replace("/services/servicesPages/bookNow/calendarType");
       // router.replace("/choose_r_s");
     }, 1000);
   }, []);

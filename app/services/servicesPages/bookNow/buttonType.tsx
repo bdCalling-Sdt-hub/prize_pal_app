@@ -1,4 +1,4 @@
-import { zipcode } from "@/assets/image";
+import { servicesSeven } from "@/assets/image";
 import { IconAdd, IconBackBlack, IconCloseDark, IconNext } from "@/icons/icon";
 import tw from "@/lib/tailwind";
 import { BlurView } from "expo-blur";
@@ -31,7 +31,7 @@ export default function buttonType() {
         contentContainerStyle={tw`flex-grow justify-center relative `}
       >
         <Image
-          source={zipcode}
+          source={servicesSeven}
           contentFit="cover"
           style={tw`h-full w-full absolute justify-center items-center z-0 opacity-100`}
         />
@@ -40,6 +40,7 @@ export default function buttonType() {
             "transparent",
             "transparent",
             "transparent",
+            "rgba(0,0,0,0.8)",
             "rgba(0,0,0,0.8)",
           ]}
           style={tw`absolute h-full w-full z-0`}
@@ -105,6 +106,9 @@ export default function buttonType() {
               </TouchableOpacity>
               <TouchableOpacity
                 style={tw`bg-SPrimary  rounded-2xl py-4 flex-row justify-center gap-3 items-center`}
+                onPress={() =>
+                  router.push("/services/servicesPages/bookNow/calendarType")
+                }
               >
                 <Text
                   style={tw`text-white font-semibold font-PoppinsMedium text-lg `}
@@ -144,16 +148,16 @@ export default function buttonType() {
               <View style={tw`mx-7 my-9`}>
                 <TextInput
                   placeholder="Type name of the room"
-                  placeholderTextColor="black"
+                  placeholderTextColor="#777777"
                   style={[
-                    tw` border rounded-2xl px-4 py-5 mb-4 text-black font-PoppinsMedium  text-base`,
+                    tw` border rounded-2xl px-4 dark:border-white py-5 mb-4 text-black font-PoppinsMedium  text-base`,
                   ]}
                 />
                 <TextInput
                   placeholder="Quantity"
-                  placeholderTextColor="black"
+                  placeholderTextColor="#777777"
                   style={[
-                    tw` border dark:border-white rounded-2xl px-4 py-5 mb-4 text-black font-PoppinsMedium  text-base`,
+                    tw` border dark:border-white rounded-2xl px-4 py-5 mb-4 text-black dark:text-primary font-PoppinsMedium  text-base`,
                   ]}
                 />
 

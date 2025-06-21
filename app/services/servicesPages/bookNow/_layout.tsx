@@ -11,6 +11,7 @@ const BooknowRoot = () => {
       <Stack.Screen name="zepcode" />
       <Stack.Screen name="redioInput" />
       <Stack.Screen name="buttonType" />
+      <Stack.Screen name="calendarType" />
     </Stack>
   );
 };

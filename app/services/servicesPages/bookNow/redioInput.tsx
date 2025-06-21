@@ -35,7 +35,7 @@ const RadioInput = () => {
         <Image
           source={servicesSix}
           contentFit="cover"
-          style={tw`h-full w-full absolute justify-center items-center z-0 opacity-100`}
+          style={tw`h-full w-full absolute justify-center items-center z-0`}
         />
         <LinearGradient
           colors={[
