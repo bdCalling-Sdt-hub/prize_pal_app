@@ -90,7 +90,7 @@ function CustomDrawerContent(props: DrawerContentComponentProps) {
           <TouchableOpacity
             onPress={() => {
               props?.navigation?.closeDrawer();
-              router.push("/editProfile/loginSignUp");
+              router.push("/editProfiles/loginSignUp");
             }}
             style={tw`flex-row justify-between items-center px-3  py-4  `}
           >
@@ -140,7 +140,7 @@ function CustomDrawerContent(props: DrawerContentComponentProps) {
           <TouchableOpacity
             onPress={() => {
               props?.navigation?.closeDrawer();
-              router.push("/Settings/Settings");
+              router.push("/Settings/Setting");
             }}
             style={tw`flex-row justify-between items-center px-3 dark:bg-darkPrimary bg-primary py-4  rounded-t-xl`}
           >

@@ -101,7 +101,7 @@ const Page = () => {
               <Btn>
                 <TouchableOpacity
                   onPress={() => {
-                    router.push("/editProfile/editProfile");
+                    router.push("/editProfiles/editProfile");
                   }}
                 >
                   <View style={tw`flex-row justify-center items-center gap-3`}>

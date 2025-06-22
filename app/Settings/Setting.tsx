@@ -18,7 +18,7 @@ import { Pressable, Switch, Text, TouchableOpacity, View } from "react-native";
 import { SvgXml } from "react-native-svg";
 import { useTheme } from "../context/ThemeProvider";
 
-const Settings = () => {
+const Setting = () => {
   const [isEnabled, setIsEnabled] = useState(false);
   const toggleSwitch = () => setIsEnabled((previousState) => !previousState);
   const { toggleColorScheme, colorScheme } = useTheme();
@@ -117,4 +117,4 @@ const Settings = () => {
   );
 };
 
-export default Settings;
+export default Setting;
