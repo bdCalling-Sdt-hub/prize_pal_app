@@ -29,7 +29,7 @@ export default function Zepcode() {
         <Image
           source={zipcode}
           contentFit="cover"
-          style={tw`h-full w-full absolute justify-center items-center z-0 opacity-100`}
+          style={tw`h-full w-full absolute justify-center items-center z-0`}
         />
         <LinearGradient
           colors={[
@@ -44,7 +44,7 @@ export default function Zepcode() {
           {/* Remodeling Header */}
           <TouchableOpacity onPress={() => router.back()}>
             <BlurView
-              experimentalBlurMethod="dimezisBlurView"
+              // experimentalBlurMethod="dimezisBlurView"
               blurReductionFactor={40}
               intensity={120}
               tint="default"
@@ -66,7 +66,7 @@ export default function Zepcode() {
               style={tw` rounded-full flex-row items-center justify-center px-4 py-3 `}
             >
               <BlurView
-                experimentalBlurMethod="dimezisBlurView"
+                // experimentalBlurMethod="dimezisBlurView"
                 blurReductionFactor={100}
                 intensity={120}
                 tint="default"
@@ -82,7 +82,7 @@ export default function Zepcode() {
               </BlurView>
             </View>
             <BlurView
-              experimentalBlurMethod="dimezisBlurView"
+              // experimentalBlurMethod="dimezisBlurView"
               blurReductionFactor={40}
               intensity={120}
               tint="default"

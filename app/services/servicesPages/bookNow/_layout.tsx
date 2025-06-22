@@ -12,6 +12,7 @@ const BooknowRoot = () => {
       <Stack.Screen name="redioInput" />
       <Stack.Screen name="buttonType" />
       <Stack.Screen name="calendarType" />
+      <Stack.Screen name="booking" />
     </Stack>
   );
 };
