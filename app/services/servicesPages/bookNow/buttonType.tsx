@@ -41,7 +41,6 @@ export default function buttonType() {
             "transparent",
             "transparent",
             "rgba(0,0,0,0.8)",
-            "rgba(0,0,0,0.8)",
           ]}
           style={tw`absolute h-full w-full z-0`}
         />
@@ -49,7 +48,6 @@ export default function buttonType() {
           {/* Remodeling Header */}
           <TouchableOpacity onPress={() => router.back()}>
             <BlurView
-              experimentalBlurMethod="dimezisBlurView"
               blurReductionFactor={40}
               intensity={120}
               tint="default"
@@ -59,9 +57,7 @@ export default function buttonType() {
               ]}
             >
               <SvgXml style={tw`font-Poppins`} xml={IconBackBlack} />
-              <Text style={tw`text-black font-Poppins text-base `}>
-                Remodeling
-              </Text>
+              <Text style={tw`text-black font-Poppins text-base `}>Back</Text>
             </BlurView>
           </TouchableOpacity>
 
@@ -71,7 +67,6 @@ export default function buttonType() {
               style={tw` rounded-full flex-row items-center justify-center px-4 py-3 `}
             >
               <BlurView
-                experimentalBlurMethod="dimezisBlurView"
                 blurReductionFactor={100}
                 intensity={120}
                 tint="default"
@@ -86,7 +81,6 @@ export default function buttonType() {
               </BlurView>
             </View>
             <BlurView
-              experimentalBlurMethod="dimezisBlurView"
               blurReductionFactor={40}
               intensity={120}
               tint="default"

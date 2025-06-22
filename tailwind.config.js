@@ -39,6 +39,7 @@ module.exports = {
         deepGrey: "#888888",
         deepGrey50: "#505050",
         deepGrey80: "#535353",
+        deepGrey20: "#646464",
         deepGrey2D: "#2D2D2D",
         deepGreycc: "#cccccc",
         primaryBlack: "#121212",

@@ -54,17 +54,17 @@ const Setting = () => {
       </View>
 
       <View style={tw`my-5`}>
-        <View style={tw`bg-primary dark:bg-deepGrey rounded-2xl`}>
+        <View style={tw`bg-primary dark:bg-darkPrimary rounded-2xl`}>
           {/* add page */}
           <TouchableOpacity
             // onPress={() => {
             //   router.push("/services/drawer/servicesHome/profile");
             // }}
-            style={tw`flex-row justify-between items-center px-3 bg-primary dark:bg-deepGrey py-4 rounded-xl`}
+            style={tw`flex-row justify-between items-center px-3 bg-primary dark:bg-darkPrimary py-4 rounded-xl`}
           >
             <View style={tw`flex-row  items-center `}>
               <View
-                style={tw`w-10 h-10 rounded-full justify-center items-center bg-deepGreycc mr-4`}
+                style={tw`w-10 h-10  justify-center items-center bg-deepGreycc dark:bg-deepGrey80 rounded-3xl  mr-4`}
               >
                 <SvgXml
                   xml={
@@ -91,11 +91,11 @@ const Setting = () => {
             onPress={() => {
               router.push("/services/drawer/servicesHome/profile");
             }}
-            style={tw`flex-row justify-between items-center px-3 bg-primary dark:bg-deepGrey py-4 rounded-xl`}
+            style={tw`flex-row justify-between items-center px-3 bg-primary dark:bg-darkPrimary py-4 rounded-xl`}
           >
             <View style={tw`flex-row  items-center `}>
               <View
-                style={tw`w-10 h-10 rounded-full justify-center items-center bg-deepGreycc mr-4`}
+                style={tw`w-10 h-10  justify-center items-center bg-deepGreycc dark:bg-deepGrey80 rounded-3xl mr-4`}
               >
                 <SvgXml
                   xml={
@@ -120,11 +120,11 @@ const Setting = () => {
             // onPress={() => {
             //   router.push("/retailer/home/profile");
             // }}
-            style={tw`flex-row justify-between items-center px-3 bg-primary dark:bg-deepGrey py-4 rounded-xl`}
+            style={tw`flex-row justify-between items-center px-3 bg-primary dark:bg-darkPrimary  py-4 rounded-xl`}
           >
             <View style={tw`flex-row  items-center `}>
               <View
-                style={tw`w-10 h-10 rounded-full justify-center items-center bg-deepGreycc mr-4`}
+                style={tw`w-10 h-10  justify-center items-center bg-deepGreycc dark:bg-deepGrey80 rounded-3xl mr-4`}
               >
                 <SvgXml
                   xml={

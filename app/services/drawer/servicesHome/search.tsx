@@ -7,6 +7,7 @@ import {
 } from "@/assets/image";
 import { IconRightArrowConner, IconSearch } from "@/icons/icon";
 import tw from "@/lib/tailwind";
+import { LinearGradient } from "expo-linear-gradient";
 import { Formik } from "formik";
 import React, { JSX } from "react";
 import {
@@ -62,6 +63,15 @@ const Search = () => {
         <Image
           style={tw`relative w-44 h-36 rounded-2xl `}
           source={item.image}
+        />
+        <LinearGradient
+          colors={[
+            "transparent",
+            "transparent",
+            "rgba(0,0,0,0.8)",
+            "rgba(0,0,0,0.8)",
+          ]}
+          style={tw`absolute h-full w-full z-0`}
         />
         <View
           style={tw`absolute bottom-3 flex-row justify-between items-center w-full px-2`}

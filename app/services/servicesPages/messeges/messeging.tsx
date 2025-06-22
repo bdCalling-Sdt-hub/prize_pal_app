@@ -4,14 +4,15 @@ import {
   Pressable,
   Text,
   TextInput,
+  TouchableOpacity,
   TouchableWithoutFeedback,
   View,
 } from "react-native";
 
-import { IconBackBlack, IconBackWhite } from "@/icons/icon";
-import TButton from "@/lib/buttons/TButton";
+import { IconBackBlack, IconBackWhite, IconSend } from "@/icons/icon";
 import tw from "@/lib/tailwind";
-import { useTheme } from "@react-navigation/native";
+
+import { useTheme } from "@/app/context/ThemeProvider";
 import { useRouter } from "expo-router";
 import React from "react";
 import { SvgXml } from "react-native-svg";
@@ -150,7 +151,7 @@ const message = () => {
                       {item.time}
                     </Text>
                     <View
-                      style={tw`flex-1 bg-SPrimary  p-3 rounded-l-2xl rounded-b-2xl`}
+                      style={tw`flex-1 bg-deepGreen  p-3 rounded-l-2xl rounded-b-2xl`}
                     >
                       <Text
                         style={tw`text-base  text-base-light dark:text-base-dark font-DegularDisplayMedium`}
@@ -177,10 +178,10 @@ const message = () => {
                   />
                   <View style={tw`flex-1 flex-row items-end gap-2`}>
                     <View
-                      style={tw`flex-1 border  border-[#0000001A] bg-white dark:bg-deepGrey  p-3 rounded-r-2xl rounded-b-2xl`}
+                      style={tw`flex-1 border  border-[#0000001A] bg-white  dark:bg-deepGrey  p-3 rounded-r-2xl rounded-b-2xl`}
                     >
                       <Text
-                        style={tw`text-base dark:text-deepGrey50  text-white font-DegularDisplayMedium`}
+                        style={tw`text-base text-deepGrey  dark:text-white font-DegularDisplayMedium`}
                       >
                         {item.message}
                       </Text>
@@ -197,35 +198,20 @@ const message = () => {
           )}
         />
         <View
-          style={tw`flex-row items-center border border-gray-200 mx-3 m-3 rounded-full  gap-2`}
+          style={tw`flex-row items-center  border-gray-200 mx-3 m-3 rounded-full  gap-2`}
         >
           <TextInput
-            style={tw`flex-1 bg-white px-4 rounded-md`}
+            style={tw`flex-1 bg-primaryFF dark:bg-darkPrimary px-4 rounded-md`}
             placeholder="Type a message"
-            placeholderTextColor={tw`dark:text-base-light`}
+            placeholderTextColor="#777777"
             value={message}
             onChangeText={(text) => setMessage(text)}
           />
-          <TButton
-            title="Send"
-            onPress={() => {
-              // Send message
-              setAllMessages((pre) => {
-                return [
-                  ...pre,
-                  {
-                    id: pre.length + 1,
-                    user: true,
-                    name: "You",
-                    time: new Date().toLocaleTimeString(),
-                    message: message,
-                  },
-                ];
-              });
-            }}
-            containerStyle={tw` bg-transparent px-4`}
-            titleStyle={tw`text-deepGrey80 dark:text-base-light text-base font-DegularDisplayBold`}
-          />
+          <TouchableOpacity
+            style={tw`bg-deepGreen p-3 rounded-lg flex-row items-center justify-center`}
+          >
+            <SvgXml xml={colorScheme === "dark" ? IconSend : IconBackWhite} />
+          </TouchableOpacity>
         </View>
       </View>
     </TouchableWithoutFeedback>

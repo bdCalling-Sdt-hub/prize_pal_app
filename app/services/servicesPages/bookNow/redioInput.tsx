@@ -42,11 +42,6 @@ const RadioInput = () => {
             "transparent",
             "transparent",
             "transparent",
-            "transparent",
-            "transparent",
-            "transparent",
-            "rgba(0,0,0,0.8)",
-            "rgba(0,0,0,0.8)",
             "rgba(0,0,0,0.8)",
           ]}
           style={tw`absolute h-full w-full z-0`}
@@ -55,7 +50,6 @@ const RadioInput = () => {
           {/* Remodeling Header */}
           <TouchableOpacity onPress={() => router.back()}>
             <BlurView
-              experimentalBlurMethod="dimezisBlurView"
               blurReductionFactor={500}
               intensity={120}
               tint="default"
@@ -75,7 +69,6 @@ const RadioInput = () => {
               style={tw`rounded-full flex-row items-center justify-center px-4 py-3`}
             >
               <BlurView
-                experimentalBlurMethod="dimezisBlurView"
                 blurReductionFactor={500}
                 intensity={120}
                 tint="default"
@@ -92,7 +85,6 @@ const RadioInput = () => {
             </View>
 
             <BlurView
-              experimentalBlurMethod="dimezisBlurView"
               blurReductionFactor={500}
               intensity={120}
               tint="default"
