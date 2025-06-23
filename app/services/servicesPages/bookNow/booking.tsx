@@ -1,7 +1,6 @@
 import { useTheme } from "@/app/context/ThemeProvider";
+import { prossingGif } from "@/assets/image";
 import {
-  IconAddBlack,
-  IconAddWhite,
   IconBackBlack,
   IconBackWhite,
   IconEdit,
@@ -13,10 +12,10 @@ import {
   IconTimeDark,
 } from "@/icons/icon";
 import tw from "@/lib/tailwind";
+import { Image } from "expo-image";
 import { router } from "expo-router";
 import React, { useState } from "react";
 import {
-  ActivityIndicator,
   Modal,
   ScrollView,
   StyleSheet,
@@ -48,7 +47,7 @@ const booking = () => {
                 Back
               </Text>
             </TouchableOpacity>
-            <TouchableOpacity
+            {/* <TouchableOpacity
               style={tw`py-2 px-3 dark:bg-darkPrimary flex-row  items-center gap-3 border rounded-2xl border-black dark:border-deepGrey20`}
               onPress={() =>
                 router.push("/services/servicesPages/serviceProviderProfile")
@@ -63,7 +62,7 @@ const booking = () => {
               >
                 Add another service
               </Text>
-            </TouchableOpacity>
+            </TouchableOpacity> */}
           </View>
 
           <View style={tw`bg-primary dark:bg-darkPrimary rounded-2xl p-5 mt-4`}>
@@ -261,23 +260,21 @@ const booking = () => {
         >
           <View style={styles.modalContainer}>
             <View
-              style={tw`bg-base-light dark:bg-darkSecoundary rounded-xl p-6 w-11/12 max-w-md`}
+              style={tw`bg-base-light   dark:bg-darkSecoundary rounded-xl p-6 w-11/12 max-w-md`}
             >
-              <ActivityIndicator
-                size="large"
-                color="#007AFF"
-                style={tw`mb-4 self-center`}
-              />
+              <View style={tw`w-full flex-row justify-center`}>
+                <Image source={prossingGif} style={tw`w-32 h-32 mt-11 mb-4`} />
+              </View>
 
               {/* Header */}
               <Text
-                style={tw`text-center text-[#007AFF] text-3xl font-DegularDisplayBold  mb-4`}
+                style={tw`text-center text-Sblue text-3xl font-DegularDisplayBold  mb-4`}
               >
                 Thanks for using our service.
               </Text>
 
               {/* Confirmation Number */}
-              <View style={tw`items-center my-6`}>
+              <View style={tw`items-center my-2`}>
                 <Text
                   style={tw`text-center text-deepGrey80 dark:text-primary text-xl font-DegularDisplayLight `}
                 >
@@ -293,7 +290,7 @@ const booking = () => {
 
               {/* Got it Button */}
               <TouchableOpacity
-                style={tw`bg-SPrimary py-3 rounded-lg mb-6`}
+                style={tw`bg-Sblue py-3 rounded-lg mb-6`}
                 onPress={() => setIsVisible(false)}
               >
                 <Text

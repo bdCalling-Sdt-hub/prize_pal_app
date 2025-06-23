@@ -57,7 +57,7 @@ const Page = () => {
 
         <View style={tw`flex-row gap-2`}>
           <TouchableOpacity
-            onPress={() => router.push("/favorite/favorite")}
+            onPress={() => router.push("/favorites/favorite")}
             style={tw`w-14 h-14 rounded-full bg-primary dark:bg-[#3D3D3D] justify-center items-center`}
           >
             {colorScheme === "dark" ? (

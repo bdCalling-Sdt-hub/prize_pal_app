@@ -71,7 +71,7 @@ const BookNowCategory = () => {
         onPress={() => router.push("/services/servicesPages/serviceExplorer")}
       >
         <Image
-          style={tw`relative w-44 h-36 rounded-2xl `}
+          style={tw`relative w-48 h-36 rounded-2xl `}
           source={item.image}
         />
         <LinearGradient
@@ -81,7 +81,7 @@ const BookNowCategory = () => {
             "rgba(0,0,0,0.8)",
             "rgba(0,0,0,0.8)",
           ]}
-          style={tw`absolute h-full w-full z-0`}
+          style={tw`absolute h-full w-full rounded-2xl z-0`}
         />
         <View
           style={tw`absolute bottom-3 flex-row justify-between items-center w-full px-2`}
@@ -93,7 +93,7 @@ const BookNowCategory = () => {
             onPress={() =>
               router.push("/services/servicesPages/serviceExplorer")
             }
-            style={tw`w-10 h-10 bg-slate-400 rounded-xl justify-center items-center`}
+            style={tw`w-10 h-10 bg-gray-500 opacity-75 rounded-xl justify-center items-center`}
           >
             <SvgXml style={tw`text-center`} xml={IconRightArrowConner} />
           </TouchableOpacity>

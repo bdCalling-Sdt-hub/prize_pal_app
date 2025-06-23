@@ -61,7 +61,7 @@ const Search = () => {
     return (
       <Pressable>
         <Image
-          style={tw`relative w-44 h-36 rounded-2xl `}
+          style={tw`relative w-48 h-36 rounded-2xl `}
           source={item.image}
         />
         <LinearGradient
@@ -71,7 +71,7 @@ const Search = () => {
             "rgba(0,0,0,0.8)",
             "rgba(0,0,0,0.8)",
           ]}
-          style={tw`absolute h-full w-full z-0`}
+          style={tw`absolute h-full w-full rounded-2xl z-0`}
         />
         <View
           style={tw`absolute bottom-3 flex-row justify-between items-center w-full px-2`}
@@ -80,7 +80,7 @@ const Search = () => {
             {item.title}
           </Text>
           <TouchableOpacity
-            style={tw`w-10 h-10 bg-slate-400 rounded-xl justify-center items-center`}
+            style={tw`w-10 h-10 bg-gray-500 opacity-75 rounded-xl justify-center items-center`}
           >
             <SvgXml style={tw`text-center`} xml={IconRightArrowConner} />
           </TouchableOpacity>
@@ -120,11 +120,13 @@ const Search = () => {
   };
 
   return (
-    <SafeAreaView style={tw`flex-1 bg-base-light dark:bg-base-dark px-4`}>
+    <SafeAreaView
+      style={tw`flex-1 items-center bg-base-light dark:bg-base-dark px-4`}
+    >
       <FlatList
         data={defaultSearchData}
         numColumns={2}
-        contentContainerStyle={tw` flex-1  gap-3 justify-start items-center`}
+        contentContainerStyle={tw` flex-1  gap-3 `}
         columnWrapperStyle={{ gap: 10 }}
         renderItem={RenderItem}
         ListHeaderComponent={HeaderContent}
