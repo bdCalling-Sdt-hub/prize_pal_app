@@ -68,12 +68,12 @@ export function TabBar({ state, descriptors, navigation }: BottomTabBarProps) {
             testID={options.tabBarButtonTestID}
             onPress={onPress}
             onLongPress={onLongPress}
-            style={tw`flex-1 justify-center  items-center rounded-full`}
+            style={tw`flex-1 justify-center items-center rounded-full`}
           >
             <View
-              style={tw`m-2 ${
+              style={tw`m-2 w-20  items-center justify-center ${
                 isFocused
-                  ? "bg-[#E4E4E4] dark:bg-darkSecoundary p-5 rounded-full "
+                  ? "bg-[#E4E4E4]  dark:bg-darkSecoundary p-5 rounded-full "
                   : ""
               }`}
             >
