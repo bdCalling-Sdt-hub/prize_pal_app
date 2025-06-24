@@ -184,7 +184,7 @@ function CustomDrawerContent(props: DrawerContentComponentProps) {
           <TouchableOpacity
             onPress={() => {
               props?.navigation?.closeDrawer();
-              router.push("/privacy/privacy");
+              router.push("/privacys/privacy");
             }}
             style={tw`flex-row justify-between items-center px-3 dark:bg-darkPrimary bg-primary py-4 `}
           >
@@ -205,7 +205,7 @@ function CustomDrawerContent(props: DrawerContentComponentProps) {
           <TouchableOpacity
             onPress={() => {
               props?.navigation?.closeDrawer();
-              router.push("/terms/terms");
+              router.push("/terms/term");
             }}
             style={tw`flex-row justify-between items-center px-3 dark:bg-darkPrimary bg-primary py-4  rounded-b-xl`}
           >

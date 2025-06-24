@@ -1,6 +1,6 @@
 import { Stack } from "expo-router";
 
-const RootLayout = () => {
+const favoritesLayout = () => {
   return (
     <Stack screenOptions={{ headerShown: false }}>
       <Stack.Screen name="favorite" />
@@ -8,4 +8,4 @@ const RootLayout = () => {
   );
 };
 
-export default RootLayout;
+export default favoritesLayout;

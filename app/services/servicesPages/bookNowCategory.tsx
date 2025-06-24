@@ -12,6 +12,7 @@ import {
   IconRightArrowConner,
 } from "@/icons/icon";
 import tw from "@/lib/tailwind";
+import { _Width } from "@/utils/utils";
 import { LinearGradient } from "expo-linear-gradient";
 import { router } from "expo-router";
 import React, { JSX } from "react";
@@ -71,7 +72,13 @@ const BookNowCategory = () => {
         onPress={() => router.push("/services/servicesPages/serviceExplorer")}
       >
         <Image
-          style={tw`relative w-48 h-36 rounded-2xl `}
+          style={[
+            tw`relative  h-36 rounded-2xl `,
+            {
+              // height: _HIGHT * 0.119,
+              width: _Width * 0.45,
+            },
+          ]}
           source={item.image}
         />
         <LinearGradient
@@ -127,7 +134,7 @@ const BookNowCategory = () => {
       <FlatList
         data={defaultSearchData}
         numColumns={2}
-        contentContainerStyle={tw` flex-1  gap-3 justify-start items-center`}
+        contentContainerStyle={tw` flex-1  gap-3  `}
         columnWrapperStyle={{ gap: 10 }}
         renderItem={RenderItem}
         ListHeaderComponent={HeaderContent}

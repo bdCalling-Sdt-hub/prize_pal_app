@@ -7,6 +7,7 @@ import {
 } from "@/assets/image";
 import { IconRightArrowConner, IconSearch } from "@/icons/icon";
 import tw from "@/lib/tailwind";
+import { _Width } from "@/utils/utils";
 import { LinearGradient } from "expo-linear-gradient";
 import { Formik } from "formik";
 import React, { JSX } from "react";
@@ -61,7 +62,13 @@ const Search = () => {
     return (
       <Pressable>
         <Image
-          style={tw`relative w-48 h-36 rounded-2xl `}
+          style={[
+            tw`relative  h-36 rounded-2xl `,
+            {
+              // height: _HIGHT * 0.119,
+              width: _Width * 0.45,
+            },
+          ]}
           source={item.image}
         />
         <LinearGradient
