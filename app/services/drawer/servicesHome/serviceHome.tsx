@@ -129,6 +129,11 @@ const ServiceHome = () => {
           <SvgXml xml={IconRightArrowWhite} />
         </TouchableOpacity>
 
+        <Text
+          style={tw`text-2xl font-DegularDisplayMedium text-black text-center mb-2 mt-10 dark:text-white`}
+        >
+          Our services
+        </Text>
         {/* ================ our services =============== */}
         <View style={tw`flex-row justify-between items-center my-5`}>
           <View

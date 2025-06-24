@@ -250,7 +250,7 @@ function CustomDrawerContent(props: DrawerContentComponentProps) {
           <TouchableOpacity
             onPress={() => {
               props?.navigation?.closeDrawer();
-              router.push("/terms/terms");
+              router.push("/terms/term");
             }}
             style={tw`flex-row justify-between items-center px-3 bg-primary dark:bg-deepGrey80 py-4 rounded-xl`}
           >
