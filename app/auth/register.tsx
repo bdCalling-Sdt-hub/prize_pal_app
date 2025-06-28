@@ -195,7 +195,7 @@ const Register = () => {
                     style={tw`bg-primaryBlack dark:bg-primary rounded-full`}
                     onPress={() => {
                       handleSubmit();
-                      router.replace("/retailer/home");
+                      router.replace("/choose_r_s");
                     }}
                   >
                     <Text
@@ -210,20 +210,17 @@ const Register = () => {
           </View>
           <View>
             <Text
-              style={tw` w-full dark:text-primary font-medium pb-6 text-base text-center  font-PoppinsSemiBold `}
+              style={tw` w-full dark:text-primary font-medium   text-base text-center  font-PoppinsSemiBold `}
             >
               Already have an account ?
-              <TouchableOpacity
-                onPress={() => router.push("/auth/login")}
-                style={tw`flex-grow justify-center `}
-              >
-                <Text
-                  style={tw`text-primaryBlack underline text-base h-11 p-3 dark:text-darkText`}
-                >
-                  Login here
-                </Text>
-              </TouchableOpacity>
             </Text>
+            <TouchableOpacity onPress={() => router.push("/auth/login")}>
+              <Text
+                style={tw`text-primaryBlack underline text-base pb-3 dark:text-darkText`}
+              >
+                Login here
+              </Text>
+            </TouchableOpacity>
           </View>
         </View>
       </ScrollView>

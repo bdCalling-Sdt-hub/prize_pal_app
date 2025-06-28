@@ -1,5 +1,4 @@
 import { useTheme } from "@/app/context/ThemeProvider";
-import Btn from "@/components/Btn";
 import {
   IconCall,
   IconEdit,
@@ -21,7 +20,10 @@ const Page = () => {
 
   return (
     <View style={tw`flex-1 bg-base-light dark:bg-base-dark`}>
-      <ScrollView>
+      <ScrollView
+        showsVerticalScrollIndicator={false}
+        contentContainerStyle={tw``}
+      >
         <View style={tw`p-5`}>
           {/* profile section */}
           <View
@@ -33,7 +35,7 @@ const Page = () => {
                   style={tw`h-32 aspect-square rounded-full`}
                   source={require("@/assets/images/profile.jpg")}
                 />
-                <TouchableOpacity style={tw`absolute bottom-0 right-5`}>
+                <TouchableOpacity style={tw`absolute bottom-0 right-12`}>
                   <SvgXml xml={IconSelectImg} />
                 </TouchableOpacity>
               </View>
@@ -54,7 +56,7 @@ const Page = () => {
             </View>
           </View>
           {/*   profile details */}
-          <View style={tw`flex-col justify-between h-[61%]`}>
+          <View style={tw`flex-col justify-between `}>
             <View>
               <View
                 style={tw`flex-row items-center gap-4 py-4 px-6 dark:bg-darkPrimary  mt-4  rounded-full border border-deepGreycc`}
@@ -97,27 +99,27 @@ const Page = () => {
                 </Text>
               </View>
             </View>
-            <View>
-              <Btn>
-                <TouchableOpacity
-                  onPress={() => {
-                    router.push("/editProfiles/editProfile");
-                  }}
-                >
-                  <View style={tw`flex-row justify-center items-center gap-3`}>
-                    {colorScheme === "dark" ? (
-                      <SvgXml xml={IconEditDark} />
-                    ) : (
-                      <SvgXml xml={IconEdit} />
-                    )}
-                    <Text
-                      style={tw`text-primaryFF dark:text-darkPrimary text-center font-semibold text-lg  `}
-                    >
-                      Edit Profile
-                    </Text>
-                  </View>
-                </TouchableOpacity>
-              </Btn>
+            <View
+              style={tw`bg-darkPrimary dark:bg-primary py-3 mt-3 rounded-full`}
+            >
+              <TouchableOpacity
+                onPress={() => {
+                  router.push("/editProfiles/editProfile");
+                }}
+              >
+                <View style={tw`flex-row justify-center items-center gap-3`}>
+                  {colorScheme === "dark" ? (
+                    <SvgXml xml={IconEditDark} />
+                  ) : (
+                    <SvgXml xml={IconEdit} />
+                  )}
+                  <Text
+                    style={tw`text-primaryFF dark:text-darkPrimary text-center font-semibold text-lg  `}
+                  >
+                    Edit Profile
+                  </Text>
+                </View>
+              </TouchableOpacity>
             </View>
           </View>
         </View>
