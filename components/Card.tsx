@@ -19,12 +19,12 @@ const Card = ({ item }: any) => {
 
           <View>
             <Text
-              style={tw`font-semibold text-lg font-PoppinsMedium dark:text-primaryFF`}
+              style={tw`font-semibold text-base font-PoppinsMedium dark:text-primaryFF`}
             >
               {item.category}
             </Text>
             <Text
-              style={tw`font-normal text-base font-Poppins text-deepGrey dark:text-primaryFF`}
+              style={tw`font-normal text-sm font-Poppins text-deepGrey dark:text-primaryFF`}
             >
               {item.productsCount} products
             </Text>
@@ -34,7 +34,7 @@ const Card = ({ item }: any) => {
           style={tw`py-[8px] px-[16px] border dark:border-primaryFF flex items-center justify-center rounded-full border-deepGrey w-[90px]`}
         >
           <Text
-            style={tw`font-normal text-base font-Poppins dark:text-primaryFF`}
+            style={tw`font-normal text-sm font-PoppinsSemiBold  dark:text-primaryFF`}
           >
             See all
           </Text>
@@ -42,7 +42,7 @@ const Card = ({ item }: any) => {
       </View>
       {/* card show  */}
 
-      <View style={tw`flex-row gap-1 pb-3 justify-between items-center`}>
+      <View style={tw`flex-row gap-1 pb-3 justify-between items-center `}>
         {item.products.map((cardItem: any) => (
           <TouchableOpacity
             onPress={() => {
@@ -53,10 +53,11 @@ const Card = ({ item }: any) => {
               tw`bg-primary dark:bg-darkPrimary  rounded-3xl relative`,
               {
                 width: _Width * 0.44,
+                height: _HIGHT * 0.3,
               },
             ]}
           >
-            <View style={tw`p-1.`}>
+            <View style={tw`p-1`}>
               <Image
                 style={[
                   tw`w-full rounded-3xl `,
@@ -74,17 +75,17 @@ const Card = ({ item }: any) => {
               <SvgXml xml={love} />
             </TouchableOpacity>
             {/* card content */}
-            <View style={tw`p-3`}>
+            <View style={tw`p-2 flex-col justify-between `}>
               <View>
                 <Text
-                  style={tw`font-semibold text-lg font-PoppinsSemiBold dark:text-primaryFF text-black`}
+                  style={tw`font-semibold text-base  font-PoppinsMedium dark:text-primaryFF text-black`}
                 >
                   {cardItem.name}
                 </Text>
               </View>
               <View style={tw`flex-row justify-between items-center `}>
                 <Text
-                  style={tw`font-normal text-lg font-PoppinsLight dark:text-primaryFF text-deepGrey`}
+                  style={tw`font-normal text-lg font-PoppinsBold dark:text-primaryFF text-deepGrey`}
                 >
                   {cardItem.price}
                 </Text>

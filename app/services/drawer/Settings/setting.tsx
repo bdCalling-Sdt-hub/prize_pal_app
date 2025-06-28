@@ -57,9 +57,9 @@ const Setting = () => {
         <View style={tw`bg-primary dark:bg-darkPrimary rounded-2xl`}>
           {/* add page */}
           <TouchableOpacity
-            // onPress={() => {
-            //   router.push("/services/drawer/servicesHome/profile");
-            // }}
+            onPress={() => {
+              router.push("/services/drawer/servicesHome/profile");
+            }}
             style={tw`flex-row justify-between items-center px-3 bg-primary dark:bg-darkPrimary py-4 rounded-xl`}
           >
             <View style={tw`flex-row  items-center `}>

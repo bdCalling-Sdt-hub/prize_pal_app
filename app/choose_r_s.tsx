@@ -1,6 +1,7 @@
 import { ImgLogo, ImgLogoLight } from "@/assets/image";
 import { IconErow } from "@/icons/icon";
 import tw from "@/lib/tailwind";
+import { _HIGHT, _Width } from "@/utils/utils";
 import { Link } from "expo-router";
 import React from "react";
 import { Image, ScrollView, Text, TouchableOpacity, View } from "react-native";
@@ -16,11 +17,17 @@ const Page = () => {
           style={tw`flex-1 justify-center  items-center bg-base-light dark:bg-base-dark`}
         >
           <Image
-            style={tw`w-40 h-40 ml-8`}
+            style={tw`w-40 h-40 `}
             source={colorScheme === "dark" ? ImgLogo : ImgLogoLight}
           />
           <Image
-            style={tw`w-[292px] h-[292px] mt-11 mb-8`}
+            style={[
+              tw` mt-6 mb-8 rounded-lg`,
+              {
+                width: _Width * 0.55,
+                height: _HIGHT * 0.24,
+              },
+            ]}
             source={require("@/assets/images/choseRorS1.png")}
           />
           <Text style={tw`text-lg dark:text-primary font-PoppinsSemiBold mb-8`}>
@@ -29,7 +36,13 @@ const Page = () => {
           {/* Retail navigation */}
           <View style={tw`mb-5 relative`}>
             <Image
-              style={tw` max-w-[370px] h-[130px] rounded-lg`}
+              style={[
+                tw`  rounded-lg`,
+                {
+                  width: _Width * 0.9,
+                  height: _HIGHT * 0.15,
+                },
+              ]}
               source={require("@/assets/images/choseRorS2.jpg")}
             />
             <TouchableOpacity
@@ -46,7 +59,13 @@ const Page = () => {
           {/* Service navigation */}
           <View style={tw`mb-5 relative`}>
             <Image
-              style={tw` max-w-[370px] h-[130px] rounded-lg `}
+              style={[
+                tw`  rounded-lg`,
+                {
+                  width: _Width * 0.9,
+                  height: _HIGHT * 0.15,
+                },
+              ]}
               source={require("@/assets/images/choseRorS3.png")}
             />
             <TouchableOpacity
